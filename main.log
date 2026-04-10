@@ -1,0 +1,731 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.10)  10 APR 2026 02:58
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**d:/stage/rapport/main.tex
+(d:/stage/rapport/main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
+(D:\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@chapter=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (D:\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (D:\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (D:\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (D:\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (D:\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (D:\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+) (D:\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip51
+\aftertitleunit=\skip52
+\ttl@plus=\dimen151
+\ttl@minus=\dimen152
+\ttl@toksa=\toks18
+\titlewidth=\dimen153
+\titlewidthlast=\dimen154
+\titlewidthfirst=\dimen155
+) (D:\MiKTeX\tex/latex/chngcntr\chngcntr.sty
+Package: chngcntr 2018/04/09 v1.1a change counter resetting
+Package chngcntr Info: \counterwithout already defined.
+(chngcntr)             Quitting chngcntr on input line 21.
+) (D:\MiKTeX\tex/latex/acro\acro.sty (D:\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (D:\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2025-12-24 L3 programming layer (loader) 
+ (D:\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count284
+))
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
+)
+Package: acro 2022/04/01 v3.8 typeset acronyms and other abbreviations (CN)
+\l__acro_tmpa_int=\count285
+\l__acro_tmpb_int=\count286
+\l__acro_tmpc_int=\count287
+\l__acro_tmpd_int=\count288
+Loading module `base' ...
+Loading module `interface' ...
+Loading module `aux' ...
+Loading module `properties' ...
+Loading module `acronyms' ...
+Loading module `formatting' ...
+Loading module `ppfixes' ...
+Loading module `tools' ...
+\l__acro_minimal_usage_int=\count289
+\l__acro_nest_int=\count290
+\g_acro_barrier_int=\count291
+\g_acro_barrier_total_int=\count292
+Loading module `commands' ...
+\l_acro_nest_level_int=\count293
+Loading module `templates' ...
+Loading module `list' ...
+Loading module `pages' ...
+\l__acro_pages_seq_threshold_int=\count294
+Loading module `locale' ...
+ (D:\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (D:\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count295
+) (D:\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (D:\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (D:\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+) (D:\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+Loading module `pdfsupport' ...
+Loading module `patch' ...
+Loading module `definitions' ...
+Loading module `upgrade' ...
+)
+==> First Aid for acro.sty applied!
+(D:\MiKTeX\tex/latex/xpatch\xpatch.sty
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+ (D:\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)) (D:\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+ (D:\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (D:\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (D:\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count296
+ (D:\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (D:\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (D:\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count297
+\c@listtotal=\count298
+\c@listcount=\count299
+\c@liststart=\count300
+\c@liststop=\count301
+\c@citecount=\count302
+\c@citetotal=\count303
+\c@multicitecount=\count304
+\c@multicitetotal=\count305
+\c@instcount=\count306
+\c@maxnames=\count307
+\c@minnames=\count308
+\c@maxitems=\count309
+\c@minitems=\count310
+\c@citecounter=\count311
+\c@maxcitecounter=\count312
+\c@savedcitecounter=\count313
+\c@uniquelist=\count314
+\c@uniquename=\count315
+\c@refsection=\count316
+\c@refsegment=\count317
+\c@maxextratitle=\count318
+\c@maxextratitleyear=\count319
+\c@maxextraname=\count320
+\c@maxextradate=\count321
+\c@maxextraalpha=\count322
+\c@abbrvpenalty=\count323
+\c@highnamepenalty=\count324
+\c@lownamepenalty=\count325
+\c@maxparens=\count326
+\c@parenlevel=\count327
+\blx@tempcnta=\count328
+\blx@tempcntb=\count329
+\blx@tempcntc=\count330
+\c@blx@maxsection=\count331
+\blx@maxsegment@0=\count332
+\blx@notetype=\count333
+\blx@parenlevel@text=\count334
+\blx@parenlevel@foot=\count335
+\blx@sectionciteorder@0=\count336
+\blx@sectionciteorderinternal@0=\count337
+\blx@entrysetcounter=\count338
+\blx@biblioinstance=\count339
+\labelnumberwidth=\skip53
+\labelalphawidth=\skip54
+\biblabelsep=\skip55
+\bibitemsep=\skip56
+\bibnamesep=\skip57
+\bibinitsep=\skip58
+\bibparsep=\skip59
+\bibhang=\skip60
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\blx@langwohyphens=\language79
+\c@mincomprange=\count340
+\c@maxcomprange=\count341
+\c@mincompwidth=\count342
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (D:\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count343
+\c@savedafterword=\count344
+\c@annotator=\count345
+\c@savedannotator=\count346
+\c@author=\count347
+\c@savedauthor=\count348
+\c@bookauthor=\count349
+\c@savedbookauthor=\count350
+\c@commentator=\count351
+\c@savedcommentator=\count352
+\c@editor=\count353
+\c@savededitor=\count354
+\c@editora=\count355
+\c@savededitora=\count356
+\c@editorb=\count357
+\c@savededitorb=\count358
+\c@editorc=\count359
+\c@savededitorc=\count360
+\c@foreword=\count361
+\c@savedforeword=\count362
+\c@holder=\count363
+\c@savedholder=\count364
+\c@introduction=\count365
+\c@savedintroduction=\count366
+\c@namea=\count367
+\c@savednamea=\count368
+\c@nameb=\count369
+\c@savednameb=\count370
+\c@namec=\count371
+\c@savednamec=\count372
+\c@translator=\count373
+\c@savedtranslator=\count374
+\c@shortauthor=\count375
+\c@savedshortauthor=\count376
+\c@shorteditor=\count377
+\c@savedshorteditor=\count378
+\c@labelname=\count379
+\c@savedlabelname=\count380
+\c@institution=\count381
+\c@savedinstitution=\count382
+\c@lista=\count383
+\c@savedlista=\count384
+\c@listb=\count385
+\c@savedlistb=\count386
+\c@listc=\count387
+\c@savedlistc=\count388
+\c@listd=\count389
+\c@savedlistd=\count390
+\c@liste=\count391
+\c@savedliste=\count392
+\c@listf=\count393
+\c@savedlistf=\count394
+\c@location=\count395
+\c@savedlocation=\count396
+\c@organization=\count397
+\c@savedorganization=\count398
+\c@origlocation=\count399
+\c@savedoriglocation=\count400
+\c@origpublisher=\count401
+\c@savedorigpublisher=\count402
+\c@publisher=\count403
+\c@savedpublisher=\count404
+\c@language=\count405
+\c@savedlanguage=\count406
+\c@origlanguage=\count407
+\c@savedoriglanguage=\count408
+\c@pageref=\count409
+\c@savedpageref=\count410
+\shorthandwidth=\skip61
+\shortjournalwidth=\skip62
+\shortserieswidth=\skip63
+\shorttitlewidth=\skip64
+\shortauthorwidth=\skip65
+\shorteditorwidth=\skip66
+\locallabelnumberwidth=\skip67
+\locallabelalphawidth=\skip68
+\localshorthandwidth=\skip69
+\localshortjournalwidth=\skip70
+\localshortserieswidth=\skip71
+\localshorttitlewidth=\skip72
+\localshortauthorwidth=\skip73
+\localshorteditorwidth=\skip74
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (D:\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (D:\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count411
+\c@textcitetotal=\count412
+\c@textcitemaxnames=\count413
+\c@biburlbigbreakpenalty=\count414
+\c@biburlbreakpenalty=\count415
+\c@biburlnumpenalty=\count416
+\c@biburlucpenalty=\count417
+\c@biburllcpenalty=\count418
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count419
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+ (D:\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
+File: ieee.bbx 2025-08-01 v1.4f biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+ (D:\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
+File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (D:\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (D:\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count420
+\c@bbx:relatedtotal=\count421
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+ (D:\MiKTeX\tex/latex/biblatex-ieee\ieee.cbx
+File: ieee.cbx 2025-08-01 v1.4f biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-verb'...
+Package biblatex Info: ... file 'numeric-verb.cbx' found.
+ (D:\MiKTeX\tex/latex/biblatex/cbx\numeric-verb.cbx
+File: numeric-verb.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+Package biblatex Info: Redefining '\textcites'.
+))
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (D:\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2025-12-24 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (D:\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+)) (D:\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen156
+\ar@mcellbox=\box54
+\extrarowheight=\dimen157
+\NC@list=\toks19
+\extratabsurround=\skip75
+\backup@length=\skip76
+\ar@cellbox=\box55
+) (D:\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count422
+\float@exts=\toks20
+\float@box=\box56
+\@float@everytoks=\toks21
+\@floatcapt=\box57
+) (D:\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+ (D:\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count423
+\Gm@cntv=\count424
+\c@Gm@tempcnt=\count425
+\Gm@bindingoffset=\dimen158
+\Gm@wd@mp=\dimen159
+\Gm@odd@mp=\dimen160
+\Gm@even@mp=\dimen161
+\Gm@layoutwidth=\dimen162
+\Gm@layoutheight=\dimen163
+\Gm@layouthoffset=\dimen164
+\Gm@layoutvoffset=\dimen165
+\Gm@dimlist=\toks22
+ (D:\MiKTeX\tex/latex/geometry\geometry.cfg)) (D:\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (D:\MiKTeX\tex/latex/needspace\needspace.sty
+Package: needspace 2025/03/13 v1.3e reserve vertical space
+) (D:\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip77
+\f@nch@offset@elh=\skip78
+\f@nch@offset@erh=\skip79
+\f@nch@offset@olh=\skip80
+\f@nch@offset@orh=\skip81
+\f@nch@offset@elf=\skip82
+\f@nch@offset@erf=\skip83
+\f@nch@offset@olf=\skip84
+\f@nch@offset@orf=\skip85
+\f@nch@height=\skip86
+\f@nch@footalignment=\skip87
+\f@nch@widthL=\skip88
+\f@nch@widthC=\skip89
+\f@nch@widthR=\skip90
+\@temptokenb=\toks23
+) (acronyms.tex
+\c@g@acro@MENA@int=\count426
+\c@g@acro@AI@int=\count427
+\c@g@acro@SLM@int=\count428
+\c@g@acro@LLM@int=\count429
+\c@g@acro@TDSP@int=\count430
+\c@g@acro@CRISP-DM@int=\count431
+\c@g@acro@API@int=\count432
+\c@g@acro@SME@int=\count433
+\c@g@acro@IBM@int=\count434
+\c@g@acro@SPSS@int=\count435
+\c@g@acro@ATI@int=\count436
+\c@g@acro@RAG@int=\count437
+\c@g@acro@DSR@int=\count438
+\c@g@acro@PDF@int=\count439
+\c@g@acro@HTTP@int=\count440
+)
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 42.
+\@quotelevel=\count441
+\@quotereset=\count442
+ (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+ (D:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count443
+\scratchdimen=\dimen166
+\scratchbox=\box58
+\nofMPsegments=\count444
+\nofMParguments=\count445
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count446
+\MPscratchDim=\dimen167
+\MPnumerator=\count447
+\makeMPintoPDFobject=\count448
+\everyMPtoPDFconversion=\toks25
+) (D:\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (D:\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+)) (D:\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 42.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (D:\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (main.bbl)
+Package biblatex Info: Reference section=0 on input line 42.
+Package biblatex Info: Reference segment=0 on input line 42.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 638.47984pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=472.03123pt
+* \textheight=638.47984pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(titlepage.tex
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=709.61174pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-66.59087pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 4.
+<figures/logo_isi.png, id=1, 3854.4pt x 1927.2pt>
+File: figures/logo_isi.png Graphic file (type png)
+<use figures/logo_isi.png>
+Package pdftex.def Info: figures/logo_isi.png  used on input line 5.
+(pdftex.def)             Requested size: 91.04303pt x 45.52458pt.
+<figures/logo_ministere.png, id=3, 144.54pt x 144.54pt>
+File: figures/logo_ministere.png Graphic file (type png)
+<use figures/logo_ministere.png>
+Package pdftex.def Info: figures/logo_ministere.png  used on input line 15.
+(pdftex.def)             Requested size: 62.59428pt x 62.59596pt.
+
+Overfull \hbox (8.3849pt too wide) in paragraph at lines 4--18
+[][] 
+ []
+
+<figures/logo_E-tafakna.png, id=4, 1027.84pt x 1027.84pt>
+File: figures/logo_E-tafakna.png Graphic file (type png)
+<use figures/logo_E-tafakna.png>
+Package pdftex.def Info: figures/logo_E-tafakna.png  used on input line 60.
+(pdftex.def)             Requested size: 56.89993pt x 56.9055pt.
+[1
+
+
+{C:/Users/louai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figures/logo_isi.png> <./figures/logo_ministere.png> <./figures/logo_E-tafakna.png>]) (chapters/chapter1.tex
+Chapter I.
+File: figures/logo_E-tafakna.png Graphic file (type png)
+<use figures/logo_E-tafakna.png>
+Package pdftex.def Info: figures/logo_E-tafakna.png  used on input line 15.
+(pdftex.def)             Requested size: 84.96216pt x 84.95781pt.
+[1
+
+
+] [2] [3] [4] [5] [6]
+<figures/CRISP-DM.png, id=36, 2116.90875pt x 1411.2725pt>
+File: figures/CRISP-DM.png Graphic file (type png)
+<use figures/CRISP-DM.png>
+Package pdftex.def Info: figures/CRISP-DM.png  used on input line 283.
+(pdftex.def)             Requested size: 377.62642pt x 251.73546pt.
+ [7 <./figures/CRISP-DM.png>]
+<figures/TDSP.png, id=41, 968.61874pt x 722.7pt>
+File: figures/TDSP.png Graphic file (type png)
+<use figures/TDSP.png>
+Package pdftex.def Info: figures/TDSP.png  used on input line 318.
+(pdftex.def)             Requested size: 377.62642pt x 281.75261pt.
+ [8 <./figures/TDSP.png (PNG copy)>]
+<figures/DSR.png, id=45, 853.1875pt x 617.30624pt>
+File: figures/DSR.png Graphic file (type png)
+<use figures/DSR.png>
+Package pdftex.def Info: figures/DSR.png  used on input line 360.
+(pdftex.def)             Requested size: 424.82523pt x 307.38075pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+[]|\OT1/cmr/m/n/12 Data min-ing and
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 381--381
+[]|\OT1/cmr/m/n/12 Production AI and
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 382--383
+[]|\OT1/cmr/m/n/12 Design and eval-u-a-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+[]|\OT1/cmr/m/n/12 Development
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+[]|\OT1/cmr/m/n/12 Iterative, artifact-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+[]|\OT1/cmr/m/n/12 Evaluation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+[]|\OT1/cmr/m/n/12 Deployment mon-i-
+ []
+
+
+Underfull \hbox (badness 7704) in paragraph at lines 399--399
+[]|\OT1/cmr/m/n/12 Artifact Ori-en-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+[]|\OT1/cmr/m/n/12 Communication
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--409
+[]|\OT1/cmr/m/n/12 Deployment
+ []
+
+
+Underfull \hbox (badness 2181) in paragraph at lines 411--411
+[]|\OT1/cmr/m/n/12 Detailed pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--414
+[]|\OT1/cmr/m/n/12 Suitability for
+ []
+
+[9 <./figures/DSR.png (PNG copy)>] [10] [11]
+<figures/azure_ai_foundry.jpg, id=55, 542.025pt x 416.55624pt>
+File: figures/azure_ai_foundry.jpg Graphic file (type jpg)
+<use figures/azure_ai_foundry.jpg>
+Package pdftex.def Info: figures/azure_ai_foundry.jpg  used on input line 506.
+(pdftex.def)             Requested size: 283.22162pt x 217.6656pt.
+ [12 <./figures/azure_ai_foundry.jpg>]
+<figures/vscode_logo.png, id=60, 923.45pt x 907.39pt>
+File: figures/vscode_logo.png Graphic file (type png)
+<use figures/vscode_logo.png>
+Package pdftex.def Info: figures/vscode_logo.png  used on input line 566.
+(pdftex.def)             Requested size: 70.8018pt x 69.56049pt.
+ [13 <./figures/vscode_logo.png>]
+<figures/python_logo.png, id=65, 225.84375pt x 225.84375pt>
+File: figures/python_logo.png Graphic file (type png)
+<use figures/python_logo.png>
+Package pdftex.def Info: figures/python_logo.png  used on input line 611.
+(pdftex.def)             Requested size: 70.8018pt x 70.80344pt.
+
+Overfull \hbox (0.72362pt too wide) in paragraph at lines 623--626
+\OT1/cmr/m/n/12 from Portable Doc-u-ment For-mat[] doc-u-ments, us-ing li-braries such as Pan-das and NumPy. 
+ []
+
+[14 <./figures/python_logo.png>]
+<figures/n8n_logo.png, id=69, 3854.4pt x 1541.76pt>
+File: figures/n8n_logo.png Graphic file (type png)
+<use figures/n8n_logo.png>
+Package pdftex.def Info: figures/n8n_logo.png  used on input line 658.
+(pdftex.def)             Requested size: 141.61081pt x 56.62547pt.
+ [15 <./figures/n8n_logo.png>]
+<figures/fastapi_logo.png, id=74, 1275.93932pt x 459.78673pt>
+File: figures/fastapi_logo.png Graphic file (type png)
+<use figures/fastapi_logo.png>
+Package pdftex.def Info: figures/fastapi_logo.png  used on input line 703.
+(pdftex.def)             Requested size: 118.0078pt x 42.52258pt.
+ [16 <./figures/fastapi_logo.png>]) [17] [18
+
+] (main.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2020/03/25>
+ ***********
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 16244 strings out of 467870
+ 369921 string characters out of 5435190
+ 1185221 words of memory out of 5000000
+ 44993 multiletter control sequences out of 15000+600000
+ 639475 words of font info for 79 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 73i,12n,79p,861b,1262s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\louai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (19 pages, 1162490 bytes).
+PDF statistics:
+ 113 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+

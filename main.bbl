@@ -1,0 +1,381 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{wearetech2024etafakna}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=5b82a23ed49ec569bc61120e93a86eaf}{%
+           family={{WeAreTech}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b82a23ed49ec569bc61120e93a86eaf}
+      \strng{fullhash}{5b82a23ed49ec569bc61120e93a86eaf}
+      \strng{fullhashraw}{5b82a23ed49ec569bc61120e93a86eaf}
+      \strng{bibnamehash}{5b82a23ed49ec569bc61120e93a86eaf}
+      \strng{authorbibnamehash}{5b82a23ed49ec569bc61120e93a86eaf}
+      \strng{authornamehash}{5b82a23ed49ec569bc61120e93a86eaf}
+      \strng{authorfullhash}{5b82a23ed49ec569bc61120e93a86eaf}
+      \strng{authorfullhashraw}{5b82a23ed49ec569bc61120e93a86eaf}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://wearetech.tn/}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{E-Tafakna: Tunisian LegalTech Startup}
+      \field{year}{2024}
+    \endentry
+    \entry{etafakna2024website}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=35375940c614092d2cd5319544895dfb}{%
+           family={{E-Tafakna}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{35375940c614092d2cd5319544895dfb}
+      \strng{fullhash}{35375940c614092d2cd5319544895dfb}
+      \strng{fullhashraw}{35375940c614092d2cd5319544895dfb}
+      \strng{bibnamehash}{35375940c614092d2cd5319544895dfb}
+      \strng{authorbibnamehash}{35375940c614092d2cd5319544895dfb}
+      \strng{authornamehash}{35375940c614092d2cd5319544895dfb}
+      \strng{authorfullhash}{35375940c614092d2cd5319544895dfb}
+      \strng{authorfullhashraw}{35375940c614092d2cd5319544895dfb}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://etafakna.com/}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{E-Tafakna Official Website}
+      \field{year}{2024}
+    \endentry
+    \entry{chapman2000crispdm}{report}{}{}
+      \name{author}{7}{}{%
+        {{hash=6e42f1026173c2e52fdda7fdd636f359}{%
+           family={Chapman},
+           familyi={C\bibinitperiod},
+           given={Pete},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f37a206983a831906b78d21c7d52eaad}{%
+           family={Clinton},
+           familyi={C\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7c25b09dcdc549eef103243260ef9097}{%
+           family={Kerber},
+           familyi={K\bibinitperiod},
+           given={Randy},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ad3964a47e85a21d4e37e96bdc189722}{%
+           family={Khabaza},
+           familyi={K\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=0837e07a12ac06f6572ab8dbb4dbdc8b}{%
+           family={Reinartz},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3a4e3f5f408e7cfa7e86f42b4a99fe8b}{%
+           family={Shearer},
+           familyi={S\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod}}}%
+        {{hash=93c4571a5818e3fd7fe299eb7352e55d}{%
+           family={Wirth},
+           familyi={W\bibinitperiod},
+           given={Rüdiger},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {SPSS Inc.}%
+      }
+      \strng{namehash}{e4568ace118615d389c03c0583880045}
+      \strng{fullhash}{d560794ae5df2373c2ca62a2e9265a57}
+      \strng{fullhashraw}{d560794ae5df2373c2ca62a2e9265a57}
+      \strng{bibnamehash}{e4568ace118615d389c03c0583880045}
+      \strng{authorbibnamehash}{e4568ace118615d389c03c0583880045}
+      \strng{authornamehash}{e4568ace118615d389c03c0583880045}
+      \strng{authorfullhash}{d560794ae5df2373c2ca62a2e9265a57}
+      \strng{authorfullhashraw}{d560794ae5df2373c2ca62a2e9265a57}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{CRISP-DM} 1.0: Step-by-Step Data Mining Guide}
+      \field{type}{techreport}
+      \field{year}{2000}
+    \endentry
+    \entry{microsoft2016tdsp}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={{Microsoft}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://learn.microsoft.com/en-us/azure/architecture/data-science-process/overview}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{Team Data Science Process Documentation}
+      \field{year}{2016}
+    \endentry
+    \entry{hevner2004design}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=e054261c7f1739e1ba1db0a45e385c1b}{%
+           family={Hevner},
+           familyi={H\bibinitperiod},
+           given={Alan\bibnamedelima R.},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=5aec260b5b1381edc4b8ff6755f2d543}{%
+           family={March},
+           familyi={M\bibinitperiod},
+           given={Salvatore\bibnamedelima T.},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=c518c214dc9e77148493e9ea47f505ab}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Jinsoo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=65565df90d4793da7a2f20e5e1b07345}{%
+           family={Ram},
+           familyi={R\bibinitperiod},
+           given={Sudha},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{77b3350005135e016e7a83431f326d8f}
+      \strng{fullhash}{b163bef761d9a2c79a3d232595321775}
+      \strng{fullhashraw}{b163bef761d9a2c79a3d232595321775}
+      \strng{bibnamehash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authorbibnamehash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authornamehash}{77b3350005135e016e7a83431f326d8f}
+      \strng{authorfullhash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authorfullhashraw}{b163bef761d9a2c79a3d232595321775}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MIS Quarterly}
+      \field{number}{1}
+      \field{title}{Design Science in Information Systems Research}
+      \field{volume}{28}
+      \field{year}{2004}
+      \field{pages}{75\bibrangedash 105}
+      \range{pages}{31}
+    \endentry
+    \entry{peffers2007dsrm}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=3127efe8cdd4557b7228a8724f568529}{%
+           family={Peffers},
+           familyi={P\bibinitperiod},
+           given={Ken},
+           giveni={K\bibinitperiod}}}%
+        {{hash=8b17b21a3e4c61d1302f46cba38c6e50}{%
+           family={Tuunanen},
+           familyi={T\bibinitperiod},
+           given={Tuure},
+           giveni={T\bibinitperiod}}}%
+        {{hash=33ad207ea3031c6d744a31f5bc43c547}{%
+           family={Rothenberger},
+           familyi={R\bibinitperiod},
+           given={Marcus\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=edf3e165ce4429b30d49e353a7d1417a}{%
+           family={Chatterjee},
+           familyi={C\bibinitperiod},
+           given={Samir},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ccaed1d47a4875e5f027cdf2d20bbca}
+      \strng{fullhash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{fullhashraw}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{bibnamehash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authorbibnamehash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authornamehash}{4ccaed1d47a4875e5f027cdf2d20bbca}
+      \strng{authorfullhash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authorfullhashraw}{0d82c455b50c2b184d97697dac2e8660}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Management Information Systems}
+      \field{number}{3}
+      \field{title}{A Design Science Research Methodology for Information Systems Research}
+      \field{volume}{24}
+      \field{year}{2007}
+      \field{pages}{45\bibrangedash 77}
+      \range{pages}{33}
+    \endentry
+    \entry{microsoft2024azureaifoundry}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={{Microsoft}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://learn.microsoft.com/en-us/azure/ai-foundry/}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{Azure AI Foundry Documentation}
+      \field{year}{2024}
+    \endentry
+    \entry{microsoft2024azureopenai}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={{Microsoft}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{Azure OpenAI Service Models}
+      \field{year}{2024}
+    \endentry
+    \entry{microsoft2024vscode}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={{Microsoft}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://code.visualstudio.com/docs}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{Visual Studio Code Documentation}
+      \field{year}{2024}
+    \endentry
+    \entry{python2024docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c7b5508dc5e59a2846d22617276cc27c}{%
+           family={{Python Software Foundation}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{bibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorbibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authornamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.python.org/3/}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{Python Language Reference}
+      \field{year}{2024}
+    \endentry
+    \entry{n8n2024docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=5877e26c078d6409fde54d508bf25721}{%
+           family={{n8n}},
+           familyi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{5877e26c078d6409fde54d508bf25721}
+      \strng{fullhash}{5877e26c078d6409fde54d508bf25721}
+      \strng{fullhashraw}{5877e26c078d6409fde54d508bf25721}
+      \strng{bibnamehash}{5877e26c078d6409fde54d508bf25721}
+      \strng{authorbibnamehash}{5877e26c078d6409fde54d508bf25721}
+      \strng{authornamehash}{5877e26c078d6409fde54d508bf25721}
+      \strng{authorfullhash}{5877e26c078d6409fde54d508bf25721}
+      \strng{authorfullhashraw}{5877e26c078d6409fde54d508bf25721}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.n8n.io/}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{n8n Documentation: Workflow Automation Tool}
+      \field{year}{2024}
+    \endentry
+    \entry{fastapi2024docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f5305ee02dd2a5c6215b53401b4a10b0}{%
+           family={Ramírez},
+           familyi={R\bibinitperiod},
+           given={Sebastián},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{fullhash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{fullhashraw}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{bibnamehash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{authorbibnamehash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{authornamehash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{authorfullhash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{authorfullhashraw}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://fastapi.tiangolo.com/}}
+      \field{note}{Accessed: 2026-04-10}
+      \field{title}{FastAPI Documentation}
+      \field{year}{2024}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

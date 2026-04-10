@@ -1,0 +1,68 @@
+\documentclass[12pt]{report}
+
+% ---- Packages ----
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{chngcntr}
+\usepackage{acro}
+\usepackage{xpatch}
+\usepackage[backend=biber, style=ieee]{biblatex}
+\usepackage{array}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+
+% ---- Geometry ----
+\geometry{
+  top=3cm,
+  bottom=2.5cm,
+  left=2.5cm,
+  right=2.5cm
+}
+
+\raggedbottom
+
+% ---- Bibliography ----
+\addbibresource{references.bib}
+
+% ---- Acronyms ----
+\input{acronyms}
+
+% ---- Numbering Customization ----
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\counterwithout{figure}{chapter}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+% ---- Subsection indentation ----
+\titlespacing*{\subsection}{1em}{*2}{*1}
+\titlespacing*{\subsubsection}{2em}{*1.5}{*0.5}
+% ---- Document ----
+\begin{document}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Title page — no page number here, that is correct
+\input{titlepage}
+
+% Force page counter and style reset after titlepage
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+\input{chapters/chapter1}
+
+\printbibliography
+
+\end{document}
