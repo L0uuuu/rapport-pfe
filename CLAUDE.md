@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a LaTeX academic thesis (Rapport de Projet de Fin d'Études / PFE) for a Master's degree in Computer Science at Institut Supérieur d'Informatique (ISI), Université Tunis El Manar. The thesis documents building a domain-specific AI legal assistant for Tunisian law at the startup E-Tafakna.
+This is a LaTeX academic thesis (Rapport de Stage de Fin d'Études / SFE) for a bachelor's degree in Computer Science at Institut Supérieur d'Informatique (ISI), Université Tunis El Manar. The thesis documents building a domain-specific AI legal assistant for Tunisian law at the startup E-Tafakna.
 
 **Author:** Louai Boubaker  
 **Academic year:** 2025/2026  
@@ -46,6 +46,11 @@ pdflatex main.tex
 **Language:** Document content is in French. Acronyms are defined in `acronyms.tex` and used with `\ac{}`, `\acp{}`, `\acl{}` etc.
 
 **Citations:** Use `\cite{}` with keys from `references.bib`. Bibliography is printed where `\printbibliography` appears in `main.tex`.
+
+## Writing Style
+
+- **Never use em dashes (—)** in any generated content. Use commas, colons, or rephrase the sentence instead.
+- Write in a natural, human-like academic tone. Avoid overly mechanical or formulaic phrasing.
 
 ## Architecture Notes
 

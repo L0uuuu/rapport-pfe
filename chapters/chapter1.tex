@@ -94,12 +94,12 @@ However, two fundamental limitations remain unresolved:
     data sovereignty, response latency, and compliance with Tunisian data regulations. 
     E-Tafakna's planned deployment at \ac{ATI} Tunisie requires a fully on-premises 
     solution with no external dependencies, ensuring that all legal data remains within 
-    a secure and controlled local infrastructure — a requirement the current system 
+    a secure and controlled local infrastructure, which is a requirement the current system
     cannot fulfill.
 \end{itemize}
 
-These two limitations — insufficient Tunisian legal knowledge and reliance on external 
-cloud services — define the core technical challenge that our project aims to address..
+These two limitations, namely insufficient Tunisian legal knowledge and reliance on external
+cloud services, define the core technical challenge that our project aims to address.
 
 \subsection{Problem Statement}
 
@@ -163,7 +163,7 @@ context, significantly improving the precision and coverage of generated respons
 
 \subsubsection*{Component 3: On-Premises Deployment at ATI Tunisie}
 
-The complete system — language model, \ac{RAG} pipeline, and vector database — will 
+The complete system, including the language model, \ac{RAG} pipeline, and vector database, will
 be deployed locally on \ac{ATI} Tunisie's infrastructure using Ollama as the local 
 \ac{LLM} inference framework. This architecture guarantees full data sovereignty, 
 eliminates latency caused by external \ac{API} calls, and ensures compliance with 
@@ -220,7 +220,7 @@ regular reviews and adaptation cycles, while Kanban emphasizes continuous flow a
 visual task management. Both are well-suited for software delivery projects where 
 requirements are relatively stable and the primary challenge is coordination and 
 delivery pace. However, they do not address the specific challenges inherent to 
-\ac{AI} development — they provide no guidance on data collection, model training, 
+\ac{AI} development, they provide no guidance on data collection, model training, 
 evaluation of predictive performance, or the construction and validation of a 
 research artifact. Applying them alone to a project involving fine-tuning a language 
 model and building a \ac{RAG} pipeline would leave the most critical technical and 
@@ -249,7 +249,7 @@ Our project presents a specific set of requirements that constrain this choice:
     Tunisie imposes strict infrastructure requirements that must be addressed from the 
     earliest stages of the project.
     \item \textbf{Artifact-Centered Development:} The primary deliverable of this 
-    project is a concrete technological artifact — a specialized legal chatbot — whose 
+    project is a concrete technological artifact, a specialized legal chatbot, whose 
     utility must be rigorously designed, built, and evaluated within an academic 
     framework.
 \end{itemize}
@@ -260,7 +260,7 @@ rationale behind our final selection.
 \subsection{Overview of CRISP-DM}
 
 \ac{CRISP-DM} \cite{chapman2000crispdm} is a traditional process model that emerged 
-in the late 1990s to standardize the practice of data mining — the automated 
+in the late 1990s to standardize the practice of data mining, the automated 
 extraction of patterns and knowledge from large datasets. It was conceived as an 
 industry-neutral framework applicable across sectors and tools, structured around 
 six sequential phases \cite{chapman2000crispdm}:
@@ -323,15 +323,15 @@ The methodology is built on four core components \cite{microsoft2016tdsp}:
 Although \ac{TDSP} represents a significant improvement over \ac{CRISP-DM} for 
 modern \ac{AI} projects, it remains fundamentally an industry-oriented engineering 
 framework. It does not provide a formal mechanism for artifact-centered research, 
-rigorous academic evaluation, or scientific communication of results — all of which 
+rigorous academic evaluation, or scientific communication of results, all of which 
 are essential requirements for an academic graduation project \cite{microsoft2016tdsp}.
 
 \subsection{Overview of DSR}
 
 \ac{DSR} \cite{hevner2004design, peffers2007dsrm} is a well-established research 
 paradigm in information systems and computer science, specifically designed for 
-projects whose primary output is a technological artifact — a system, model, method, 
-or tool — built to solve a clearly identified real-world problem. Unlike traditional 
+projects whose primary output is a technological artifact, a system, model, method, 
+or tool, built to solve a clearly identified real-world problem. Unlike traditional 
 process methodologies, \ac{DSR} is rooted in a scientific approach: it requires not 
 only that an artifact be constructed, but that its utility and effectiveness be 
 formally evaluated and communicated as a research contribution 
@@ -411,9 +411,9 @@ Basic system integration &
 Detailed production recommendations & 
 Demonstration in realistic environment \\
 \hline
-Suitability for PFE & 
-Weak & 
-Moderate & 
+Suitability for Small-Scale Projects &
+Weak &
+Moderate &
 Strong \\
 \hline
 \end{tabular}
@@ -427,19 +427,21 @@ the following reasons:
 
 \begin{itemize}
     \item \textbf{Artifact-Centered:} Our project's primary deliverable is a 
-    specialized legal chatbot — a concrete technological artifact. \ac{DSR} is built 
+    specialized legal chatbot, a concrete technological artifact. \ac{DSR} is built 
     precisely around the design, construction, and evaluation of such artifacts 
     \cite{hevner2004design}.
     \item \textbf{Academic Rigor:} Unlike \ac{CRISP-DM} and \ac{TDSP}, \ac{DSR} 
     provides a formal evaluation framework that allows the utility and performance of 
-    the system to be rigorously assessed — an essential requirement for an academic 
+    the system to be rigorously assessed, an essential requirement for an academic 
     graduation project.
     \item \textbf{Structured Evaluation:} The dedicated evaluation phase enables a 
     principled comparison between the fine-tuned model and a generic baseline, 
     providing scientifically grounded evidence of improvement \cite{peffers2007dsrm}.
-    \item \textbf{Communication Phase:} \ac{DSR} explicitly includes a communication 
-    activity that maps directly onto the writing of this report and its oral defense, 
-    making the methodology fully consistent with the academic context of this work.
+    \item \textbf{Communication Phase:} Unlike \ac{CRISP-DM} and \ac{TDSP}, \ac{DSR}
+    treats communication as a first-class activity rather than an afterthought, requiring
+    researchers to document and disseminate the artifact, the design decisions, and the
+    evaluation results to a relevant audience \cite{peffers2007dsrm}. This maps naturally
+    onto the written report and oral defense that conclude this graduation project.
     \item \textbf{Iterative by Design:} The build-and-evaluate cycle at the core of 
     \ac{DSR} \cite{hevner2004design} naturally accommodates the multiple iterations 
     of fine-tuning, testing, and refinement that domain adaptation of a language model 
@@ -452,17 +454,17 @@ We tailored the \ac{DSR} lifecycle \cite{peffers2007dsrm} to fit the specific
 structure of our project, embedding the full \ac{AI} technical pipeline within the 
 Design and Development phase:
 
-\textbf{Phase 1 — Problem Identification and Motivation:}
-We identified the core limitations of E-Tafakna's existing \ac{AI} agents — 
-insufficient Tunisian legal knowledge and dependency on external cloud services — 
+\textbf{Phase 1: Problem Identification and Motivation.}
+We identified the core limitations of E-Tafakna's existing \ac{AI} agents, 
+insufficient Tunisian legal knowledge and dependency on external cloud services, 
 and established the need for a domain-specific, locally deployable solution.
 
-\textbf{Phase 2 — Definition of Objectives:}
+\textbf{Phase 2: Definition of Objectives.}
 We defined three concrete objectives for the artifact: domain adaptation through 
 fine-tuning on Tunisian legal corpora, dynamic knowledge retrieval through a 
 \ac{RAG} pipeline, and full on-premises deployment at \ac{ATI} Tunisie.
 
-\textbf{Phase 3 — Design and Development:}
+\textbf{Phase 3: Design and Development.}
 This phase encompasses the complete \ac{AI} technical pipeline:
 \begin{itemize}
     \item Collection and preprocessing of Tunisian legal documents.
@@ -471,17 +473,17 @@ This phase encompasses the complete \ac{AI} technical pipeline:
     \item Integration of the complete system into E-Tafakna's platform architecture.
 \end{itemize}
 
-\textbf{Phase 4 — Demonstration:}
+\textbf{Phase 4: Demonstration.}
 The artifact is deployed on \ac{ATI} Tunisie's on-premises infrastructure and 
 demonstrated through realistic legal consultation scenarios covering the use cases 
 of both Elyssa and Kahina.
 
-\textbf{Phase 5 — Evaluation:}
-The system is evaluated using quantitative metrics — including response accuracy, 
-legal precision, and retrieval quality — and compared against a generic baseline 
+\textbf{Phase 5: Evaluation.}
+The system is evaluated using quantitative metrics (including response accuracy, 
+legal precision, and retrieval quality) and compared against a generic baseline 
 model to measure the concrete contribution of domain-specific fine-tuning.
 
-\textbf{Phase 6 — Communication:}
+\textbf{Phase 6: Communication.}
 The findings, artifact design, and evaluation results are communicated through this 
 academic report and its oral defense before the graduation jury.
 
@@ -497,13 +499,13 @@ development of our solution, and explains the rationale behind its selection.
 
 Azure AI Foundry is Microsoft's unified platform for building, evaluating, and deploying 
 generative \ac{AI} applications. It provides centralized access to a catalog of foundation 
-models from multiple providers — including OpenAI, Meta, and Mistral — through a single 
+models from multiple providers (including OpenAI, Meta, and Mistral) through a single 
 secure endpoint, along with tooling for prompt engineering, model evaluation, and 
 enterprise-grade governance \cite{microsoft2024azureaifoundry}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{figures/azure_ai_foundry.jpg}
+\includegraphics[width=0.4\textwidth]{figures/azure_ai_foundry.jpg}
 \caption{Azure AI Foundry Platform \cite{microsoft2024azureaifoundry}}
 \label{fig:azure-ai-foundry}
 \end{figure}
@@ -511,7 +513,7 @@ enterprise-grade governance \cite{microsoft2024azureaifoundry}.
 Within this ecosystem, we specifically relied on the \textbf{GPT-4.1} model made available 
 through Azure OpenAI Service. GPT-4.1 is one of the most advanced large language models 
 offered on the platform, featuring an expanded context window, strong multimodal 
-capabilities, and improved instruction following compared to previous generations — 
+capabilities, and improved instruction following compared to previous generations, 
 characteristics that are particularly valuable when processing dense and heterogeneous 
 legal documents \cite{microsoft2024azureopenai}.
 
@@ -519,7 +521,7 @@ legal documents \cite{microsoft2024azureopenai}.
 
 GPT-4.1 played a central role in the data preparation phase of our project. The Tunisian 
 legal corpus required for fine-tuning was originally available as a large collection of 
-PDF documents — including legislation, official gazettes, and regulatory texts — whose 
+PDF documents (including legislation, official gazettes, and regulatory texts) whose 
 content was often embedded in complex layouts, multi-column formats, and scanned pages. 
 Traditional text extraction tools proved insufficient to reliably capture the structure 
 and semantics of these documents.
@@ -545,13 +547,120 @@ populating the vector database of the \ac{RAG} pipeline.
 
 \subsubsection*{Rationale for Selection}
 
-Azure AI Foundry was chosen for its enterprise-grade security guarantees, its native 
-integration with other Azure services, and its compliance with data protection standards 
-— all of which align with the confidentiality requirements of legal data handling. 
+{\itshape Azure AI Foundry was chosen for its enterprise-grade security guarantees, its native 
+integration with other Azure services, and its compliance with data protection standards, 
+all of which align with the confidentiality requirements of legal data handling. 
 Although the final production system is deployed entirely on-premises at \ac{ATI} 
 Tunisie, leveraging GPT-4.1 during the data preparation phase allowed us to build a 
 high-quality legal corpus efficiently, without compromising the on-premises nature of 
-the final deliverable.
+the final deliverable.}
+
+\subsection{Google Vertex AI: OCR Extraction from Image-Based PDFs}
+
+Google Vertex AI is Google Cloud's unified machine learning platform, bringing together
+a broad suite of \ac{AI} services (including foundation models, AutoML, custom training,
+and managed inference) under a single \ac{API} and console \cite{google2024vertexai}.
+Among its services, \textbf{Document AI} provides enterprise-grade document processing
+capabilities, including optical character recognition (\ac{OCR}), form parsing, and
+intelligent document splitting \cite{google2024documentai}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{figures/vertex_ai_logo.png}
+\caption{Google Vertex AI \cite{google2024vertexai}}
+\label{fig:vertex-ai-logo}
+\end{figure}
+
+\subsubsection*{Role in Our Project}
+
+A significant portion of the Tunisian legal corpus was available only as scanned
+image-based \ac{PDF} files, meaning the content was stored as rasterized images
+rather than selectable text, making standard text extraction tools entirely
+ineffective. To handle this category of documents, we relied on Google Vertex AI's
+Document AI \ac{OCR} capabilities, which can process image-based \ac{PDF} pages and
+return high-accuracy text output by performing character recognition directly on the
+visual content.
+
+Specifically, Vertex AI Document AI was used to:
+
+\begin{itemize}
+    \item \textbf{Optical Character Recognition (OCR) Processing:} Extract machine-readable text from scanned legal
+    documents where the content existed solely as images, covering legislation texts,
+    official gazettes, and regulatory decrees unavailable in digital form.
+
+    \item \textbf{Multi-page Document Handling:} Process lengthy \ac{PDF} files
+    spanning hundreds of pages in batch, returning structured text output that could
+    be integrated into the same data pipeline as digitally-born documents.
+
+    \item \textbf{Arabic and French Script Recognition:} Accurately recognize both
+    Arabic and French characters present in Tunisian legal texts, given that many
+    official documents are bilingual.
+\end{itemize}
+
+The extracted text was then passed through the same cleaning and structuring pipeline
+used for the digitally-born documents, ensuring a uniform representation across the
+entire legal corpus.
+
+\subsubsection*{Rationale for Selection}
+
+{\itshape Google Vertex AI Document AI was selected specifically for its strong multilingual
+\ac{OCR} performance on Arabic-script and Latin-script documents, a critical
+requirement given the bilingual nature of the Tunisian legal corpus. Its cloud-based
+batch processing model also allowed us to handle large volumes of scanned documents
+without requiring local infrastructure during the data preparation phase, while the
+final production system remained fully on-premises at \ac{ATI} Tunisie.}
+
+\subsection{OVH AI Notebooks: GPU Resources for Fine-Tuning}
+
+OVH AI Notebooks is a managed cloud service provided by OVHcloud that delivers
+on-demand Jupyter notebook environments backed by dedicated \ac{GPU} instances.
+It is designed to make computationally intensive \ac{AI} workloads accessible
+without the overhead of provisioning and maintaining dedicated hardware, giving
+practitioners direct access to \ac{GPU} resources through a familiar notebook
+interface \cite{ovh2024notebooks}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/ovh_logo.png}
+\caption{OVHcloud AI Notebooks \cite{ovh2024notebooks}}
+\label{fig:ovh-notebooks}
+\end{figure}
+
+\subsubsection*{Role in Our Project}
+
+Fine-tuning a large language model on a domain-specific corpus is among the most
+computationally demanding tasks in the \ac{AI} pipeline. Running such a workload
+on a standard development machine would require days or even weeks of processing
+time, making rapid experimentation practically impossible. To address this, we
+used OVH AI Notebooks to run the fine-tuning experiments on \ac{GPU}-accelerated
+instances, which dramatically reduced training time and allowed us to iterate
+efficiently over different configurations:
+
+\begin{itemize}
+    \item \textbf{Fine-Tuning Execution:} Running the supervised fine-tuning
+    pipeline on the curated Tunisian legal corpus, leveraging \ac{GPU} acceleration
+    to complete training jobs in a fraction of the time that would be required on
+    standard hardware.
+
+    \item \textbf{Experiment Tracking:} Using the notebook environment to monitor
+    training metrics, compare runs, and adjust hyperparameters interactively between
+    iterations.
+
+    \item \textbf{Model Evaluation:} Running inference on the fine-tuned checkpoints
+    directly within the notebook environment to perform initial quality assessments
+    before moving to formal evaluation.
+\end{itemize}
+
+\subsubsection*{Rationale for Selection}
+
+{\itshape OVH AI Notebooks was chosen for the combination of accessible \ac{GPU} capacity,
+competitive pricing, and European data residency, a relevant consideration given the
+legal sensitivity of the training data. Its notebook-native interface integrated
+smoothly with our existing Python and Hugging Face Transformers workflow, avoiding
+the need to learn a new toolchain. As with the other cloud services used during
+data preparation, the reliance on OVH was limited strictly to the training phase.
+The final production system remains entirely self-contained and deployed on-premises
+at \ac{ATI} Tunisie.}
 
 \subsection{Visual Studio Code}
 
@@ -591,12 +700,12 @@ without leaving the editor:
 
 \subsubsection*{Rationale for Selection}
 
-We chose VS Code mainly for practical reasons: it runs smoothly on modest 
+{\itshape We chose VS Code mainly for practical reasons: it runs smoothly on modest 
 hardware, supports the full Python ecosystem we needed, and brings editing, 
 debugging, and version control together in one interface. Keeping everything 
 in a single workspace noticeably reduced the friction of switching between 
 tasks, which matters in a project that combines data handling, model training, 
-and integration work.
+and integration work.}
 
 \subsection{Python}
 
@@ -639,17 +748,17 @@ without having to mix multiple languages:
 
 \subsubsection*{Rationale for Selection}
 
-Python was chosen for its central role in the \ac{AI} ecosystem and the 
-availability of mature libraries covering every stage of our pipeline — from 
+{\itshape Python was chosen for its central role in the \ac{AI} ecosystem and the 
+availability of mature libraries covering every stage of our pipeline, from 
 data extraction to model training, evaluation, and deployment. Its readability 
 also made the codebase easier to document and maintain, which was particularly 
-valuable in the academic context of this project.
+valuable in the academic context of this project.}
 
 \subsection{n8n}
 
 n8n is an open-source workflow automation platform that allows users to design 
 processing pipelines visually, by connecting nodes that each perform a specific 
-action — from calling an \ac{API} to reading a file or running a script. It 
+action, from calling an \ac{API} to reading a file or running a script. It 
 can be fully self-hosted, meaning workflow data never has to leave the local 
 environment \cite{n8n2024docs}.
 
@@ -683,12 +792,12 @@ overview of the whole process:
 
 \subsubsection*{Rationale for Selection}
 
-n8n was selected mainly because it is open-source and self-hostable, which 
+{\itshape n8n was selected mainly because it is open-source and self-hostable, which 
 aligns with the on-premises deployment constraints imposed by \ac{ATI} Tunisie. 
 Beyond that, its visual approach lowered the overhead of managing a growing 
 number of processing steps, and the ability to keep everything on local 
 infrastructure ensured that no data ever left the controlled environment 
-during automated processing.
+during automated processing.}
 
 \subsection{FastAPI}
 
@@ -713,9 +822,9 @@ we wrapped our extraction and \ac{RAG}-related scripts behind small FastAPI
 endpoints so that n8n workflows could invoke them like any other integration:
 
 \begin{itemize}
-    \item \textbf{Script Exposition:} Turning standalone Python scripts — 
+    \item \textbf{Script Exposition:} Turning standalone Python scripts, 
     including the legal data extraction routines and the \ac{RAG} pipeline 
-    components — into \ac{HTTP} endpoints that could be consumed directly from 
+    components, into \ac{HTTP} endpoints that could be consumed directly from 
     n8n.
     
     \item \textbf{Seamless Orchestration:} Allowing n8n to trigger Python 
@@ -729,41 +838,21 @@ endpoints so that n8n workflows could invoke them like any other integration:
 
 \subsubsection*{Rationale for Selection}
 
-FastAPI was chosen because it makes exposing Python functions as web endpoints 
+{\itshape FastAPI was chosen because it makes exposing Python functions as web endpoints 
 almost trivial, while still offering solid performance under the kind of 
 long-running inference calls our pipeline involves. Its native support for 
 asynchronous operations fit naturally with our \ac{AI} workloads, and its 
 tight integration with the Python ecosystem made it the most practical choice 
-to connect our processing scripts to the n8n automation layer.
+to connect our processing scripts to the n8n automation layer.}
 
 \section{Conclusion}
 
-This chapter established the general framework of our graduation project. We began 
-by presenting E-Tafakna, a pioneering Tunisian LegalTech startup operating across 
-the \ac{MENA} region, whose platform digitizes the entire legal document lifecycle 
-and integrates two \ac{AI}-powered agents — Elyssa and Kahina — to assist users 
-with document drafting, compliance, and legal guidance.
+This chapter introduced E-Tafakna and its existing \ac{AI} agents, identified the
+two core limitations of the current system, namely the lack of Tunisian legal
+grounding and the dependency on external cloud services, and proposed a solution
+combining a fine-tuned language model, a \ac{RAG} pipeline, and fully on-premises
+deployment at \ac{ATI} Tunisie. We also selected \ac{DSR} as our guiding methodology,
+given its artifact-centered structure and formal evaluation framework.
 
-A critical analysis of the existing system revealed two fundamental limitations: 
-the reliance on general-purpose language models that lack grounding in Tunisian 
-legal knowledge, and a dependency on external cloud services that is incompatible 
-with the on-premises deployment requirements of \ac{ATI} Tunisie. These limitations 
-gave rise to a central research question — how to build a legal \ac{AI} assistant 
-that is both deeply specialized in Tunisian law and fully deployable within a secure, 
-self-contained local infrastructure.
-
-In response, we proposed a solution built around three complementary components: 
-a fine-tuned \ac{SLM} or \ac{LLM} trained on Tunisian legal corpora, a \ac{RAG} 
-pipeline for dynamic legal knowledge retrieval, and a fully on-premises deployment 
-at \ac{ATI} Tunisie using a local inference framework.
-
-Finally, after evaluating several methodological frameworks — from traditional 
-project management approaches such as Scrum and Kanban, to data science methodologies 
-such as \ac{CRISP-DM} and \ac{TDSP}, and research-oriented paradigms — we adopted 
-\ac{DSR} as our guiding methodology. Its artifact-centered structure, formal 
-evaluation framework, and explicit communication phase make it the most appropriate 
-choice for a project that is both technically ambitious and academically rigorous.
-
-The following chapter will build on this foundation by providing a detailed review 
-of the state of the art, examining the key concepts, existing approaches, and 
-technologies that underpin our proposed solution.
+The following chapter grounds this project in the existing literature, examining
+the key concepts and technologies that underpin our proposed solution.
