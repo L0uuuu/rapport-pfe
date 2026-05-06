@@ -55,9 +55,9 @@ scraping/
   download_journal_officiel_lois_decrets_decisions_avis.py  ← legacy AR
   download_journal_officiel_lois_decrets_decisions_avis_francais.py  ← refactored FR
   download_journal_officiel_annonces_legales.py             ← legacy AR
-  download_journal_officiel_annonces_legales_francais.py    ← refactored FR (partial)
+  download_journal_officiel_annonces_legales_francais.py    ← refactored FR ✓
   download_journal_officiel_tribunal_foncier.py             ← legacy AR
-  download_journal_officiel_tribunal_foncier_francais.py    ← refactored FR (partial)
+  download_journal_officiel_tribunal_foncier_francais.py    ← refactored FR ✓
 ```
 
 ## Key Notes / Decisions
@@ -67,6 +67,7 @@ scraping/
 - **Download trigger varies by section.** Lois/Décrets uses `page.evaluate("_PAGE_.A3.value = ...")` + clicking `a[name="A15"]`. Annonces Légales and Tribunal Foncier trigger download by clicking the date link directly.
 - **Scripts are run from the repo root** so that relative `pdfs/` and `checkpoints/` paths resolve correctly.
 - **`scraper_common.py` must be importable** — scripts in `scraping/` import it directly, so the working directory or `PYTHONPATH` must include `scraping/`, or scripts must be run as `python scraping/<script>.py` from the root.
+- **Skip logic is checkpoint-driven, not filesystem-driven.** All three `*_francais.py` scripts build a `downloaded_paths` set from checkpoint entries with `status == "downloaded"` at startup. A file is skipped if its `filepath` is already in that set — `os.path.exists` is never called. After a successful download, `filepath` is immediately added to `downloaded_paths` to prevent re-downloading if the same file appears twice in one run. Moving or deleting the `pdfs/` folder does not trigger re-downloads as long as the checkpoint is intact.
 
 ## API & Orchestration
 
@@ -91,7 +92,7 @@ The API launches the scraper script in a **new terminal window** (`CREATE_NEW_CO
 
 n8n polls the status endpoint every 10 seconds and loops back to Wait until the job is terminal. See `claude context/n8n_workflow_nodes.md` for the full node setup.
 
-## Next Steps
+## Improvements
 
-- Migrate remaining legacy scripts (AR variants) to the refactored pattern if resumability is needed for them.
-- Consider adding a `--dry-run` flag to `scraper_common` for testing navigation without downloading.
+- Migrate legacy AR scripts (`download_journal_officiel_*.py`) to the refactored pattern (CLI args, headless mode, checkpoints) if resumability is needed for them.
+- Add a `--dry-run` flag to `scraper_common` for testing navigation without actually downloading files.

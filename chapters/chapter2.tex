@@ -25,6 +25,8 @@ diverse sources such as books, web pages, and scientific articles
 text, answering questions, summarizing documents, and performing a wide range
 of language tasks without being explicitly programmed for any of them.
 
+\vspace{1em}
+
 What distinguishes a \ac{LLM} from earlier language models is primarily
 its scale, both in terms of parameter count (often ranging from several
 billion to hundreds of billions) and the volume of training data consumed.
@@ -42,6 +44,8 @@ order. This sequential nature created a bottleneck: long-range dependencies
 between distant words were difficult to capture, and training could not be
 effectively parallelized across hardware.
 
+\vspace{1em}
+
 The Transformer resolved both limitations through a mechanism called
 \textbf{self-attention}. Rather than reading a sequence token by token,
 the self-attention mechanism allows every token in a sequence to directly
@@ -50,6 +54,8 @@ captures contextual relationships regardless of distance. This parallel
 computation of attention across all positions makes the Transformer
 significantly faster to train on modern \ac{GPU} hardware and far more
 effective at modeling long-range dependencies \cite{vaswani2017attention}.
+
+\vspace{1em}
 
 A standard Transformer consists of two main components: an \textbf{encoder},
 which reads and encodes the input sequence into a set of continuous
@@ -73,6 +79,8 @@ subsets of this architecture:
     one sequence into another, such as translation or summarization.
 \end{itemize}
 
+Figure~\ref{fig:transformer} illustrates the overall architecture of the Transformer model, including its encoder and decoder stacks.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/Annotated-Transformers-Architecture.png}
@@ -90,6 +98,8 @@ in a sequence (for decoder-only models) or to reconstruct masked words
 internalize grammar, factual knowledge, reasoning patterns, and even
 stylistic conventions present in the training data \cite{devlin2019bert}.
 
+\vspace{1em}
+
 The second stage, called \textbf{fine-tuning} or \textbf{transfer learning},
 adapts the pre-trained model to a specific downstream task or domain by
 continuing training on a smaller, task-specific dataset. Because the model
@@ -105,12 +115,14 @@ particular applications \cite{brown2020gpt3}.
 The landscape of open-weight and proprietary \ac{LLM}s has expanded rapidly
 in recent years. Several model families are particularly relevant to our project.
 
+\vspace{1em}
+
 \textbf{GPT (OpenAI).} The \ac{GPT} series pioneered the decoder-only
 autoregressive approach to language modeling. GPT-3, with 175 billion
 parameters, demonstrated that scaling model size and training data could
 unlock powerful few-shot learning capabilities. GPT-4 and GPT-4.1
 extended these capabilities further with multimodal understanding and
-improved instruction following \cite{brown2020gpt3}.
+improved instruction following \cite{brown2020gpt3}, as shown in Figure~\ref{fig:openai-logo}.
 
 \begin{figure}[H]
 \centering
@@ -124,7 +136,7 @@ was designed to achieve strong performance at smaller scales by training
 on more data per parameter than previous approaches. LLaMA models range
 from 7 billion to 70 billion parameters and have become a popular
 foundation for community-driven fine-tuning and adaptation
-\cite{touvron2023llama}.
+\cite{touvron2023llama}, as shown in Figure~\ref{fig:llama-logo}.
 
 \begin{figure}[H]
 \centering
@@ -138,7 +150,7 @@ Alibaba Cloud, covers a wide range of model sizes from 0.5 billion to
 over 70 billion parameters. Qwen models stand out for their strong
 multilingual capabilities, with particular emphasis on Arabic and
 other non-Latin scripts, making them well suited for applications
-that span multiple languages and writing systems \cite{qwen2025qwen25}.
+that span multiple languages and writing systems \cite{qwen2025qwen25}, as shown in Figure~\ref{fig:qwen-logo}.
 
 \begin{figure}[H]
 \centering
@@ -152,7 +164,7 @@ contribution to the open-weight model ecosystem. Built on the same
 research foundations as the Gemini series, Gemma models are available
 in compact sizes (2B and 7B parameters) designed for efficient
 deployment, making them particularly attractive for on-premises
-scenarios with limited hardware resources \cite{gemma2024google}.
+scenarios with limited hardware resources \cite{gemma2024google}, as shown in Figure~\ref{fig:gemma-logo}.
 
 \begin{figure}[H]
 \centering
@@ -178,6 +190,8 @@ in which all parameters of the pre-trained model are updated using the domain-sp
 dataset. During this process, the model's weights are adjusted through standard
 backpropagation and gradient descent, allowing every layer of the network to
 adapt to the new data distribution.
+
+\vspace{1em}
 
 Full fine-tuning typically produces the highest quality adaptation, as the entire
 model capacity is available to learn domain-specific patterns. However, it comes
@@ -206,14 +220,16 @@ the original pre-trained weights and injects small trainable low-rank matrices
 alongside them. During fine-tuning, only these low-rank matrices are updated,
 while the vast majority of the model's parameters remain unchanged.
 
+\vspace{1em}
+
 In practice, this means that a \ac{LoRA} adapter might add only a few million
 trainable parameters to a model that contains billions, reducing memory
 consumption by an order of magnitude while achieving adaptation quality that
-is often indistinguishable from full fine-tuning \cite{hu2021lora}.
+is often indistinguishable from full fine-tuning \cite{hu2021lora}. Figure~\ref{fig:lora} illustrates how LoRA injects trainable low-rank matrices alongside the frozen pre-trained weights.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.75\textwidth]{figures/lora_diagram.jpg}
+\includegraphics[width=0.9\textwidth]{figures/lora_diagram.jpg}
 \caption{LoRA: Low-Rank Adaptation of frozen weight matrices \cite{datadriveninvestor2024lora}}
 \label{fig:lora}
 \end{figure}
@@ -227,16 +243,18 @@ NormalFloat4, which reduces its memory footprint by approximately four times
 compared to standard 16-bit representations. The \ac{LoRA} adapters are then
 trained in 16-bit precision on top of this quantized base.
 
+\vspace{1em}
+
 This combination makes it possible to fine-tune models with tens of billions
 of parameters on a single consumer-grade \ac{GPU}, a capability that was
 previously restricted to organizations with access to expensive multi-\ac{GPU}
 clusters. \ac{QLoRA} has been shown to match the performance of full 16-bit
 fine-tuning on a variety of benchmarks while using a fraction of the hardware
-resources \cite{dettmers2023qlora}.
+resources \cite{dettmers2023qlora}. Figure~\ref{fig:lora-vs-full} compares the parameter update strategies of LoRA and full fine-tuning.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{figures/lora_vs_fft.png}
+\includegraphics[width=0.9\textwidth]{figures/lora_vs_fft.png}
 \caption{LoRA vs Full Fine-Tuning: comparison of parameter update strategies \cite{digitalocean2024lora}}
 \label{fig:lora-vs-full}
 \end{figure}
@@ -282,6 +300,8 @@ fabricated. This occurs because language models are fundamentally trained to
 produce statistically likely continuations of text, not to verify the factual
 accuracy of their outputs \cite{lewis2020rag}.
 
+\vspace{1em}
+
 In high-stakes domains such as law, hallucination is particularly dangerous.
 A legal assistant that confidently cites a non-existent article of law or
 misrepresents the content of a regulation could mislead users into making
@@ -319,14 +339,16 @@ The \ac{RAG} pipeline typically operates in three stages:
 This architecture enables the system to provide responses that are anchored
 in actual documents, significantly reducing hallucination and allowing the
 knowledge base to be updated independently of the model itself
-\cite{lewis2020rag}.
+\cite{lewis2020rag}. Figure~\ref{fig:rag-pipeline} illustrates the three stages of the RAG pipeline.
 
-\begin{figure}[H]
+\clearpage
+\begin{sidewaysfigure}
 \centering
-\includegraphics[width=0.9\textwidth]{figures/rag_pipeline.jpg}
+\includegraphics[width=0.95\textheight]{figures/rag_pipeline.jpg}
 \caption{The RAG Pipeline: indexing, retrieval, and generation stages \cite{towardsai2024rag}}
 \label{fig:rag-pipeline}
-\end{figure}
+\end{sidewaysfigure}
+\clearpage
 
 \subsection{Vector Databases and Embedding Models}
 
@@ -337,17 +359,21 @@ as relational databases do, vector databases rank results by geometric
 proximity, using metrics such as cosine similarity or dot product to surface
 the vectors closest to a given query.
 
+\vspace{1em}
+
 \textbf{\ac{FAISS} (Meta).} Developed by Meta Research, \ac{FAISS} is an
 open-source library purpose-built for dense vector search over very large
 collections. It supports both exact and approximate nearest-neighbor
 algorithms, giving practitioners a trade-off between search precision and
 speed depending on the scale of their dataset \cite{johnson2019faiss}.
 
+\vspace{1em}
+
 \textbf{Chroma.} Chroma is a lightweight vector store aimed at developers
 building \ac{AI} applications. Its straightforward \ac{API} makes it easy
 to store, query, and manage embeddings, and it can operate either as an
 embedded in-process database or as a standalone server, keeping the
-integration overhead low \cite{chroma2024docs}.
+integration overhead low \cite{chroma2024docs}, as shown in Figure~\ref{fig:chroma-logo}.
 
 \begin{figure}[H]
 \centering
@@ -360,7 +386,7 @@ integration overhead low \cite{chroma2024docs}.
 beyond basic similarity search by supporting rich payload filtering alongside
 vector queries. Its distributed architecture allows it to scale horizontally,
 making it suitable for workloads that combine dense retrieval with structured
-metadata filtering \cite{qdrant2024docs}.
+metadata filtering \cite{qdrant2024docs}, as shown in Figure~\ref{fig:qdrant-logo}.
 
 \begin{figure}[H]
 \centering
@@ -427,14 +453,16 @@ retrieval quality:
 For legal documents, where the meaning of a clause or article depends on
 its complete text and its position within a hierarchical structure, semantic
 or recursive chunking strategies are generally preferred over fixed-size
-approaches.
+approaches. Figure~\ref{fig:chunking-methods} summarizes the main chunking strategies applicable to RAG pipelines.
 
-\begin{figure}[H]
+\clearpage
+\begin{sidewaysfigure}
 \centering
-\includegraphics[width=0.9\textwidth]{figures/chunking_methodes.png}
+\includegraphics[width=0.95\textheight]{figures/chunking_methodes.png}
 \caption{Overview of Common Chunking Strategies for RAG Pipelines}
 \label{fig:chunking-methods}
-\end{figure}
+\end{sidewaysfigure}
+\clearpage
 
 \section{AI for Legal Applications}
 \label{sec:legal-ai}
@@ -571,7 +599,7 @@ provides a command-line interface and a local \ac{API} server, supports
 \ac{GGUF}-quantized models, and handles model lifecycle management
 (downloading, loading, and unloading) automatically. It is the inference
 framework selected for our project's on-premises deployment at \ac{ATI}
-Tunisie \cite{ollama2024docs}.
+Tunisie \cite{ollama2024docs}, as shown in Figure~\ref{fig:ollama-logo}.
 
 \begin{figure}[H]
 \centering
@@ -585,7 +613,7 @@ production-grade \ac{LLM} serving. vLLM introduces PagedAttention,
 a memory management technique that significantly improves \ac{GPU}
 memory utilization during inference, enabling higher concurrent
 request throughput than traditional serving approaches
-\cite{kwon2023vllm}.
+\cite{kwon2023vllm}, as shown in Figure~\ref{fig:vllm-logo}.
 
 \begin{figure}[H]
 \centering
@@ -597,7 +625,7 @@ request throughput than traditional serving approaches
 \textbf{llama.cpp.} A lightweight C/C++ inference library focused on
 running \ac{LLM}s efficiently on \ac{CPU} hardware. It supports a wide
 range of quantization formats and is the engine underlying Ollama's
-model execution \cite{ollama2024docs}.
+model execution \cite{ollama2024docs}, as shown in Figure~\ref{fig:llamacpp-logo}.
 
 \begin{figure}[H]
 \centering
@@ -839,6 +867,8 @@ techniques, from full fine-tuning to parameter-efficient methods such as
 \ac{LoRA} and \ac{QLoRA}, and detailed the \ac{RAG} paradigm as a solution
 to the hallucination problem inherent in language models.
 
+\vspace{1em}
+
 We then surveyed the specific challenges of applying \ac{NLP} to legal texts,
 reviewed existing legal \ac{AI} solutions across different jurisdictions, and
 confirmed that none addresses the unique combination of requirements central
@@ -847,9 +877,13 @@ support, and fully on-premises deployment with data sovereignty guarantees.
 The technical challenges of local \ac{LLM} deployment, including model
 quantization and inference framework selection, were also examined.
 
+\vspace{1em}
+
 Finally, we formalized the functional and non-functional requirements that
 will guide the design and implementation of our system, providing a clear
 specification against which the final artifact can be evaluated.
+
+\vspace{1em}
 
 The following chapter will present the detailed design and architecture of
 our solution, translating these requirements into concrete technical choices

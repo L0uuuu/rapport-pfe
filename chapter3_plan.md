@@ -215,7 +215,14 @@ Answers include:
 
 ## Section 8: Model Selection and Training
 
-### 8.1 Candidate Models
+### 8.1 Base Model Selection Rationale
+Before listing candidates, document the justification for choosing an SLM over a large cloud model:
+- **O3 (on-premises):** no external API at inference time — rules out GPT-4.1, Gemini, etc.
+- **Hardware budget:** available GPU VRAM limits the maximum model size that can run locally
+- **Inference latency:** SLMs return answers in seconds on local hardware; larger models are impractical
+- **Selection criteria used:** multilingual support (Arabic + French), instruction-following capability, permissive open-weight license, GGUF-exportable for local inference runtime
+
+### 8.1b Candidate Models
 Three open-weight models are evaluated in parallel:
 
 | Model | Parameters | Arabic Support | License | Notes |
@@ -272,6 +279,15 @@ If none of the three achieve acceptable performance on Tunisian legal Q&A, a lar
 - RAG pipeline (Part I) remains unchanged — only the LLM endpoint changes
 - FastAPI `/query` endpoint routes through RAG retrieval → fine-tuned model
 - Combined system (fine-tuned LLM + RAG) is the artifact evaluated in Chapter 4
+
+**Prompt template structure (document this in the section):**
+The fine-tuned model receives a structured prompt at inference time:
+1. **System prompt:** role definition + instruction to answer only from provided legal articles
+2. **Retrieved context block:** top-k reranked articles, each with `law_name`, `article_number`, `source_date`, and `content` in the query language (Arabic or French)
+3. **User query:** the original question
+4. **Expected answer format:** answer grounded in the provided articles, with explicit citations (e.g., "Selon l'article 2 du Code des Obligations et des Contrats...")
+
+If the confidence gate in the retrieval layer fires (best reranker score < 0.4), the model is not called and a bilingual fallback message is returned instead.
 
 ---
 

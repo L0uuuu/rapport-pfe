@@ -1,0 +1,201 @@
+\chapter{Legal Article Enrichment Schema}
+\label{annex:schema}
+
+This annex documents every field produced by the Stage 2 semantic enrichment step of Phase 4 (Article Extraction). Each article extracted from a JORT issue is expanded into the schema below before being passed to the validation and embedding phases. Fields are grouped by function.
+
+% ---- shared column format ----
+\renewcommand{\arraystretch}{1.25}
+\newcommand{\schemarow}[3]{\texttt{#1} & \textit{#2} & #3 \\}
+
+% ===========================
+\subsection*{Identification}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{jurisdiction}{string}{State jurisdiction. Always \texttt{TUNISIA}.}
+\schemarow{institution}{string}{Primary institution issuing the legal text (e.g., Ministère des Finances).}
+\schemarow{law\_type}{string}{Type of legal act: \texttt{Loi}, \texttt{Décret}, \texttt{Arrêté}, \texttt{Décision}, etc.}
+\schemarow{law\_number}{string}{Official number of the law or decree as it appears in the JORT.}
+\schemarow{year}{string}{Year of the arrêté or law (reflects the act's own date, not the JORT issue date).}
+\schemarow{status}{string}{Current lifecycle status: \texttt{ACTIVE}, \texttt{REPEALED}, or \texttt{AMENDED}.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Content}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{title\_french}{string}{French title of the article.}
+\schemarow{title\_arabic}{string}{Arabic title of the article.}
+\schemarow{chapter}{string}{Chapter heading within the parent law, as it appears in the source.}
+\schemarow{chapter\_normalized}{string}{Normalized chapter identifier for grouping across issues.}
+\schemarow{section}{string}{Section heading within the chapter, if present.}
+\schemarow{article\_number}{string}{Article number as it appears in the source text (e.g., \texttt{Article 3}).}
+\schemarow{article\_order}{integer}{Sequential position of the article within the JORT issue.}
+\schemarow{article\_type}{string}{Functional type: \texttt{SUBSTANTIVE}, \texttt{PROCEDURAL}, \texttt{DEFINITIONAL}, \texttt{TRANSITIONAL}.}
+\schemarow{content\_french}{string}{Full article body in French.}
+\schemarow{content\_arabic}{string}{Full article body in Arabic.}
+\schemarow{content\_combined}{string}{French and Arabic bodies concatenated for full-text search.}
+\schemarow{summary\_french}{string}{One-sentence summary of the article in French.}
+\schemarow{summary\_arabic}{string}{One-sentence summary of the article in Arabic.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Retrieval}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{search\_content}{string}{Search-optimized text combining key fields for keyword-based retrieval.}
+\schemarow{embedding\_text}{string}{Purpose-built passage combining title, body, legal concepts, and law name. This field is the direct input to the embedding model and is the most retrieval-critical field in the schema.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Legal Analysis}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{keywords}{string[]}{Key legal terms extracted from the article body.}
+\schemarow{legal\_domains}{string[]}{Legal domains covered (e.g., Droit Administratif, Droit du Travail).}
+\schemarow{legal\_concepts}{string[]}{Abstract legal concepts referenced in the article.}
+\schemarow{business\_impact}{string}{Estimated impact on businesses or citizens: \texttt{LOW}, \texttt{MEDIUM}, or \texttt{HIGH}.}
+\schemarow{target\_audience}{string[]}{Entities directly addressed by the article (e.g., Fonctionnaires, Entreprises).}
+\schemarow{related\_laws}{string[]}{Identifiers of other legal texts explicitly referenced.}
+\schemarow{ambiguity\_level}{string}{Assessed textual ambiguity: \texttt{LOW}, \texttt{MEDIUM}, or \texttt{HIGH}.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Structural Flags}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{has\_obligations}{boolean}{\texttt{true} if the article creates binding obligations.}
+\schemarow{has\_penalties}{boolean}{\texttt{true} if the article defines penalties or sanctions.}
+\schemarow{has\_deadlines}{boolean}{\texttt{true} if the article contains explicit deadlines or time limits.}
+\schemarow{has\_exceptions}{boolean}{\texttt{true} if the article contains exception clauses.}
+\schemarow{is\_abrogation}{boolean}{\texttt{true} if the article explicitly repeals a prior legal text.}
+\schemarow{is\_transitional}{boolean}{\texttt{true} if the article is a transitional provision.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Institutions}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{institution\_primary}{string}{Main institution responsible for the legal act.}
+\schemarow{institution\_secondary}{string}{Secondary institution co-signing or co-responsible, if any.}
+\schemarow{institutions}{string[]}{All institutions mentioned anywhere in the article.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Source and Dates}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{source\_name}{string}{Source publication. Always \texttt{JORT}.}
+\schemarow{source\_number}{string}{JORT issue number.}
+\schemarow{source\_url}{string}{URL of the source PDF on iort.gov.tn, if available.}
+\schemarow{source\_date}{ISO 8601}{Date of the legal act (signing date).}
+\schemarow{publication\_date}{ISO 8601}{Date the act was published in the JORT.}
+\schemarow{effective\_date}{ISO 8601}{Date the act enters into force, if explicitly stated.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Relations}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{relation\_target\_ids}{string[]}{Identifiers of articles this article relates to.}
+\schemarow{relation\_types}{string[]}{Nature of each relation: \texttt{AMENDS}, \texttt{CITES}, \texttt{REPEALS}, \texttt{IMPLEMENTS}.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Named Entities}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{entity\_names}{string[]}{Named entities recognized in the article text.}
+\schemarow{entity\_types}{string[]}{Type of each entity: \texttt{MINISTRY}, \texttt{ORGANIZATION}, \texttt{PERSON}, \texttt{LOCATION}.}
+\schemarow{entity\_ids}{string[]}{Normalized identifiers for each entity, used for cross-article linking.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Thematic Community}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{community\_id}{string}{Identifier of the thematic community this article belongs to (e.g., \texttt{fonction-publique-finances}).}
+\schemarow{community\_label}{string}{Human-readable community name (e.g., Fonction publique et finances).}
+\schemarow{community\_summary}{string}{Short description of the community's legal scope.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Document Graph and Provenance}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{parent\_document\_id}{string}{Identifier of the JORT issue this article was extracted from (derived from the filename, e.g., \texttt{tn-jort-001-2026-01-02}).}
+\schemarow{preceding\_article\_id}{string}{Identifier of the article immediately preceding this one in the issue.}
+\schemarow{following\_article\_id}{string}{Identifier of the article immediately following this one in the issue.}
+\schemarow{graph\_level}{integer}{Depth of the article in the document hierarchy (1 = top-level article).}
+\schemarow{version}{integer}{Version counter, incremented each time the article record is updated.}
+\hline
+\end{tabular}
+
+% ===========================
+\subsection*{Lifecycle}
+% ===========================
+
+\begin{tabular}{|p{4cm}|p{2.2cm}|p{7.3cm}|}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\schemarow{repeal\_date}{ISO 8601}{Date the article was repealed, if applicable.}
+\schemarow{superseded\_by\_id}{string}{Identifier of the article that supersedes this one.}
+\schemarow{supersedes\_id}{string}{Identifier of the article this one supersedes.}
+\schemarow{last\_checked}{ISO 8601}{Timestamp of the last manual or automated verification of this record.}
+\schemarow{next\_check}{ISO 8601}{Scheduled date for the next verification cycle.}
+\hline
+\end{tabular}

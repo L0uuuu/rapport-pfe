@@ -295,8 +295,8 @@
       \strng{authorfullhash}{8b36e9207c24c76e6719268e49201d94}
       \strng{authorfullhashraw}{8b36e9207c24c76e6719268e49201d94}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://cloud.google.com/vertex-ai/docs}}
@@ -753,6 +753,7 @@
       \strng{authornamehash}{0f98f9c132af315a916cf1272843fc7b}
       \strng{authorfullhash}{0f98f9c132af315a916cf1272843fc7b}
       \strng{authorfullhashraw}{0f98f9c132af315a916cf1272843fc7b}
+      \field{extraname}{1}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -813,8 +814,8 @@
       \strng{authornamehash}{d775178c34083951ab1e07df578582c3}
       \strng{authorfullhash}{08f4b49735d5d145be00bc9c07f38975}
       \strng{authorfullhashraw}{08f4b49735d5d145be00bc9c07f38975}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2106.09685}
@@ -997,8 +998,8 @@
       \strng{authornamehash}{9f63ac4111a962da0c8c2df04b0a2e58}
       \strng{authorfullhash}{9f63ac4111a962da0c8c2df04b0a2e58}
       \strng{authorfullhashraw}{9f63ac4111a962da0c8c2df04b0a2e58}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://pub.towardsai.net/developing-a-retrieval-augmented-generation-rag-pipeline-using-langchain-ba2f83a163a0}}
@@ -1205,8 +1206,8 @@
       \strng{authornamehash}{9fca7fa5e9732b0fea5844126f015c14}
       \strng{authorfullhash}{9fca7fa5e9732b0fea5844126f015c14}
       \strng{authorfullhashraw}{9fca7fa5e9732b0fea5844126f015c14}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.doctrine.fr/}}
@@ -1432,6 +1433,145 @@
       \field{note}{Accessed: 2026-04-10}
       \field{title}{{PyMuPDF} Documentation}
       \field{year}{2024}
+    \endentry
+    \entry{bge_reranker2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=eb0dc0d2f495fc8ebd0b59b8bf65dbcc}{%
+           family={{BAAI}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{eb0dc0d2f495fc8ebd0b59b8bf65dbcc}
+      \strng{fullhash}{eb0dc0d2f495fc8ebd0b59b8bf65dbcc}
+      \strng{fullhashraw}{eb0dc0d2f495fc8ebd0b59b8bf65dbcc}
+      \strng{bibnamehash}{eb0dc0d2f495fc8ebd0b59b8bf65dbcc}
+      \strng{authorbibnamehash}{eb0dc0d2f495fc8ebd0b59b8bf65dbcc}
+      \strng{authornamehash}{eb0dc0d2f495fc8ebd0b59b8bf65dbcc}
+      \strng{authorfullhash}{eb0dc0d2f495fc8ebd0b59b8bf65dbcc}
+      \strng{authorfullhashraw}{eb0dc0d2f495fc8ebd0b59b8bf65dbcc}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://huggingface.co/BAAI/bge-reranker-v2-m3}}
+      \field{note}{Accessed: 2026-04-30}
+      \field{title}{{BAAI/bge-reranker-v2-m3}: Lightweight Cross-Encoder Reranker}
+      \field{year}{2024}
+    \endentry
+    \entry{qwen2026qwen35}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4622c4bb7444dadba22813c2addff5e7}{%
+           family={{Qwen Team}},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{4622c4bb7444dadba22813c2addff5e7}
+      \strng{fullhash}{4622c4bb7444dadba22813c2addff5e7}
+      \strng{fullhashraw}{4622c4bb7444dadba22813c2addff5e7}
+      \strng{bibnamehash}{4622c4bb7444dadba22813c2addff5e7}
+      \strng{authorbibnamehash}{4622c4bb7444dadba22813c2addff5e7}
+      \strng{authornamehash}{4622c4bb7444dadba22813c2addff5e7}
+      \strng{authorfullhash}{4622c4bb7444dadba22813c2addff5e7}
+      \strng{authorfullhashraw}{4622c4bb7444dadba22813c2addff5e7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://huggingface.co/Qwen/Qwen3.5-9B}}
+      \field{note}{Accessed: 2026-05-01}
+      \field{title}{Qwen3.5: A Family of Efficient Hybrid Language Models}
+      \field{year}{2026}
+    \endentry
+    \entry{google2025gemma4}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=0f98f9c132af315a916cf1272843fc7b}{%
+           family={{Google DeepMind}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{fullhash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{fullhashraw}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{bibnamehash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{authorbibnamehash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{authornamehash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{authorfullhash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{authorfullhashraw}{0f98f9c132af315a916cf1272843fc7b}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://ai.google.dev/gemma/docs/core/model_card_4}}
+      \field{note}{Accessed: 2026-05-01}
+      \field{title}{Gemma 4: Frontier Multimodal Intelligence on Device}
+      \field{year}{2025}
+    \endentry
+    \entry{ibm2025syntheticdata}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=cbf44511d041dc6d1dd73cc0c033122c}{%
+           family={{IBM}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ibm.com/think/topics/synthetic-data}}
+      \field{note}{Accessed: 2026-05-06}
+      \field{title}{What Is Synthetic Data?}
+      \field{year}{2025}
+    \endentry
+    \entry{pvml2025syntheticdata}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8b446fa014d940afd406c20349856e20}{%
+           family={{PVML}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b446fa014d940afd406c20349856e20}
+      \strng{fullhash}{8b446fa014d940afd406c20349856e20}
+      \strng{fullhashraw}{8b446fa014d940afd406c20349856e20}
+      \strng{bibnamehash}{8b446fa014d940afd406c20349856e20}
+      \strng{authorbibnamehash}{8b446fa014d940afd406c20349856e20}
+      \strng{authornamehash}{8b446fa014d940afd406c20349856e20}
+      \strng{authorfullhash}{8b446fa014d940afd406c20349856e20}
+      \strng{authorfullhashraw}{8b446fa014d940afd406c20349856e20}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://pvml.com/glossary/synthetic-data/}}
+      \field{note}{Accessed: 2026-05-06}
+      \field{title}{Synthetic Data: Definition, Use Cases, and Applications}
+      \field{year}{2025}
+    \endentry
+    \entry{gartner2023syntheticdata}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=18bfab6309a4addeb7e1dae07d2a4b89}{%
+           family={{Gartner}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{fullhash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{fullhashraw}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{bibnamehash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{authorbibnamehash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{authornamehash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{authorfullhash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{authorfullhashraw}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.techmonitor.ai/digital-economy/ai-and-automation/ai-synthetic-data-edge-computing-gartner}}
+      \field{note}{Accessed: 2026-05-06}
+      \field{title}{Gartner Predicts 60\% of Data Used for {AI} Will Be Synthetic by 2024}
+      \field{year}{2023}
     \endentry
   \enddatalist
 \endrefsection

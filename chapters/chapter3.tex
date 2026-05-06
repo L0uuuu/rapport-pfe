@@ -3,15 +3,15 @@
 \section{Introduction}
 \label{sec:ch3-introduction}
 
-This chapter covers the two central phases of our \ac{DSR} lifecycle: the formalization of the project objectives and the construction of the technological artifact. The chapter is organized in two parts. The first, presented here, details the design and implementation of the \ac{RAG} system, which constitutes the knowledge retrieval layer of the legal assistant. It covers the full data pipeline from acquiring raw legal texts from official Tunisian sources to indexing them in a hybrid vector database ready for semantic retrieval. The second part, to be presented once the training experiments are complete, addresses the domain adaptation of the base language model through supervised fine-tuning on Tunisian legal data.
+This chapter covers the two central phases of our \ac{DSR} lifecycle: formalizing the project objectives and constructing the technological artifact. It is organized in two parts. The first, presented here, follows the \ac{RAG} system from its starting point, acquiring raw legal texts from official Tunisian sources, through to indexing them in a hybrid vector database ready for semantic retrieval. The second part, to be presented once the training experiments are complete, addresses the domain adaptation of the base language model through supervised fine-tuning on Tunisian legal data.
 
 \section{Definition of Objectives}
 \label{sec:ch3-objectives}
 
-The problem analysis conducted in Chapter~I identified two fundamental gaps in E-Tafakna's existing system: the absence of Tunisian legal grounding in the \ac{AI} agents, and an architecture dependent on external cloud services incompatible with the on-premises requirements of \ac{ATI} Tunisie. Addressing these gaps translates into three concrete, measurable objectives that govern the design of the artifact:
+The problem analysis conducted in Chapter~I identified two fundamental gaps in E-Tafakna's existing system: the absence of Tunisian legal grounding in the \ac{AI} agents, and an architecture that depends on external cloud services incompatible with \ac{ATI} Tunisie's on-premises requirements. Addressing these gaps translates into three concrete, measurable objectives that govern the design of the artifact:
 
 \begin{itemize}
-    \item \textbf{O1: Domain Adaptation.} Fine-tune a base language model on a curated corpus of Tunisian legal texts, enabling it to understand the specific vocabulary, structure, and reasoning patterns of Tunisian law more accurately than a general-purpose model.
+    \item \textbf{O1: Domain Adaptation.} Fine-tune a base language model on a curated corpus of Tunisian legal texts so that it understands the specific vocabulary, structure, and reasoning patterns of Tunisian law more accurately than a general-purpose model.
 
     \item \textbf{O2: Dynamic Knowledge Retrieval.} Design and implement a \ac{RAG} pipeline connecting the language model to an indexed knowledge base of legal documents, grounding responses in retrieved legal evidence at inference time and allowing the knowledge base to be updated independently of model retraining.
 
@@ -49,33 +49,44 @@ Complete inference with zero external calls \\
 % ================================================================
 
 \needspace{6\baselineskip}
-\section{RAG System Architecture}
+\section{Part I: RAG System Implementation}
+\label{sec:part1-rag}
+
+\subsection{System Architecture}
 \label{sec:rag-system-architecture}
 
-\subsection{Overall System Architecture}
+\subsubsection{Overall Architecture}
 
-The \ac{RAG} system operates around two distinct flows sharing the same data layer. The first is an offline data pipeline responsible for acquiring, processing, and indexing the Tunisian legal corpus. This pipeline runs once at system initialization and is subsequently triggered when new legal texts are published. The second is a query-time flow that handles user queries at runtime: a question is embedded, the vector database is searched for the most semantically relevant legal articles, and the retrieved content is injected into the language model's prompt before generating a response. Both flows run entirely on-premises.
+The \ac{RAG} system is built around two distinct flows that share the same data layer. The first is an data pipeline responsible for acquiring, processing, and indexing the Tunisian legal corpus. This pipeline runs once at system initialization and is triggered again whenever new legal texts are published. The second is a query-time flow that handles user requests at runtime: a question is embedded, the vector database is searched for the most semantically relevant legal articles, and the retrieved content is injected into the language model's prompt before generating a response. Both flows run entirely on-premises. Figure~\ref{fig:system-architecture} provides a visual overview of both flows and their shared data layer.
 
-\begin{figure}[H]
+\vspace{1em}
+
+Both flows share the same embedding model and vector database, ensuring that the representations built at indexing time are identical to those used at retrieval time. No data leaves the local environment at any stage of either flow.
+
+\clearpage
+\begin{sidewaysfigure}
 \centering
-\includegraphics[width=0.95\textwidth]{figures/system_architecture.png}
+\includegraphics[width=1.0\textheight]{figures/system_architecture.png}
 \caption{Overall Architecture of the Legal AI System}
 \label{fig:system-architecture}
-\end{figure}
+\end{sidewaysfigure}
+\clearpage
 
-Both flows share the same embedding model and vector database, guaranteeing that the representations used at indexing time are identical to those used at retrieval time. All components run on-premises: no data leaves the local environment at any stage of either flow.
 
-\subsection{Pipeline Data Flow}
+\clearpage
+\begin{sidewaysfigure}
+\centering
+\includegraphics[width=1.0\textheight,height=0.6\textwidth]{figures/flowchart_pipeline.jpg}
+\caption{Flowchart of the Data Pipeline}
+\label{fig:flowchart-pipeline}
+\end{sidewaysfigure}
+\clearpage
+\subsubsection{Pipeline Data Flow}
 \label{subsec:pipeline-dataflow}
 
-The offline pipeline consists of seven sequential phases, each producing structured output consumed by the next. Figure~\ref{fig:bpmn-pipeline} illustrates the complete data flow from raw \ac{PDF} acquisition to a queryable vector database.
+The pipeline consists of seven sequential phases, each producing structured output consumed by the next. Figure~\ref{fig:flowchart-pipeline} illustrates the complete data flow from raw \ac{PDF} acquisition to a queryable vector database.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/bpmn_pipeline.png}
-\caption{BPMN Diagram of the Offline Data Pipeline}
-\label{fig:bpmn-pipeline}
-\end{figure}
+\vspace{1em}
 
 Table~\ref{tab:pipeline-phases} summarizes each phase, its inputs and outputs, and the key tool responsible for its execution.
 
@@ -96,7 +107,7 @@ Table~\ref{tab:pipeline-phases} summarizes each phase, its inputs and outputs, a
 \hline
 4 & Article Extraction & Plain text files & Structured JSON & GPT-4.1 (Azure) \\
 \hline
-5 & Validation & Structured JSON & Validated JSON & Python \\
+5 & Validation \& Scoring & Structured JSON & Validated JSON & Python + GPT-4.1 \\
 \hline
 6 & Embedding & Validated JSON & Dense + sparse vectors & BAAI/bge-m3 \\
 \hline
@@ -105,7 +116,7 @@ Table~\ref{tab:pipeline-phases} summarizes each phase, its inputs and outputs, a
 \end{tabular}
 \end{table}
 
-\subsection{Technology Stack}
+\subsubsection{Technology Stack}
 
 Table~\ref{tab:tech-stack} presents the complete technology stack organized by functional layer.
 
@@ -126,9 +137,11 @@ Article Structuring & GPT-4.1 (Azure OpenAI) \cite{microsoft2024azureopenai} & T
 \hline
 Embedding & BAAI/bge-m3 \cite{chen2024bgem3} & Bilingual dense and sparse vectorization \\
 \hline
+Reranking & BAAI/bge-reranker-v2-m3 \cite{bge_reranker2024} & Cross-encoder reranking of retrieval candidates \\
+\hline
 Vector Storage & Qdrant (Docker) \cite{qdrant2024docs} & Hybrid semantic and lexical search \\
 \hline
-API Layer & FastAPI \cite{fastapi2024docs} & HTTP interface for each pipeline phase \\
+\ac{API} Layer & FastAPI \cite{fastapi2024docs} & HTTP interface for each pipeline phase \\
 \hline
 Orchestration & n8n (self-hosted) \cite{n8n2024docs} & Automated workflow chaining and monitoring \\
 \hline
@@ -137,10 +150,53 @@ Development & Python \cite{python2024docs} + VS Code \cite{microsoft2024vscode} 
 \end{tabular}
 \end{table}
 
-\section{Legal Corpus Acquisition}
+\subsection{Pipeline Orchestration}
+\label{sec:pipeline-orchestration}
+
+\subsubsection{FastAPI Service Layer}
+\label{subsec:fastapi-service}
+
+Each of the seven pipeline phases is exposed as an asynchronous \ac{HTTP} endpoint through a FastAPI \cite{fastapi2024docs} application. This design allows any phase to be triggered independently, monitored, and retried without rerunning the full pipeline. All endpoints follow a consistent job-based pattern:
+
+\begin{itemize}
+    \item A \texttt{POST} request to the phase-specific endpoint starts a background job and returns a job identifier.
+    \item A \texttt{GET} request to \texttt{/legal\_extraction/status/\{job\_id\}} returns the current status (\texttt{queued}, \texttt{running}, \texttt{done}, or \texttt{failed}), along with timing information and any associated error message.
+\end{itemize}
+
+This uniform interface decouples the orchestration logic from the implementation details of each phase, making it straightforward to replace or extend any phase without modifying the workflow that drives it.
+
+\subsubsection{n8n Workflow Automation}
+\label{subsec:n8n-automation}
+
+The n8n \cite{n8n2024docs} workflow connects the seven pipeline phases into a single automated sequence. n8n is a self-hosted, open-source workflow automation platform that communicates with external services through configurable \ac{HTTP} request nodes. Its self-hosted deployment model ensures that no data or credentials are transmitted to any external service, in line with the project's data sovereignty requirements.
+
+\vspace{1em}
+
+The workflow follows a consistent pattern for each phase, as illustrated in Figure~\ref{fig:n8n-workflow}:
+
+\begin{enumerate}
+    \item \textbf{Trigger:} An \ac{HTTP} node calls the FastAPI endpoint for the current phase and retrieves the job identifier.
+    \item \textbf{Notify:} A notification node sends an immediate message confirming the job has started.
+    \item \textbf{Poll:} A Wait node pauses for 30 to 60 seconds, followed by an \ac{HTTP} node that polls the status endpoint.
+    \item \textbf{Branch:} A Switch node routes execution based on the returned status. A \texttt{done} status advances to the next phase; a \texttt{failed} or \texttt{error} status triggers an error notification and halts the pipeline; a \texttt{running} or \texttt{queued} status loops back to the Wait node.
+    \item \textbf{Guard:} An IF node at the beginning of each subsequent phase verifies the success of the previous one before triggering the next job.
+\end{enumerate}
+
+The complete workflow consists of 50 nodes covering all seven phases, with notifications at each transition point for real-time monitoring without requiring active observation of the pipeline execution.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/n8n_workflow_ultra_upscaled.png}
+\caption{n8n Workflow: Automated Pipeline Orchestration}
+\label{fig:n8n-workflow}
+\end{figure}
+
+Each of the seven phases visible in Figure~\ref{fig:n8n-workflow} is detailed individually in the sections that follow, with a dedicated sub-workflow diagram showing the nodes specific to that phase: Phase~1 in Figure~\ref{fig:scraping-workflow}, Phase~2 in Figure~\ref{fig:upload-workflow}, Phase~3 in Figure~\ref{fig:text-extraction-workflow}, Phase~4 in Figure~\ref{fig:article-extraction-workflow}, Phase~5 in Figure~\ref{fig:validation-workflow}, Phase~6 in Figure~\ref{fig:embedding-workflow}, and Phase~7 in Figure~\ref{fig:vector-storage-workflow}.
+
+\subsection{Legal Corpus Acquisition}
 \label{sec:corpus-acquisition}
 
-\subsection{Source: Journal Officiel de la République Tunisienne}
+\subsubsection{Source: Journal Officiel de la République Tunisienne}
 \label{subsec:jort}
 
 The primary source for the legal corpus is the Journal Officiel de la République Tunisienne (JORT), the official gazette of the Tunisian state, published by the government and accessible at iort.gov.tn. The JORT is the authoritative publication for all Tunisian legislation and covers three main sections:
@@ -155,43 +211,75 @@ The primary source for the legal corpus is the Journal Officiel de la Républiqu
 
 Each section is accessible through both Arabic and French interfaces on the website, yielding six distinct scraping targets. Coverage spans from [START\_YEAR] to [END\_YEAR], producing a corpus of [N] JORT issues and [N] \ac{PDF} documents across all sections.
 
-\subsection{Automated PDF Acquisition}
+\subsubsection{Automated PDF Acquisition}
 \label{subsec:scraping}
 
 The JORT website is a legacy application built on the WinDev/WebDev framework and exposes no public \ac{API}. Automated acquisition therefore requires direct browser interaction. We implemented a Python scraping system using Playwright \cite{playwright2024docs}, a browser automation library that drives a Chromium instance to navigate the site, select the target year and issue, and trigger the \ac{PDF} download for each entry.
 
+\vspace{1em}
+
 Each scraping script is fully resumable. Progress is tracked in a checkpoint JSON file that records the download status of every issue as \texttt{downloaded}, \texttt{skipped}, or \texttt{failed}. Re-running the script on a partially completed session safely skips already-downloaded files without duplicating work. Download triggers differ across journal sections, as the site uses different WinDev named anchors and JavaScript calls for each section, requiring section-specific navigation logic.
 
-The scripts are not invoked directly during pipeline execution. Instead, they are exposed through a FastAPI endpoint (\texttt{POST /legal\_extraction/scraping/run}), which launches the scraper as a background job and returns a job identifier for status polling.
+\vspace{1em}
 
-\subsection{Cloud Backup}
+The scripts are not invoked directly during pipeline execution. Instead, they are exposed through a FastAPI endpoint (\texttt{POST /legal\_extraction/scraping/run}), which launches the scraper as a background job and returns a job identifier for status polling. Figure~\ref{fig:scraping-workflow} shows the corresponding n8n sub-workflow for this phase.
 
-Downloaded \ac{PDF}s are mirrored to Google Drive using rclone, a command-line utility for syncing local directories to cloud storage. This backup step is triggered automatically after each successful scraping run by the n8n orchestration workflow. The folder tree on Google Drive mirrors the local directory layout, preserving the section and year hierarchy for easy cross-referencing. The backup provides redundancy against local disk failure and a collaborative access point for the raw corpus during the project.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/scraping_workflow.png}
+\caption{n8n Workflow: Phase 1 -- PDF Acquisition}
+\label{fig:scraping-workflow}
+\end{figure}
 
-\section{Text Extraction and Article Structuring}
+\subsubsection{Cloud Backup}
+
+Downloaded \ac{PDF}s are mirrored to Google Drive using rclone, a command-line utility for syncing local directories to cloud storage. This backup step is triggered automatically after each successful scraping run by the n8n orchestration workflow. The folder tree on Google Drive mirrors the local directory layout, preserving the section and year hierarchy for easy cross-referencing. The backup provides redundancy against local disk failure and gives the team a shared access point for the raw corpus during the project. Figure~\ref{fig:upload-workflow} shows the n8n sub-workflow for this phase.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/uploding_workflow.png}
+\caption{n8n Workflow: Phase 2 -- Cloud Backup}
+\label{fig:upload-workflow}
+\end{figure}
+
+\subsection{Text Extraction and Article Structuring}
 \label{sec:text-structuring}
 
-\subsection{Hybrid PDF-to-Text Conversion}
+\subsubsection{Hybrid PDF-to-Text Conversion}
 \label{subsec:hybrid-extraction}
 
 The JORT corpus contains two fundamentally different categories of \ac{PDF}: digitally generated files, where the text is encoded as a selectable text layer, and scanned files, where each page is stored as a rasterized image with no embedded text. These two categories require distinct extraction strategies, applied on a per-page basis.
+\vspace{1em}
 
-For each page, a routing decision is made based on two conditions. A page is classified as digital and processed with PyMuPDF \cite{pymupdf2024docs} if it contains more than 50 characters of selectable text and its image content occupies less than 15\% of the page area. Pages that fail either condition are sent to Gemini via Google Vertex AI \cite{google2024vertexai} for \ac{OCR}.
+For each page, a routing decision is made based on two conditions. A page is treated as digital and processed with PyMuPDF \cite{pymupdf2024docs} if it contains more than 50 characters of selectable text and its image content occupies less than 15\% of the page area. Pages that fail either condition are sent to Gemini via Google Vertex AI \cite{google2024vertexai} for \ac{OCR}.
+\vspace{1em}
 
-The Gemini model receives a rendered image of the page and is prompted to return the extracted text in a structured format: Arabic tables are preserved as markdown pipe tables with right-to-left column ordering, and non-table content is returned as plain prose. This hybrid routing strategy ensures high-quality extraction across the full diversity of the corpus, combining the speed of direct text layer extraction for the majority of pages with the accuracy of a vision-capable model for scanned content.
+The Gemini model receives a rendered image of the page and is prompted to return the extracted text in a structured format: Arabic tables are preserved as markdown pipe tables with right-to-left column ordering, and non-table content is returned as plain prose. This routing strategy ensures high-quality extraction across the full diversity of the corpus, combining the speed of direct text-layer extraction for the majority of pages with the accuracy of a vision-capable model for scanned content.
+\vspace{1em}
 
-The output of this phase is one plain text file per JORT issue, with each page separated by a header marker that preserves page boundary information for downstream parsing.
+The output of this phase is one plain text file per JORT issue, with each page separated by a header marker that preserves page boundary information for downstream parsing. Figure~\ref{fig:text-extraction-workflow} shows the n8n sub-workflow for this phase.
 
-\subsection{Article-Level Extraction Using GPT-4.1}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/text_extracion_workflow.png}
+\caption{n8n Workflow: Phase 3 -- Text Extraction}
+\label{fig:text-extraction-workflow}
+\end{figure}
+
+\subsubsection{Article-Level Extraction Using GPT-4.1}
 \label{subsec:article-extraction}
 
 Converting plain text JORT issues into individually structured legal articles is the most semantically demanding step of the pipeline. Rather than applying a generic text-splitting strategy, we designed a two-stage extraction pipeline powered by GPT-4.1 \cite{microsoft2024azureopenai} that identifies and enriches legal articles as the natural semantic unit of the corpus.
 
+\vspace{1em}
+
 \textbf{Stage 1: Boundary Detection.}
 The model receives the full text of a JORT issue and identifies the boundaries of each individual legal article within the document. It returns a raw list of article objects containing the article text, number, title, parent law name, and chapter. This stage operates at the document level, allowing the model to reason about the hierarchical structure of the issue before committing to individual article extractions.
 
+\vspace{1em}
+
 \textbf{Stage 2: Semantic Enrichment.}
-Each article identified in Stage 1 is passed back to the model individually for deep enrichment. The model expands each raw article into a rich schema spanning approximately 45 fields across identification, content, legal analysis, and retrieval metadata. Table~\ref{tab:article-schema} presents the key field groups.
+Each article identified in Stage 1 is passed back to the model individually for deep enrichment. The model expands each raw article into a rich schema spanning approximately 45 fields across identification, content, legal analysis, and retrieval metadata. Table~\ref{tab:article-schema} presents the key field groups; a complete field-by-field reference is provided in Annex~\ref{annex:schema}.
 
 \begin{table}[H]
 \centering
@@ -226,24 +314,60 @@ Retrieval &
 \end{tabular}
 \end{table}
 
-Among these fields, \texttt{embedding\_text} warrants particular attention. Rather than embedding raw article content directly, Phase 4 constructs a dedicated text field that combines the article title, body, key legal concepts, and the parent law name into a single coherent passage. This deliberate construction ensures that the resulting embedding captures both the specific content of the article and its legal context, improving retrieval quality over naive content embedding.
+Among these fields, \texttt{embedding\_text} deserves particular attention. Rather than embedding raw article content directly, Phase 4 constructs a dedicated text field that combines the article title, body, key legal concepts, and the parent law name into a single coherent passage. This deliberate construction ensures that the resulting embedding captures both the specific content of the article and its broader legal context, which leads to meaningfully better retrieval quality compared to embedding the raw text alone.
+\vspace{1em}
 
-The pipeline includes a fallback chain to handle extraction failures gracefully. If Stage 1 fails after retries, a regular expression (\texttt{Article \textbackslash d+}) identifies article boundaries as a heuristic fallback. If Stage 2 enrichment fails for a specific article, a minimal schema is generated from the raw content with empty enrichment fields, ensuring the pipeline continues without data loss.
+The pipeline includes a fallback chain to handle extraction failures gracefully. If Stage 1 fails after retries, a regular expression (\verb|Article \d+|) identifies article boundaries as a heuristic fallback. If Stage 2 enrichment fails for a specific article, a minimal schema is generated from the raw content with empty enrichment fields, ensuring the pipeline continues without data loss. Figure~\ref{fig:article-extraction-workflow} shows the n8n sub-workflow for this phase.
 
-\subsection{Why Article-Level Extraction Is Preferable to Generic Chunking}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/articles_extraction_workflow.png}
+\caption{n8n Workflow: Phase 4 -- Article Extraction}
+\label{fig:article-extraction-workflow}
+\end{figure}
+
+\subsubsection{Why Article-Level Extraction Is Preferable to Generic Chunking}
 \label{subsec:chunking-rationale}
 
 As discussed in Chapter~II, the three most common chunking strategies for \ac{RAG} pipelines are fixed-size, recursive, and semantic. For Tunisian legal texts, none of these generic approaches is fully satisfactory. Fixed-size chunking frequently splits articles across chunk boundaries, severing the logical connection between an article's conditions and its obligations. Recursive chunking, while more aware of sentence and paragraph boundaries, remains blind to the hierarchical structure of legal documents and may group unrelated provisions from adjacent articles.
 
-The two-stage GPT-4.1 extraction implements a structurally superior form of semantic chunking, one guided by the actual legal architecture of the document rather than arbitrary size thresholds. Each resulting unit is a complete, self-contained legal article, enriched with metadata fields that enable precise filtering and ranking at retrieval time. In Tunisian legal texts, the article is simultaneously the natural unit of legislative meaning and the natural unit of legal citation, making article-level segmentation the most semantically faithful representation of the corpus.
+\vspace{1em}
 
-\section{Embedding and Vector Storage}
+The two-stage GPT-4.1 extraction implements a structurally superior form of semantic chunking, guided by the actual legal architecture of the document rather than arbitrary size thresholds. Each resulting unit is a complete, self-contained legal article enriched with metadata that enables precise filtering and ranking at retrieval time. In Tunisian legal texts, the article is simultaneously the natural unit of legislative meaning and the natural unit of legal citation, making article-level segmentation the most semantically faithful representation of the corpus.
+
+\subsubsection{Two-Layer Validation and Scoring}
+\label{subsec:validation}
+
+Before any article proceeds to embedding, it passes through a two-layer quality gate designed to filter out records that are too incomplete or malformed to be useful in retrieval.
+
+\vspace{1em}
+
+\textbf{Layer 1: Rule-Based Scoring.} Every article is evaluated against six deterministic checks, each carrying a weight. The checks cover the presence of required fields, minimum body length, \ac{OCR} noise ratio, date format correctness, language consistency between the Arabic and French fields, and the existence of a non-empty \texttt{embedding\_text} field. Weights sum to 1.0, and an article's score is the sum of the weights of all passing checks. An article scoring 0.75 or above is marked as passed and moves directly to embedding. An article scoring below 0.50 is rejected outright. Articles in the borderline range, between 0.50 and 0.74, proceed to Layer 2.
+
+\vspace{1em}
+
+\textbf{Layer 2: LLM Semantic Check.} For borderline articles, a single GPT-4.1 call assesses whether the article body is semantically coherent with its title. The model responds with one of three labels: \texttt{valid} (coherent legal text that matches the title), \texttt{garbled} (body contains \ac{OCR} errors or incoherent content), or \texttt{mismatch} (body exists but is unrelated to the title). A \texttt{valid} label raises the score by 0.10 and may lift the article above the passing threshold; the other labels lower the score and add a diagnostic flag. Layer 2 is invoked only on borderline cases, keeping \ac{API} costs low.
+
+\vspace{1em}
+
+The output of this phase is the same set of JSON files enriched in place, with a \texttt{validation} block appended to each article recording its score, pass/fail status, and any diagnostic flags. The embedding phase reads this block and skips any article where \texttt{passed} is \texttt{false}, preventing low-quality records from entering the vector database. Figure~\ref{fig:validation-workflow} shows the corresponding n8n sub-workflow.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/articles_validation_wrokflow.png}
+\caption{n8n Workflow: Phase 5 -- Validation and Scoring}
+\label{fig:validation-workflow}
+\end{figure}
+
+\subsection{Embedding and Vector Storage}
 \label{sec:embedding-vector}
 
-\subsection{Embedding Model: BAAI/bge-m3}
+\subsubsection{Embedding Model: BAAI/bge-m3}
 \label{subsec:bge-m3-embedding}
 
-Each article extracted in the previous phase is converted into a vector representation using BAAI/bge-m3 \cite{chen2024bgem3}, a multilingual embedding model developed by the Beijing Academy of Artificial Intelligence. The model runs entirely on local hardware using the \texttt{FlagEmbedding} Python library, with no external \ac{API} call required at any stage of the embedding process.
+Each validated article is converted into a vector representation using BAAI/bge-m3 \cite{chen2024bgem3}, a multilingual embedding model developed by the Beijing Academy of Artificial Intelligence. The model runs entirely on local hardware using the \texttt{FlagEmbedding} Python library, with no external \ac{API} call required at any stage of the embedding process.
+
+\vspace{1em}
 
 For each article, bge-m3 produces two complementary representations from the \texttt{embedding\_text} field in a single encoding pass:
 
@@ -253,12 +377,21 @@ For each article, bge-m3 produces two complementary representations from the \te
     \item \textbf{Sparse vector:} A set of token-level lexical weights, stored as a mapping from token identifiers to weight values. Sparse vectors support precise keyword matching, particularly effective for retrieving articles that contain specific legal terms, article numbers, or law references.
 \end{itemize}
 
-Both representations are generated alongside all article metadata and persisted to disk before being loaded into the vector database in the subsequent phase. The model operates with 16-bit floating-point precision (\texttt{use\_fp16=True}) to remain within the \ac{VRAM} budget of the available \ac{GPU} while preserving embedding quality.
+Both representations are generated alongside all article metadata and persisted to disk before being loaded into the vector database in the subsequent phase. The model operates with 16-bit floating-point precision (\texttt{use\_fp16=True}) to remain within the \ac{VRAM} budget of the available \ac{GPU} while preserving embedding quality. Figure~\ref{fig:embedding-workflow} shows the n8n sub-workflow for this phase.
 
-\subsection{Hybrid Vector Database: Qdrant}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/embedding_workflow.png}
+\caption{n8n Workflow: Phase 6 -- Embedding}
+\label{fig:embedding-workflow}
+\end{figure}
+
+\subsubsection{Hybrid Vector Database: Qdrant}
 \label{subsec:qdrant-db}
 
 The embeddings and metadata produced in Phase 6 are stored in Qdrant \cite{qdrant2024docs}, an open-source vector database running in a local Docker container. Qdrant was selected over alternatives such as \ac{FAISS} and Chroma for three reasons: its native support for named vector fields enabling hybrid dense and sparse search within a single collection, its production-grade stability under concurrent queries, and its fully self-hosted deployment model that aligns with the on-premises constraints of the project.
+
+\vspace{1em}
 
 The collection, named \texttt{jort\_articles\_v2}, is configured with two named vector fields:
 
@@ -267,58 +400,272 @@ The collection, named \texttt{jort\_articles\_v2}, is configured with two named 
     \item \textbf{sparse} (lexical weights, dot product): supports exact and near-exact keyword matching using the sparse representations produced by bge-m3.
 \end{itemize}
 
-At query time, both vector types are searched simultaneously and their result sets are merged using Reciprocal Rank Fusion (RRF), a score combination technique that aggregates rankings from multiple retrieval signals without requiring manual weight calibration. This hybrid approach consistently outperforms either dense or sparse retrieval alone on legal texts, where a user query may match an article semantically (a paraphrased question about contract validity) or lexically (a direct citation such as ``Article 2 du Code des Obligations et des Contrats'').
+At query time, both vector types are searched simultaneously and their result sets are merged using \ac{RRF}, a score combination technique that aggregates rankings from multiple retrieval signals without requiring manual weight calibration. This hybrid approach handles legal queries that may match an article semantically, such as a paraphrased question about contract validity, just as well as queries that rely on exact terminology, such as a direct citation like ``Article 2 du Code des Obligations et des Contrats''.
 
-Ten payload fields are indexed for filtered retrieval, including \texttt{year}, \texttt{law\_type}, \texttt{institution}, \texttt{legal\_domains}, \texttt{has\_obligations}, \texttt{has\_penalties}, \texttt{is\_abrogation}, and \texttt{status}. These filters allow the retrieval layer to scope a search to a specific legal category or time period without scanning the full collection. Insertion into the database is idempotent: each article carries a stable identifier assigned at embedding time, and Qdrant's upsert operation inserts a new record or overwrites an existing one with the same identifier, making it safe to re-run the pipeline on the same corpus.
+\vspace{1em}
 
-\subsection{Retrieval at Inference Time}
-\label{subsec:inference-retrieval}
-
-When a user submits a query to the legal assistant, the retrieval process mirrors the indexing process. The query text is embedded using the same bge-m3 model, producing a dense and a sparse vector. These vectors are submitted to Qdrant as a hybrid search request, and the top-$k$ articles are returned based on the RRF-fused score.
-
-The retrieved articles are injected into the language model's prompt alongside the original query. Each article contributes its content in the language matching the query (Arabic or French) together with its source metadata: the law name, article number, and publication date. This metadata allows the model to produce responses that include proper legal citations, making each answer directly verifiable against the original JORT source. The value of $k$ is treated as a tunable hyperparameter and will be optimized during the evaluation phase described in Chapter~IV.
-
-\section{Pipeline Orchestration}
-\label{sec:pipeline-orchestration}
-
-\subsection{FastAPI Service Layer}
-\label{subsec:fastapi-service}
-
-Each of the seven pipeline phases is exposed as an asynchronous \ac{HTTP} endpoint through a FastAPI \cite{fastapi2024docs} application. This design allows any phase to be triggered independently, monitored, and retried without rerunning the full pipeline. All endpoints follow a consistent job-based pattern:
-
-\begin{itemize}
-    \item A \texttt{POST} request to the phase-specific endpoint starts a background job and returns a job identifier.
-    \item A \texttt{GET} request to \texttt{/legal\_extraction/status/\{job\_id\}} returns the current status (\texttt{queued}, \texttt{running}, \texttt{done}, or \texttt{failed}), along with timing information and any associated error message.
-\end{itemize}
-
-This uniform interface decouples the orchestration logic from the implementation details of each phase, making it straightforward to replace or extend a phase without modifying the workflow that drives it.
-
-\subsection{n8n Workflow Automation}
-\label{subsec:n8n-automation}
-
-The n8n \cite{n8n2024docs} workflow connects the seven pipeline phases into a single automated sequence. n8n is a self-hosted, open-source workflow automation platform that communicates with external services through configurable \ac{HTTP} request nodes. Its self-hosted deployment model ensures that no data or credentials are transmitted to any external service, in line with the project's data sovereignty requirements.
-
-The workflow follows a consistent pattern for each phase, as illustrated in Figure~\ref{fig:n8n-workflow}:
-
-\begin{enumerate}
-    \item \textbf{Trigger:} An \ac{HTTP} node calls the FastAPI endpoint for the current phase and retrieves the job identifier.
-    \item \textbf{Notify:} A notification node sends an immediate message confirming the job has started.
-    \item \textbf{Poll:} A Wait node pauses for 30 to 60 seconds, followed by an \ac{HTTP} node that polls the status endpoint.
-    \item \textbf{Branch:} A Switch node routes execution based on the returned status. A \texttt{done} status advances to the next phase; a \texttt{failed} or \texttt{error} status triggers an error notification and halts the pipeline; a \texttt{running} or \texttt{queued} status loops back to the Wait node.
-    \item \textbf{Guard:} An IF node at the beginning of each subsequent phase verifies the success of the previous one before triggering the next job.
-\end{enumerate}
+Ten payload fields are indexed for filtered retrieval, including \texttt{year}, \texttt{law\_type}, \texttt{institution}, \texttt{legal\_domains}, \texttt{has\_obligations}, \texttt{has\_penalties}, \texttt{is\_abrogation}, and \texttt{status}. These filters allow the retrieval layer to scope a search to a specific legal category or time period without scanning the full collection. Insertion into the database is idempotent: each article carries a stable identifier assigned at embedding time, and Qdrant's upsert operation inserts a new record or overwrites an existing one with the same identifier, making it safe to re-run the pipeline on the same corpus. Figure~\ref{fig:vector-storage-workflow} shows the n8n sub-workflow for this phase.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/n8n_workflow.png}
-\caption{n8n Workflow: Automated Pipeline Orchestration \cite{n8n2024docs}}
-\label{fig:n8n-workflow}
+\includegraphics[width=0.95\textwidth]{figures/vector_storage_workflow.png}
+\caption{n8n Workflow: Phase 7 -- Vector Storage}
+\label{fig:vector-storage-workflow}
 \end{figure}
 
-The complete workflow consists of 43 nodes covering all seven phases, with notifications at each transition point for real-time monitoring without requiring active observation of the pipeline execution.
+\subsubsection{Retrieval at Inference Time}
+\label{subsec:inference-retrieval}
+
+When a user submits a query to the legal assistant, the retrieval process closely mirrors the indexing process. The system first auto-detects the query language based on the proportion of Arabic Unicode characters in the input, selecting either the French or Arabic content fields for context injection accordingly. The query text is then embedded using the same bge-m3 model, producing a dense and a sparse vector, which are submitted to Qdrant as a hybrid search request. An optional year filter can be applied at this stage, restricting the search to articles from a specific year using a payload field condition. Qdrant returns an initial candidate pool of 20 articles ranked by \ac{RRF}-fused score.
+
+\vspace{1em}
+
+Before passing the results to the language model, the candidate pool is reranked by a cross-encoder model, BAAI/bge-reranker-v2-m3 \cite{bge_reranker2024}, which scores each (question, article) pair jointly rather than comparing independent vector representations. Because the cross-encoder sees both texts together, its relevance signal is substantially more precise than vector similarity alone. The final set is trimmed to the top-$k$ articles, where $k$ is a tunable hyperparameter to be optimized during the evaluation phase described in Chapter~IV. A confidence gate is applied at this point: if the highest reranker score falls below a minimum threshold, the language model call is skipped entirely and the system returns a bilingual ``no relevant articles found'' message rather than risk generating an unsupported answer.
+
+\vspace{1em}
+
+The reranked articles are injected into the prompt of the fine-tuned language model, whose training and architecture are detailed in Part~II of this chapter. Each article contributes its content in the language matching the query together with its source metadata, including the law name, article number, and publication date. This metadata enables the model to produce responses with proper legal citations, making each answer directly verifiable against the original JORT source. Figure~\ref{fig:rag-query-flow} summarizes the complete query flow from user input to streamed answer.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{figures/rag_query_flow.png}
+\caption{RAG Query Flow: From User Question to Grounded Answer}
+\label{fig:rag-query-flow}
+\end{figure}
+
+
+% ================================================================
+% PART II: FINE-TUNING
+% ================================================================
+
+\needspace{6\baselineskip}
+\section{Part II: Fine-Tuning}
+\label{sec:part2-finetuning}
+
+\subsection{Base Model Selection}
+\label{sec:base-model-selection}
+
+\subsubsection{Motivation for Using a Small Language Model}
+
+The on-premises deployment constraint defined in O3 immediately excludes any model accessible only through an external \ac{API}, such as GPT-4.1 or Gemini. The entire inference stack must run on \ac{ATI} Tunisie's local infrastructure, which means the chosen model must fit within the available \ac{GPU} \ac{VRAM} budget, respond at interactive latency, and carry a license permitting on-premises commercial deployment.
+
+\vspace{1em}
+
+These constraints point toward open-weight \acp{SLM} in the 4B to 9B parameter range. Models of this size can be quantized and served locally with output quality that, when combined with the grounding provided by the \ac{RAG} retrieval layer, is sufficient for answering structured legal questions in Arabic and French.
+
+\subsubsection{Selection Criteria}
+
+Four criteria guided the evaluation of candidate models. Table~\ref{tab:model-selection-criteria} summarizes each criterion and its requirement.
+
+\begin{table}[H]
+\centering
+\caption{Model Selection Criteria}
+\label{tab:model-selection-criteria}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Criterion} & \textbf{Requirement} \\
+\hline
+Multilingual capability &
+Strong Arabic and French support at both understanding and generation level \\
+\hline
+Instruction-following &
+Capable of following a structured prompt with a system role and retrieved context block \\
+\hline
+License &
+Permissive open-weight license allowing on-premises commercial use \\
+\hline
+Deployment compatibility &
+Exportable to \ac{GGUF} format for serving via the local inference runtime \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Candidate Models}
+
+Two open-weight models were selected for fine-tuning and direct comparison.
+
+\vspace{1em}
+
+\textbf{Qwen3.5 9B.}
+Developed by Alibaba Cloud, Qwen3.5 9B \cite{qwen2026qwen35} is a 9-billion-parameter model released under the Apache 2.0 license. Its architecture combines Gated Delta Networks, a form of linear attention that replaces the standard quadratic self-attention mechanism, with a sparse Mixture-of-Experts feed-forward layer. This hybrid design delivers substantially higher throughput and lower inference latency compared to dense models of equivalent parameter count. Qwen3.5 9B was pretrained on a corpus spanning 201 languages, with strong coverage of Arabic and French, and supports a native context window of 262,144 tokens. The instruction-tuned variant, Qwen3.5-9B-Instruct, follows structured prompts reliably and produces well-formed, citation-aware answers. The model is available in \ac{GGUF} format for local serving.
+
+\vspace{1em}
+
+\textbf{Gemma 4 E4B.}
+Developed by Google DeepMind, Gemma 4 E4B \cite{google2025gemma4} is released under the Apache 2.0 license. The ``E'' in E4B stands for Effective: the model uses Per-Layer Embeddings (PLE) to share a large embedding lookup table across layers, so only the computationally active parameters are loaded into \ac{VRAM} while the embedding table is accessed from cheaper memory. This architecture gives Gemma 4 E4B the memory footprint of a 4B model while retaining the representational capacity of a larger one. The model supports a context window of 128K tokens, is pretrained on 140 languages with strong out-of-the-box performance on over 35, including Arabic and French, and uses a hybrid attention mechanism that interleaves local sliding-window attention with full global attention. The instruction-tuned variant is \texttt{gemma-4-E4B-it}. \ac{GGUF} quantizations are available via llama.cpp for local deployment.
+
+\subsubsection{Rationale for This Pair}
+
+Qwen3.5 9B and Gemma 4 E4B represent two distinct operating points on the size-versus-quality tradeoff. Qwen3.5 9B provides broader multilingual depth across 201 languages and benefits from a larger parameter budget and extended context, at the cost of higher \ac{VRAM} consumption. Gemma 4 E4B is designed for memory-constrained hardware: its PLE architecture minimises the active \ac{VRAM} footprint without sacrificing context length, making it well suited to deployment environments where \ac{GPU} memory is limited. Fine-tuning both models on the same synthesized Tunisian legal dataset under identical hyperparameter configurations yields a direct empirical comparison between the two approaches.
+
+% ----------------------------------------------------------------
+\subsection{Training Data Synthesis}
+\label{sec:training-data-synthesis}
+
+\subsubsection{Synthetic Data as a Training Strategy}
+\label{subsec:synthetic-data-strategy}
+
+Synthetic data is data that is artificially generated to imitate the statistical properties of real-world observations, produced through algorithms, generative models, or rule-based simulations rather than collected from actual events \cite{ibm2025syntheticdata, pvml2025syntheticdata}. The key distinction from anonymized or augmented data is that synthetic records are never derived from any specific real individual or event: they carry no inherent privacy risk because no original data subject underlies them.
+
+\vspace{1em}
+
+Industry adoption has accelerated substantially over recent years. Gartner projected that by 2024, 60\% of all data used for \ac{AI} and analytics development would be synthetically generated, up from just 1\% in 2021 \cite{gartner2023syntheticdata}. The synthetic data generation market, estimated at approximately \$2 billion in 2025, is forecast to reach \$10 billion by 2033 at a compound annual growth rate of 25\% \cite{pvml2025syntheticdata}. This growth reflects a broad shift across data-intensive industries toward generating training data on demand rather than collecting and labelling it manually. Figure~\ref{fig:synthetic-data-domains} illustrates this breadth, showing adoption across healthcare, banking, agriculture, e-commerce, manufacturing, automotive, and disaster prediction, among other sectors \cite{pvml2025syntheticdata}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/synthetic_data_domains.jpg}
+\caption{Industries and Domains Leveraging Synthetic Data (Source: \cite{pvml2025syntheticdata})}
+\label{fig:synthetic-data-domains}
+\end{figure}
+
+For this project, synthetic data is the only viable training strategy, for three reasons. First, no annotated corpus of Tunisian legal question-answer pairs exists; constructing one by recruiting legal professionals to formulate and verify thousands of examples would be prohibitively expensive and slow. Second, any dataset built from real user interactions with the E-Tafakna platform would contain sensitive legal consultations that cannot be used for model training without explicit user consent and formal legal review, conflicting directly with the project's data sovereignty requirements. Third, the synthesis process described in the following sections allows the distribution of question types, language balance, and legal code coverage to be specified precisely, producing a dataset that matches the target domain far more closely than any available general-purpose legal corpus.
+
+\subsubsection{Motivation and Approach}
+
+No publicly available annotated dataset exists for Tunisian legal question answering. To address this gap, a supervised fine-tuning dataset was constructed through a structured synthesis process: official Tunisian legal code \acp{PDF} were uploaded to three frontier language models, GPT~5.2, Qwen~3.6, and Claude~Opus~4.6, together with a detailed generation prompt specifying format, citation rules, and answer style. The three models were used in rotation across the full dataset rather than being assigned to specific codes, which reduces stylistic uniformity and increases the diversity of formulation across examples. The resulting dataset totals 1,762 training examples.
+
+\vspace{1em}
+
+A key design decision governs every example in the dataset: the user message is constructed in \ac{RAG} format, embedding the question alongside a "\textit{Documents pertinents}" block containing the verbatim text of the relevant legal articles. This mirrors exactly how the model will be queried at production inference time, where Qdrant retrieves articles and injects them into the prompt before the model generates a response. Training on this format ensures the model learns to ground its answers in the provided context rather than relying on parametric knowledge alone.
+
+\subsubsection{Dataset Structure and Volume}
+
+The dataset is organized in two tiers. The first, referred to as constructed data, contains 1,620 examples generated from legal code \acp{PDF} through the structured synthesis process described above. It is further divided into standard Question and Answer (\ac{QA}) batches (1,543 examples across 20 codes) and complex multi-issue scenario batches (20 examples across 4 codes), with 77 Tunisian dialect Arabic examples distributed within the standard batches. The second tier, referred to as added data, contains 142 examples covering interaction patterns not produced by the synthesis prompt: 44 real multi-turn user conversations, 60 service-routing examples, and 38 out-of-scope refusal examples. Table~\ref{tab:dataset-volume} summarizes the composition and Figure~\ref{fig:dataset-composition} provides a visual breakdown of the full dataset by type.
+
+\begin{table}[H]
+\centering
+\caption{Dataset Composition by Source and Type}
+\label{tab:dataset-volume}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{4.5cm}|p{5cm}|r|}
+\hline
+\textbf{Source} & \textbf{Type} & \textbf{Examples} \\
+\hline
+Constructed data & Standard \ac{QA} batches & 1,543 \\
+\hline
+Constructed data & Complex scenario batches & 20 \\
+\hline
+Constructed data & Tunisian dialect (Darija) & 77 \\
+\hline
+\textbf{Constructed subtotal} & & \textbf{1,620} \\
+\hline
+Added data & Real multi-turn conversations & 44 \\
+\hline
+Added data & Service routing & 60 \\
+\hline
+Added data & Out-of-scope refusals & 38 \\
+\hline
+\textbf{Added subtotal} & & \textbf{142} \\
+\hline
+\textbf{Grand total} & & \textbf{1,762} \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/dataset_composition.png}
+\caption{Fine-Tuning Dataset Composition by Type}
+\label{fig:dataset-composition}
+\end{figure}
+
+\subsubsection{Legal Codes Covered}
+
+Standard batches cover 20 distinct Tunisian legal codes, spanning civil, commercial, fiscal, maritime, and constitutional law. Complex scenario batches draw on four of those codes for multi-issue narratives. Table~\ref{tab:codes-covered} lists the full set; the complete batch-level breakdown with counts per code is provided in Annex~\ref{annex:dataset}.
+
+\begin{table}[H]
+\centering
+\caption{Tunisian Legal Codes Covered in the Training Dataset}
+\label{tab:codes-covered}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{2cm}|p{5.8cm}|p{2cm}|p{5.8cm}|}
+\hline
+\textbf{Code} & \textbf{Full Name} & \textbf{Code} & \textbf{Full Name} \\
+\hline
+CAC & Code des activités commerciales & CMM & Code maritime \\
+\hline
+CCL & Code civil (obligations/leasing) & CN & Code du notariat \\
+\hline
+CCP & Code de commerce (procédures) & COC & Code des obligations et contrats \\
+\hline
+CC & Code civil & Douanes & Code des douanes \\
+\hline
+CDET & Code des droits et engagements du trésor & Changes & Code des changes \\
+\hline
+CDIP & Code de droit international privé & Eaux & Code des eaux \\
+\hline
+CDPF & Code des droits et procédures fiscaux & Const. 2022 & Constitution tunisienne 2022 \\
+\hline
+CDR & Code de la route & CP & Code pénal \\
+\hline
+CFL & Code des finances locales & CTM & Code du travail maritime \\
+\hline
+CIRPP/IS & Code de l'IRPP et de l'IS & Presse & Code de la presse \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Question Categories and Language Distribution}
+
+Each standard batch of 20 examples is distributed across six question categories. Table~\ref{tab:question-categories} lists each category, its description, and the total count across the full constructed dataset. Figure~\ref{fig:question-categories} visualises the distribution. The complete reference including all supplementary subcategories is provided in Annex~\ref{annex:dataset}.
+
+\begin{table}[H]
+\centering
+\caption{Question Categories in the Constructed Dataset}
+\label{tab:question-categories}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{3.5cm}|p{7cm}|r|}
+\hline
+\textbf{Category} & \textbf{Description} & \textbf{Count} \\
+\hline
+Direct \ac{QA} & Factual question answered by a single article & 348 \\
+\hline
+Multi-article synthesis & Question requiring two to three related articles & 214 \\
+\hline
+Principle and exception & States the general rule, then its exceptions or nuances & 190 \\
+\hline
+In-domain refusal & Plausible question the code does not answer; model declines and recommends a lawyer & 158 \\
+\hline
+Procedural & Questions about sequential legal processes or phases & 128 \\
+\hline
+Clarification & Ambiguous question; model requests clarification before answering & 121 \\
+\hline
+Complex scenario & Multi-issue legal narrative requiring four to eight articles & 20 \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+Language distribution within constructed batches is strictly balanced: each batch of 20 examples contains 10 French examples and 10 Arabic examples in formal Modern Standard Arabic, with two additional cross-lingual examples where the question and the source article are in different languages. The 77 Tunisian dialect examples represent a distinct informal Arabic register distributed across the standard batches. The 44 real multi-turn conversations from the added data are the only multi-turn examples in the full dataset. Figure~\ref{fig:language-distribution} shows the language split across the full dataset.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/question_categories_chart.png}
+\caption{Distribution of Question Categories in the Constructed Dataset}
+\label{fig:question-categories}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/language_distribution_chart.png}
+\caption{Language Distribution Across the Full Training Dataset}
+\label{fig:language-distribution}
+\end{figure}
+
+\subsubsection{Anti-Hallucination Measures}
+
+Citation accuracy is the most critical quality constraint in a legal training dataset. Three measures were enforced throughout generation. First, every article cited in an answer must appear verbatim in the uploaded \ac{PDF}; no article numbers may be invented or approximated. Second, when \ac{OCR} quality in a source \ac{PDF} was ambiguous, a \texttt{confidence\_flag} field was added to the example, marking it for manual review before inclusion in training. Third, the generation prompt explicitly instructed each model that producing fifteen solid examples with verified citations is preferable to producing twenty examples with hallucinated article numbers.
+
+\subsubsection{Human Validation by Legal Experts}
+
+Approximately 50\% of the dataset was reviewed by legal professionals, with coverage distributed across all question categories and complexity levels. Reviewers assessed citation accuracy, the correctness and completeness of the legal reasoning in each answer, and the appropriateness of refusals and clarification requests. Across the full set of reviewed examples, fewer than 2\% required correction, confirming that the multi-model synthesis process combined with the verbatim citation constraint produces legally sound training data at scale.
 
 \section{Conclusion}
 
-This chapter presented the design and implementation of the \ac{RAG} system forming the knowledge retrieval layer of the legal assistant. Beginning from the official Tunisian legal gazette, the pipeline acquires, processes, and structures the full JORT corpus into individually enriched legal articles, converts them into bilingual dense and sparse vector representations using bge-m3, and stores them in a hybrid Qdrant collection optimized for legal retrieval. The complete pipeline is orchestrated through an automated n8n workflow backed by a FastAPI service layer, running entirely on-premises with no dependency on external services at inference time.
+This chapter presented the design and implementation of the two main components of the legal assistant. Part~I described the \ac{RAG} pipeline: starting from the official Tunisian legal gazette, the pipeline acquires, processes, and structures the full JORT corpus into individually enriched legal articles, passes them through a two-layer quality gate, converts them into bilingual dense and sparse vector representations using bge-m3, and stores them in a hybrid Qdrant collection optimized for legal retrieval. Retrieval at inference time combines hybrid vector search with cross-encoder reranking to surface the most relevant articles before they are injected into the language model's prompt. The complete pipeline runs under an automated n8n workflow backed by a FastAPI service layer, entirely on-premises with no dependency on external services.
 
-The following part of this chapter, to be presented once the training experiments are complete, addresses the supervised fine-tuning of the base language model on a synthesized Tunisian legal dataset.
+\vspace{1em}
+
+Part~II opened the fine-tuning component with the selection of two open-weight \acp{SLM}, Qwen3.5~9B and Gemma~4~E4B, and the construction of a 1,762-example Tunisian legal training dataset synthesized using GPT~5.2, Qwen~3.6, and Claude~Opus~4.6 in rotation across 20 legal codes, validated by legal professionals with a correction rate below 2\%. The following sections address the supervised fine-tuning procedure using \ac{QLoRA} and the preparation of the trained models for integration with the retrieval layer.

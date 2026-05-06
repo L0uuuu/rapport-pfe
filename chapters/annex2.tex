@@ -1,0 +1,158 @@
+\chapter{Fine-Tuning Dataset: Full Reference}
+\label{annex:dataset}
+
+This annex provides the complete reference tables for the supervised fine-tuning dataset described in Section~\ref{sec:training-data-synthesis}. It covers the full question type breakdown across all sources, the complete legal codes list with batch counts, the training example data format, and known dataset limitations.
+
+% ================================================================
+\section*{A.1 \quad Complete Question Type Reference}
+% ================================================================
+
+Table~\ref{tab:annex-question-types} lists every question category and subcategory present in the dataset, its source tier, total count, and the field value used in the JSON metadata.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+\centering
+\caption{Complete Question Type Reference}
+\label{tab:annex-question-types}
+\begin{tabular}{|p{3.8cm}|p{2.8cm}|p{5.5cm}|r|}
+\hline
+\textbf{Category} & \textbf{Source} & \textbf{Description} & \textbf{Count} \\
+\hline
+Direct \ac{QA} & Constructed & Factual question answered by a single article & 348 \\
+\hline
+Multi-article synthesis & Constructed & Question requiring two to three related articles & 214 \\
+\hline
+Principle and exception & Constructed & States the general rule and its exceptions & 190 \\
+\hline
+In-domain refusal & Constructed & Plausible question the code does not answer & 158 \\
+\hline
+Procedural / lifecycle & Constructed & Sequential legal processes or phases & 128 \\
+\hline
+Clarification & Constructed & Ambiguous question; model asks for clarification & 121 \\
+\hline
+Darija (dialect) & Constructed & Tunisian colloquial Arabic input & 77 \\
+\hline
+Complex scenario & Constructed & Multi-issue narrative requiring four to eight articles & 20 \\
+\hline
+Clear routing & Added & User clearly needs an E-Tafakna service & 18 \\
+\hline
+Ambiguous routing & Added & Could be \ac{QA} or a service; model answers briefly and suggests service & 18 \\
+\hline
+Wrong-service correction & Added & User implies service A but needs service B & 12 \\
+\hline
+Informal routing & Added & Casual phrasing; model recognises intent and routes & 12 \\
+\hline
+Multi-turn conversation & Added & Real user sessions (up to 5 turns, no category field) & 44 \\
+\hline
+Out-of-scope refusal & Added & Off-topic, foreign law, or abusive requests & 38 \\
+\hline
+Foreign law & Added & Requests about non-Tunisian law & 8 \\
+\hline
+Greeting & Added & Simple greetings; model responds and invites a legal question & 6 \\
+\hline
+Vague / unclear & Added & Minimal queries; model asks smart clarifying questions & 5 \\
+\hline
+Platform meta & Added & Questions about the AI system; model deflects & 4 \\
+\hline
+Abuse handling & Added & Hostile messages; model stays professional & 3 \\
+\hline
+Translation refusal & Added & Translation requests; model declines and offers legal explanation & 2 \\
+\hline
+\textbf{Total} & & & \textbf{1,762} \\
+\hline
+\end{tabular}
+\end{table}
+
+% ================================================================
+\section*{A.2 \quad Legal Codes Covered with Batch Counts}
+% ================================================================
+
+Table~\ref{tab:annex-codes} lists every Tunisian legal code used as a source for the constructed dataset, the number of standard batches generated from it, and whether it was also used for complex scenario generation. Each standard batch produces 20 examples; each complex batch produces 5 examples.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+\centering
+\caption{Legal Codes and Batch Counts}
+\label{tab:annex-codes}
+\begin{tabular}{|p{1.5cm}|p{6.5cm}|c|c|}
+\hline
+\textbf{Code} & \textbf{Full Name} & \textbf{Standard Batches} & \textbf{Complex Batches} \\
+\hline
+CAC   & Code des activités commerciales          & 3 & -- \\
+\hline
+CCL   & Code civil (obligations/leasing)         & 3 & -- \\
+\hline
+CCP   & Code de commerce (procédures)            & 3 & -- \\
+\hline
+CC    & Code civil                               & 3 & -- \\
+\hline
+CDET  & Code des droits et engagements du trésor & 3 & -- \\
+\hline
+CDIP  & Code de droit international privé        & 2 & -- \\
+\hline
+CDPF  & Code des droits et procédures fiscaux    & 3 & -- \\
+\hline
+CDR   & Code de la route                         & 3 & -- \\
+\hline
+CFL   & Code des finances locales                & 3 & -- \\
+\hline
+CIRPP/IS & Code de l'IRPP et de l'IS             & 3 & 1 \\
+\hline
+CMM   & Code maritime                            & 3 & -- \\
+\hline
+CN    & Code du notariat                         & 1 & -- \\
+\hline
+COC   & Code des obligations et contrats         & 3 & 1 \\
+\hline
+Douanes & Code des douanes                       & 4 & 1 \\
+\hline
+Changes & Code des changes                       & 3 & -- \\
+\hline
+Eaux  & Code des eaux                            & 3 & -- \\
+\hline
+Const. 2022 & Constitution tunisienne 2022       & 3 & -- \\
+\hline
+CP    & Code pénal                               & 3 & 1 \\
+\hline
+CTM   & Code du travail maritime                 & 3 & -- \\
+\hline
+Presse & Code de la presse                       & 2 & -- \\
+\hline
+\textbf{Total} & & \textbf{57} & \textbf{4} \\
+\hline
+\end{tabular}
+\end{table}
+
+% ================================================================
+\section*{A.3 \quad Training Example Data Format}
+% ================================================================
+
+All examples use the OpenAI messages format with three roles: \texttt{system}, \texttt{user}, and \texttt{assistant}. The user message always contains both the question and a \textit{Documents pertinents} block with the verbatim article text retrieved for that question. This structure trains the model to answer from provided context, mirroring production \ac{RAG} inference. Each example is also tagged with metadata fields: \texttt{batch\_id}, \texttt{source} (the legal code), \texttt{language} (\texttt{fr}, \texttt{ar}, or \texttt{mixed}), \texttt{category}, \texttt{articles\_referenced}, and an optional \texttt{confidence\_flag} set when \ac{OCR} quality in the source \ac{PDF} was ambiguous.
+
+\vspace{1em}
+
+Every substantive answer follows a \textbf{principle, exception, rationale} structure and closes with a \texttt{Sources: art. X, Y du [Code]} line and a legal disclaimer. Refusal and clarification answers are shorter (40 to 80 words) and do not include a sources line. Complex scenario answers follow a six-part structure: situation acknowledgement, issue-by-issue analysis, explicit limits, practical next steps, sources, and disclaimer; target length is 400 to 700 words.
+
+% ================================================================
+\section*{A.4 \quad Known Dataset Limitations}
+% ================================================================
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+\centering
+\caption{Known Limitations of the Synthetic Training Dataset}
+\label{tab:annex-limitations}
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Limitation} & \textbf{Impact} \\
+\hline
+All synthetic questions are well-formed & Real users write with typos, code-switching, and informal phrasing not fully represented in synthetic data \\
+\hline
+Single-turn only (constructed data) & Every synthetic example is one user message and one assistant reply; multi-turn reasoning is only covered by the 44 real conversations \\
+\hline
+24 system prompt variants across batches & Inconsistency across generations; prompts should be standardised to two variants (French and Arabic) before training \\
+\hline
+Arabic from generation only & No real Arabic user queries; all formal Arabic is AI-generated \\
+\hline
+\end{tabular}
+\end{table}

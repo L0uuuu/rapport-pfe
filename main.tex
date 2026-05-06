@@ -9,6 +9,7 @@
 \usepackage[backend=biber, style=ieee]{biblatex}
 \usepackage{array}
 \usepackage{float}
+\usepackage{rotating}
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{needspace}
@@ -35,6 +36,9 @@
 \renewcommand{\thesection}{\arabic{section}}
 \counterwithout{figure}{chapter}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+% ---- Section depth ----
+\setcounter{secnumdepth}{3}
+
 % ---- Subsection indentation ----
 \titlespacing*{\subsection}{1em}{*2}{*1}
 \titlespacing*{\subsubsection}{2em}{*1.5}{*0.5}
@@ -66,5 +70,9 @@
 \input{chapters/chapter3}
 
 \printbibliography
+
+\appendix
+\input{chapters/annex1}
+\input{chapters/annex2}
 
 \end{document}
