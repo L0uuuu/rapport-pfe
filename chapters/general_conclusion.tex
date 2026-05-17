@@ -1,0 +1,48 @@
+\chapter*{General Conclusion}
+\addcontentsline{toc}{chapter}{General Conclusion}
+\markboth{General Conclusion}{General Conclusion}
+
+This project set out to answer a single practical question: can a legal \ac{AI}
+assistant be both deeply grounded in Tunisian law and deployed entirely within a
+secure, self-contained local infrastructure? The work carried out over the four
+chapters of this report demonstrates that the answer is yes.
+
+Starting from a raw collection of official \ac{JORT} publications, we built a
+seven-phase preparation pipeline that extracts, structures, validates, and indexes
+Tunisian legal articles into a hybrid vector database. At query time, a compact
+Python pipeline runs the user's question through an embedding model, a hybrid
+search against the indexed corpus, a cross-encoder reranker, a confidence gate,
+and a fine-tuned language model, all without a single external network call. Two
+candidate models, Gemma~4~E4B and Qwen3.5~9B, were fine-tuned on a curated
+dataset of 1,619 Tunisian legal \ac{QA} examples and served locally in
+quantized \ac{GGUF} format via Ollama.
+
+The evaluation confirmed that all three objectives were met. Both models produce
+grounded, correctly cited, and disclaimed legal answers in French and Arabic,
+satisfying the domain adaptation objective. The retrieval layer found the correct
+article for every factual test query and correctly declined all out-of-scope
+questions without hallucinating, satisfying the dynamic retrieval objective.
+Every component active at inference time runs locally with no external
+dependencies, satisfying the on-premises deployment objective. An expert
+evaluation by legal professionals further confirmed strong performance on core
+legal reasoning tasks, with accuracy ranging from 80\% to 90\% across direct
+\ac{QA}, multi-article synthesis, principle-and-exception, and in-domain refusal
+categories.
+
+Three limitations remain to be addressed in the next development iteration. The
+indexed corpus is currently limited to two \ac{JORT} issues, a practical
+constraint imposed by the availability of the GPT-4.1 enrichment step. Scaling
+the corpus to a full national legislation index is the highest-priority next
+step. The routing category underperformed at 40\% accuracy due to insufficient
+training examples. And all Arabic training data is synthetic, which limits
+robustness on real Tunisian user queries. Beyond these corrections, the article
+enrichment schema already captures the cross-reference fields needed to implement
+Graph \ac{RAG}, a structural improvement that would allow the retrieval layer to
+follow legal chains across related articles automatically.
+
+More broadly, this project demonstrates that sovereign, domain-specific legal
+\ac{AI} is technically achievable at the scale of a startup. The combination of
+parameter-efficient fine-tuning, hybrid retrieval, and quantized local inference
+makes it possible to build a system that is simultaneously specialized, accurate,
+and fully self-contained, a meaningful step toward making Tunisian legal knowledge
+accessible, reliable, and private.

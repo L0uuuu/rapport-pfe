@@ -1,0 +1,144 @@
+\acswitchoff 
+\xpg@aux {}{french}
+\contentsline {chapter}{List of Abbreviations}{vii}{section*.4}%
+\contentsline {chapter}{General Introduction}{1}{chapter*.6}%
+\contentsline {chapter}{\numberline {I}PROJECT GENERAL FRAMEWORK}{2}{chapter.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1.1}%
+\contentsline {section}{\numberline {2}Host Organization Presentation}{2}{section.1.2}%
+\contentsline {section}{\numberline {3}General Project Overview}{3}{section.1.3}%
+\contentsline {subsection}{\numberline {3.1}Project Framework}{3}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {3.2}Study of Existing Solutions}{3}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {3.3}Critical Analysis of the Existing System}{4}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {3.4}Problem Statement}{4}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {3.5}Proposed Solution}{5}{subsection.1.3.5}%
+\contentsline {section}{\numberline {4}Adopted Methodology}{6}{section.1.4}%
+\contentsline {subsection}{\numberline {4.1}Methodological Framework Selection}{6}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {4.2}Overview of CRISP-DM}{7}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {4.3}Overview of TDSP}{8}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {4.4}Overview of DSR}{9}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {4.5}Methodologies Comparison}{11}{subsection.1.4.5}%
+\contentsline {subsection}{\numberline {4.6}Why We Chose DSR}{11}{subsection.1.4.6}%
+\contentsline {subsection}{\numberline {4.7}Our Adapted DSR Lifecycle}{12}{subsection.1.4.7}%
+\contentsline {section}{\numberline {5}Choice of Services, Technologies, and Tools}{12}{section.1.5}%
+\contentsline {subsection}{\numberline {5.1}Azure AI Foundry: Access to State-of-the-Art Language Models}{13}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {5.2}Google Vertex AI: OCR Extraction from Image-Based PDFs}{14}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {5.3}OVH AI Notebooks: GPU Resources for Fine-Tuning}{15}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {5.4}Visual Studio Code}{16}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {5.5}Python}{17}{subsection.1.5.5}%
+\contentsline {subsection}{\numberline {5.6}n8n}{18}{subsection.1.5.6}%
+\contentsline {subsection}{\numberline {5.7}FastAPI}{19}{subsection.1.5.7}%
+\contentsline {section}{\numberline {6}Conclusion}{19}{section.1.6}%
+\contentsline {chapter}{\numberline {II}PROBLEM IDENTIFICATION AND MOTIVATION}{21}{chapter.2}%
+\contentsline {section}{\numberline {1}Introduction}{21}{section.2.1}%
+\contentsline {section}{\numberline {2}Large Language Models}{21}{section.2.2}%
+\contentsline {subsection}{\numberline {2.1}Defining Large Language Models}{21}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Transformer Architecture}{22}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Pre-Training and Transfer Learning}{23}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.4}Key Model Families}{23}{subsection.2.2.4}%
+\contentsline {section}{\numberline {3}Fine-Tuning Techniques for Domain Adaptation}{25}{section.2.3}%
+\contentsline {subsection}{\numberline {3.1}Full Fine-Tuning}{25}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {3.2}Parameter-Efficient Fine-Tuning}{25}{subsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}LoRA: Low-Rank Adaptation}{25}{subsubsection.2.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}QLoRA: Quantized Low-Rank Adaptation}{26}{subsubsection.2.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Domain Adaptation in Specialized Fields}{27}{subsection.2.3.3}%
+\contentsline {section}{\numberline {4}Retrieval-Augmented Generation}{28}{section.2.4}%
+\contentsline {subsection}{\numberline {4.1}The Hallucination Problem}{28}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {4.2}The RAG Paradigm}{28}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {4.3}Vector Databases and Embedding Models}{30}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {4.4}Chunking Strategies}{31}{subsection.2.4.4}%
+\contentsline {section}{\numberline {5}AI for Legal Applications}{33}{section.2.5}%
+\contentsline {subsection}{\numberline {5.1}Challenges Specific to Legal NLP}{33}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {5.2}Existing Legal AI Systems Worldwide}{33}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {5.3}Arabic and French Legal NLP}{34}{subsection.2.5.3}%
+\contentsline {section}{\numberline {6}On-Premises LLM Deployment}{34}{section.2.6}%
+\contentsline {subsection}{\numberline {6.1}Model Quantization Techniques}{34}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {6.2}Local Inference Frameworks}{35}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {6.3}Hardware Constraints and Optimization}{36}{subsection.2.6.3}%
+\contentsline {section}{\numberline {7}Comparative Study of Existing Legal AI Solutions}{36}{section.2.7}%
+\contentsline {section}{\numberline {8}Functional and Non-Functional Requirements}{37}{section.2.8}%
+\contentsline {subsection}{\numberline {8.1}Functional Requirements}{38}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {8.2}Non-Functional Requirements}{39}{subsection.2.8.2}%
+\contentsline {section}{\numberline {9}Conclusion}{40}{section.2.9}%
+\contentsline {chapter}{\numberline {III}DESIGN AND DEVELOPMENT}{41}{chapter.3}%
+\contentsline {section}{\numberline {1}Introduction}{41}{section.3.1}%
+\contentsline {section}{\numberline {2}Definition of Objectives}{41}{section.3.2}%
+\contentsline {section}{\numberline {3}Part I: RAG System Implementation}{42}{section.3.3}%
+\contentsline {subsection}{\numberline {3.1}System Architecture}{42}{subsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Overall Architecture}{42}{subsubsection.3.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Pipeline Data Flow}{45}{subsubsection.3.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Technology Stack}{45}{subsubsection.3.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Pipeline Orchestration}{46}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}FastAPI Service Layer}{46}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}n8n Workflow Automation}{47}{subsubsection.3.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Legal Corpus Acquisition}{49}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Source: Journal Officiel de la République Tunisienne}{49}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Downloading the Legal Corpus: Automated PDF Acquisition}{49}{subsubsection.3.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Cloud Backup}{50}{subsubsection.3.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Text Extraction and Article Structuring}{50}{subsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Reading the Documents: Hybrid PDF-to-Text Conversion}{50}{subsubsection.3.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Isolating Each Legal Article: Article-Level Extraction Using GPT-4.1}{51}{subsubsection.3.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Why Article-Level Extraction Is Preferable to Generic Chunking}{53}{subsubsection.3.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Keeping Only Quality Articles: Two-Layer Validation and Scoring}{53}{subsubsection.3.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Embedding and Vector Storage}{54}{subsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Turning Text into Searchable Numbers: Embedding Model (BAAI/bge-m3)}{54}{subsubsection.3.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Where the Articles Are Stored: Hybrid Vector Database (Qdrant)}{55}{subsubsection.3.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}When a User Asks a Question: Retrieval at Inference Time}{56}{subsubsection.3.3.5.3}%
+\contentsline {section}{\numberline {4}Part II: Fine-Tuning}{59}{section.3.4}%
+\contentsline {subsection}{\numberline {4.1}Base Model Selection}{59}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Motivation for Using a Small Language Model}{59}{subsubsection.3.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Selection Criteria}{59}{subsubsection.3.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Candidate Models}{59}{subsubsection.3.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Rationale for This Pair}{60}{subsubsection.3.4.1.4}%
+\contentsline {subsection}{\numberline {4.2}Training Data Synthesis}{60}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Synthetic Data as a Training Strategy}{60}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Motivation and Approach}{61}{subsubsection.3.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Dataset Structure and Volume}{62}{subsubsection.3.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Legal Codes Covered}{63}{subsubsection.3.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Question Categories and Language Distribution}{64}{subsubsection.3.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.6}Anti-Hallucination Measures}{65}{subsubsection.3.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.7}Human Validation by Legal Experts}{66}{subsubsection.3.4.2.7}%
+\contentsline {subsection}{\numberline {4.3}Fine-Tuning Methodology}{66}{subsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Why Full Fine-Tuning Is Not Feasible}{66}{subsubsection.3.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Adapter Configuration}{66}{subsubsection.3.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}What the Model Is Trained to Do: Response-Only Masking}{67}{subsubsection.3.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Out-of-Memory Error and Parameter Adjustment}{67}{subsubsection.3.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Training Configuration}{68}{subsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Hyperparameters}{68}{subsubsection.3.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Training Infrastructure}{69}{subsubsection.3.4.4.2}%
+\contentsline {subsection}{\numberline {4.5}Quantization and Deployment}{70}{subsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}LoRA Adapter Export}{70}{subsubsection.3.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Preparing the Model for Production: GGUF Export and Local Deployment}{70}{subsubsection.3.4.5.2}%
+\contentsline {section}{\numberline {5}Conclusion}{70}{section.3.5}%
+\contentsline {chapter}{\numberline {IV}DEMONSTRATION AND EVALUATION}{72}{chapter.4}%
+\contentsline {section}{\numberline {1}Introduction}{72}{section.4.1}%
+\contentsline {section}{\numberline {2}Part I: Demonstration}{72}{section.4.2}%
+\contentsline {subsection}{\numberline {2.1}System Overview at Demo Time}{72}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {2.2}Pipeline Execution}{73}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {2.3}Example Queries and System Responses}{77}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Query 1: Contract Validity Under Tunisian Law (French, Direct QA)}{78}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Query 2: Diploma Conditions for an Archives Examination (French, JORT Corpus)}{79}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Query 3: Arabic Query on the Same Examination}{80}{subsubsection.4.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Query 4: Out-of-Domain Query (Confidence Gate)}{80}{subsubsection.4.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Pipeline Execution Walkthrough}{81}{subsection.4.2.4}%
+\contentsline {section}{\numberline {3}Part II: Evaluation}{82}{section.4.3}%
+\contentsline {subsection}{\numberline {3.1}Training Results}{82}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Gemma 4 E4B}{82}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Qwen3.5 9B}{83}{subsubsection.4.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Side-by-Side Comparison}{84}{subsubsection.4.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Retrieval Evaluation}{85}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Finding the Right Article}{85}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Handling Out-of-Scope Questions}{86}{subsubsection.4.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Expert Evaluation by Legal Professionals}{87}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Evaluation Protocol}{87}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Results by Category}{87}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Discussion}{88}{subsubsection.4.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}On-Premises Compliance}{89}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {3.5}Objectives Summary}{89}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {3.6}Limitations and Identified Improvements}{90}{subsection.4.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Corpus Scale}{90}{subsubsection.4.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Routing Underperformance}{90}{subsubsection.4.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Graph RAG as a Structural Improvement}{90}{subsubsection.4.3.6.3}%
+\contentsline {section}{\numberline {4}Conclusion}{91}{section.4.4}%
+\contentsline {chapter}{General Conclusion}{92}{chapter*.7}%
+\contentsline {chapter}{\numberline {A}Legal Article Enrichment Schema}{98}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Fine-Tuning Dataset: Full Reference}{103}{appendix.B}%

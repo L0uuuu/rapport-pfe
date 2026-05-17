@@ -14,6 +14,14 @@
 \usepackage{setspace}
 \usepackage{needspace}
 \usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{french}
+\setotherlanguage{arabic}
+\newfontfamily\arabicfont[Script=Arabic, Scale=1.1]{Arial}
 
 % ---- Geometry ----
 \geometry{
@@ -61,13 +69,37 @@
 % Title page — no page number here, that is correct
 \input{titlepage}
 
-% Force page counter and style reset after titlepage
+% ---- Front matter (roman numerals) ----
+\pagenumbering{roman}
 \setcounter{page}{1}
 \pagestyle{fancy}
 
+\tableofcontents
+\clearpage
+
+\listoffigures
+\clearpage
+
+\listoftables
+\clearpage
+
+% ---- List of Abbreviations ----
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\printacronyms[name={List of Abbreviations}, heading=chapter*]
+\clearpage
+
+% ---- Main matter (arabic numerals) ----
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+\input{chapters/general_introduction}
 \input{chapters/chapter1}
 \input{chapters/chapter2}
 \input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/general_conclusion}
 
 \printbibliography
 

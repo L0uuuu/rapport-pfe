@@ -41,29 +41,57 @@ chapters/
                            Section 1: Definition of Objectives
                            Section 2: Part I — RAG System Implementation
                              2.1 System Architecture
-                               2.1.1 Overall Architecture
-                               2.1.2 Pipeline Data Flow
-                               2.1.3 Technology Stack
                              2.2 Legal Corpus Acquisition
                                2.2.1 Source: JORT
-                               2.2.2 Automated PDF Acquisition
+                               2.2.2 Downloading the Legal Corpus: Automated PDF Acquisition
                                2.2.3 Cloud Backup
                              2.3 Text Extraction and Article Structuring
-                               2.3.1 Hybrid PDF-to-Text Conversion
-                               2.3.2 Article-Level Extraction Using GPT-4.1
+                               2.3.1 Reading the Documents: Hybrid PDF-to-Text Conversion
+                               2.3.2 Isolating Each Legal Article: Article-Level Extraction Using GPT-4.1
                                2.3.3 Why Article-Level Extraction Is Preferable
-                               2.3.4 Two-Layer Validation and Scoring
+                               2.3.4 Keeping Only Quality Articles: Two-Layer Validation and Scoring
                              2.4 Embedding and Vector Storage
-                               2.4.1 Embedding Model: BAAI/bge-m3
-                               2.4.2 Hybrid Vector Database: Qdrant
-                               2.4.3 Retrieval at Inference Time
+                               2.4.1 Turning Text into Searchable Numbers: Embedding Model (BAAI/bge-m3)
+                               2.4.2 Where the Articles Are Stored: Hybrid Vector Database (Qdrant)
+                               2.4.3 When a User Asks a Question: Retrieval at Inference Time
                              2.5 Pipeline Orchestration
                                2.5.1 FastAPI Service Layer
                                2.5.2 n8n Workflow Automation
-                           Part II: Fine-Tuning (to be written)
+                           Section 3: Part II — Fine-Tuning
+                             2.6 Base Model Selection
+                             2.7 Training Data Synthesis
+                             2.8 Fine-Tuning Methodology
+                               2.8.1 Adapter Configuration (LoRA / QLoRA per model)
+                               2.8.2 What the Model Is Trained to Do: Response-Only Masking
+                               2.8.3 Out-of-Memory Error and Parameter Adjustment
+                             2.9 Training Configuration
+                               2.9.1 Hyperparameters (both models identical)
+                               2.9.2 Training Infrastructure (OVHcloud V100S)
+                             2.10 Quantization and Deployment
+                               2.10.1 LoRA Adapter Export
+                               2.10.2 Preparing the Model for Production: GGUF Export and Local Deployment (Ollama)
+                           Section 4: Conclusion
+  chapter4.tex         — Chapter IV: Demonstration and Evaluation
+                           Section 1: Introduction
+                           Section 2: Part I — Demonstration
+                             2.1 System Overview at Demo Time
+                               — offline flow: n8n + FastAPI (preparation only)
+                               — runtime flow: rag/query.py (bge-m3 → Qdrant → reranker → Ollama)
+                             2.2 Pipeline Execution
+                               — schedule trigger (manual for testing)
+                               — Telegram notifications as pipeline log
+                               — n8n logs + FastAPI logs figures
+                             2.3 Example Queries and System Responses
+                               — Query 1: COC Art.2 contract validity (both model responses)
+                               — Query categories table (4 types; categories 2-4 pending screenshots)
+                             2.4 Pipeline Execution Walkthrough (rag/query.py steps 1-7)
+                           Section 3: Part II — Evaluation (TODO)
   annex1.tex           — Appendix A: Legal Article Enrichment Schema (all ~45 fields)
+  annex2.tex           — Appendix B: Fine-Tuning Dataset Full Reference (question types, legal codes, data format, limitations)
 figures/               — All images (logos, diagrams, n8n workflow screenshots)
 context_rag/           — Technical documentation for each pipeline phase (source of truth)
+context_fine-tuning/   — Technical documentation for the fine-tuning pipeline (source of truth)
+scripts/               — Utility scripts (generate_charts.py for dataset figures)
 ```
 
 ## LaTeX Conventions
@@ -79,11 +107,11 @@ context_rag/           — Technical documentation for each pipeline phase (sour
 
 **Margins:** top 3cm, bottom 2.5cm, left/right 2.5cm
 
-**Language:** Chapter 3 is in English. Other chapters in French. Acronyms are defined in `acronyms.tex` and used with `\ac{}`, `\acp{}`, `\acl{}` etc.
+**Language:** Chapters 3 and 4 are in English. Other chapters in French. Acronyms are defined in `acronyms.tex` and used with `\ac{}`, `\acp{}`, `\acl{}` etc.
 
 **Citations:** Use `\cite{}` with keys from `references.bib`. Bibliography printed at end of `main.tex` via `\printbibliography`.
 
-**Appendix:** Added via `\appendix` then `\input{chapters/annex1}` after `\printbibliography` in `main.tex`. LaTeX labels it Appendix A automatically.
+**Appendix:** Added via `\appendix` then `\input{chapters/annexN}` after `\printbibliography` in `main.tex`. Currently: annex1 (Appendix A: Article Schema), annex2 (Appendix B: Dataset Reference). LaTeX labels them automatically.
 
 **Sideways figures:** Large pipeline diagrams use `\begin{sidewaysfigure}` (from `rotating` package), wrapped in `\clearpage` before and after.
 
@@ -97,7 +125,7 @@ context_rag/           — Technical documentation for each pipeline phase (sour
 
 ## Acronyms Defined (acronyms.tex)
 
-`MENA`, `AI`, `SLM`, `LLM`, `TDSP`, `CRISP-DM`, `API`, `SME`, `IBM`, `SPSS`, `ATI`, `RAG`, `DSR`, `PDF`, `HTTP`, `OCR`, `NLP`, `GPU`, `CPU`, `VRAM`, `RAM`, `BERT`, `GPT`, `PEFT`, `LoRA`, `QLoRA`, `FAISS`, `GGUF`, `GPTQ`, `RRF`
+`MENA`, `AI`, `SLM`, `LLM`, `TDSP`, `CRISP-DM`, `API`, `SME`, `IBM`, `SPSS`, `ATI`, `RAG`, `DSR`, `PDF`, `HTTP`, `OCR`, `NLP`, `GPU`, `CPU`, `VRAM`, `RAM`, `BERT`, `GPT`, `PEFT`, `LoRA`, `QLoRA`, `FAISS`, `GGUF`, `GPTQ`, `RRF`, `QA`, `JORT`, `PLE`
 
 When adding new acronyms, declare them in `acronyms.tex` and use `\ac{KEY}` on first occurrence (auto-expands to "Long Form (SHORT)").
 
@@ -116,6 +144,11 @@ When adding new acronyms, declare them in `acronyms.tex` and use `\ac{KEY}` on f
 | `n8n2024docs` | n8n workflow automation |
 | `python2024docs` | Python |
 | `microsoft2024vscode` | VS Code |
+| `qwen2026qwen35` | Qwen3.5 9B (Alibaba Cloud) |
+| `google2025gemma4` | Gemma 4 E4B (Google DeepMind) |
+| `ibm2025syntheticdata` | IBM — What Is Synthetic Data? |
+| `pvml2025syntheticdata` | PVML — Synthetic Data glossary + domain figure |
+| `gartner2023syntheticdata` | Gartner 60% synthetic data prediction |
 
 ## Context Files (context_rag/)
 
@@ -144,6 +177,12 @@ These markdown files are the authoritative technical reference for the RAG pipel
 - **Cross-encoder reranking**: bge-reranker-v2-m3 scores (question, article) pairs jointly; 20 Qdrant candidates → top-k. More precise than vector similarity alone.
 - **Confidence gating**: if best reranker score < 0.4, LLM call is skipped and a bilingual "no relevant articles" message is returned. Prevents hallucinations on out-of-domain queries.
 - **On-premises**: no data leaves the local environment at any stage. All models run locally except GPT-4.1 (Azure, pipeline-only) and Gemini (OCR, pipeline-only).
+- **Base models for fine-tuning**: Qwen3.5 9B (Gated Delta Networks + sparse MoE, 201 languages, Apache 2.0) and Gemma 4 E4B (PLE architecture, 128K context, Apache 2.0).
+- **Fine-tuning methods**: Gemma 4 E4B uses LoRA on fp16 base; Qwen3.5 9B uses QLoRA (4-bit NF4 base) because fp16 loading exceeded 32 GiB VRAM ceiling. Both trained on OVHcloud V100S 32 GiB.
+- **Training results**: Gemma — 3,357s, loss 0.0586, VRAM 30.8 GiB, 40.6M trainable params (0.51%), adapter 185.6 MB. Qwen — 15,223s, loss 0.8208, VRAM 11.2 GiB, 29.1M trainable params (0.31%), adapter 130.1 MB. Both exported to GGUF q4_k_m and served via Ollama.
+- **Training dataset**: 1,619 cleaned examples across Tunisian legal codes, RAG-aware format with "Documents pertinents" block mirroring production inference.
+- **RAG query pipeline** (runtime, NOT n8n/FastAPI): `rag/query.py` — language detection → bge-m3 embedding → Qdrant hybrid search (RRF, top-20) → bge-reranker reranking → confidence gate (threshold 0.4) → Ollama generation. n8n + FastAPI are offline preparation only.
+- **n8n trigger**: schedule trigger in production; manual trigger for testing. Sends Telegram notifications at start/end of each phase.
 
 ## Figures in Chapter 3
 
@@ -160,6 +199,20 @@ These markdown files are the authoritative technical reference for the RAG pipel
 | `fig:vector-storage-workflow` | `vector_storage_workflow.png` | n8n Phase 7 sub-workflow |
 | `fig:rag-query-flow` | `rag_query_flow.png` | RAG query flow diagram |
 | `fig:n8n-workflow` | `n8n_workflow.png` | Full n8n orchestration workflow |
+| `fig:dataset-composition` | `dataset_composition.png` | Fine-tuning dataset composition by type (generated by scripts/generate_charts.py) |
+| `fig:question-categories` | `question_categories_chart.png` | Question category distribution — constructed dataset |
+| `fig:language-distribution` | `language_distribution_chart.png` | Language distribution across full training dataset |
+| `fig:synthetic-data-domains` | `synthetic_data_domains.png` | Industries using synthetic data (save manually from pvml.com) |
+| `fig:ovh-notebook` | `ovh_notebook.png` | OVHcloud AI Notebook instance used for fine-tuning |
+
+## Figures in Chapter 4
+
+| Label | File | Description |
+|---|---|---|
+| `fig:qdrant-collection` | `qdrant_collection.png` | Qdrant dashboard showing jort_articles_v2 collection after indexing |
+| `fig:telegram-notifications` | `telegram_1.png` + `telegram_2.png` | Telegram bot notifications during pipeline run (side by side) |
+| `fig:n8n-logs` | `n8n_logs.png` | n8n execution panel during pipeline run |
+| `fig:fastapi-logs` | `fastAPI_logs.png` | FastAPI server terminal logs during pipeline run |
 
 ## Architecture Notes
 

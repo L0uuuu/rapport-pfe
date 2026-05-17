@@ -1,0 +1,44 @@
+\chapter*{General Introduction}
+\addcontentsline{toc}{chapter}{General Introduction}
+\markboth{General Introduction}{General Introduction}
+
+Legal services have historically been expensive, complex, and difficult to access,
+particularly for individuals and small businesses navigating an increasingly
+regulated environment. The rapid development of \ac{AI} is beginning to change
+this: language models can now engage in open-ended dialogue about legal matters,
+interpret regulations, and assist users in understanding their rights and
+obligations. For a LegalTech company like E-Tafakna, which already offers a
+comprehensive platform for contract management and legal document processing
+across the \ac{MENA} region, this evolution opens the door to a qualitative
+improvement in the intelligence it can offer to its users.
+
+Two obstacles, however, stand between the current state of the art and a
+genuinely useful Tunisian legal assistant. First, general-purpose language models
+were not trained on Tunisian legislation: they lack the specific vocabulary,
+article structure, and regulatory context of local law, and their responses on
+Tunisian legal matters are correspondingly unreliable. Second, the legal
+sensitivity of the data makes external cloud-based inference unacceptable.
+E-Tafakna's planned deployment at \ac{ATI} Tunisie requires a system that runs
+entirely on local infrastructure, with no data leaving the controlled environment
+during operation.
+
+This graduation project addresses both obstacles simultaneously. We design,
+build, and evaluate a domain-specific legal \ac{AI} assistant that combines
+a language model fine-tuned on Tunisian legal texts with a
+\ac{RAG} pipeline that retrieves relevant legal articles at inference time,
+all deployed on-premises with no external dependencies at query time.
+
+This report is organized in four chapters. Chapter~I situates the project within
+its institutional and methodological context: it presents E-Tafakna, analyses the
+limitations of its current \ac{AI} agents, defines the problem and the proposed
+solution, and justifies the adoption of \ac{DSR} as the guiding methodology.
+Chapter~II reviews the scientific and technical literature relevant to the
+project, covering \ac{RAG} architectures, parameter-efficient fine-tuning, and
+on-premises deployment of large language models. Chapter~III describes the
+complete design and development of the artifact: the seven-phase offline
+preparation pipeline, the real-time query architecture, the fine-tuning of two
+candidate models on a curated Tunisian legal dataset, and their quantized local
+deployment. Chapter~IV closes the \ac{DSR} cycle by demonstrating the system in
+operation and evaluating it against the three objectives defined in Chapter~III,
+covering training outcomes, retrieval quality, expert assessment, and on-premises
+compliance.

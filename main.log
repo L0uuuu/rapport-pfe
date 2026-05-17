@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.10)  6 MAY 2026 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.10)  17 MAY 2026 01:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -417,87 +417,325 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip91
 \f@nch@widthR=\skip92
 \@temptokenb=\toks24
-) (acronyms.tex
-\c@g@acro@MENA@int=\count427
-\c@g@acro@AI@int=\count428
-\c@g@acro@SLM@int=\count429
-\c@g@acro@LLM@int=\count430
-\c@g@acro@TDSP@int=\count431
-\c@g@acro@CRISP-DM@int=\count432
-\c@g@acro@API@int=\count433
-\c@g@acro@SME@int=\count434
-\c@g@acro@IBM@int=\count435
-\c@g@acro@SPSS@int=\count436
-\c@g@acro@ATI@int=\count437
-\c@g@acro@RAG@int=\count438
-\c@g@acro@DSR@int=\count439
-\c@g@acro@PDF@int=\count440
-\c@g@acro@HTTP@int=\count441
-\c@g@acro@OCR@int=\count442
-\c@g@acro@NLP@int=\count443
-\c@g@acro@GPU@int=\count444
-\c@g@acro@CPU@int=\count445
-\c@g@acro@VRAM@int=\count446
-\c@g@acro@RAM@int=\count447
-\c@g@acro@BERT@int=\count448
-\c@g@acro@GPT@int=\count449
-\c@g@acro@PEFT@int=\count450
-\c@g@acro@LoRA@int=\count451
-\c@g@acro@QLoRA@int=\count452
-\c@g@acro@FAISS@int=\count453
-\c@g@acro@GGUF@int=\count454
-\c@g@acro@GPTQ@int=\count455
-\c@g@acro@RRF@int=\count456
-\c@g@acro@QA@int=\count457
+) (D:\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip93
+
+For additional information on amsmath, use the `?' option.
+(D:\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (D:\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks25
+\ex@=\dimen166
+)) (D:\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen167
+) (D:\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 46.
-\@quotelevel=\count458
-\@quotereset=\count459
- (main.aux)
+\inf@bad=\count427
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count428
+\leftroot@=\count429
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count430
+\DOTSCASE@=\count431
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box59
+\strutbox@=\box60
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen168
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count432
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count433
+\dotsspace@=\muskip22
+\c@parentequation=\count434
+\dspbrk@lvl=\count435
+\tag@help=\toks26
+\row@=\count436
+\column@=\count437
+\maxfields@=\count438
+\andhelp@=\toks27
+\eqnshift@=\dimen169
+\alignsep@=\dimen170
+\tagshift@=\dimen171
+\tagwidth@=\dimen172
+\totwidth@=\dimen173
+\lineht@=\dimen174
+\@envbody=\toks28
+\multlinegap=\skip94
+\multlinetaggap=\skip95
+\mathdisplay@stack=\toks29
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+) (D:\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (D:\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (D:\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+ (D:\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (D:\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (D:\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (D:\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+ (D:\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (D:\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count439
+) (D:\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen175
+\Hy@linkcounter=\count440
+\Hy@pagecounter=\count441
+ (D:\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (D:\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count442
+ (D:\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count443
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen176
+ (D:\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (D:\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count444
+\Field@Width=\dimen177
+\Fld@charsize=\dimen178
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count445
+\c@Item=\count446
+\c@Hfootnote=\count447
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (D:\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count448
+\c@bookmark@seq@number=\count449
+ (D:\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+ (D:\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip96
+) (D:\MiKTeX\tex/latex/fontspec\fontspec.sty
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+
+
+D:\MiKTeX\tex/latex/fontspec\fontspec.sty:101: Fatal Package fontspec Error: The fontspec package requires either XeTeX or
+(fontspec)                      LuaTeX.
+(fontspec)                      
+(fontspec)                      You must change your typesetting engine to,
+(fontspec)                      e.g., "xelatex" or "lualatex" instead of
+(fontspec)                      "latex" or "pdflatex".
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.101 \msg_fatal:nn {fontspec} {cannot-use-pdftex}
+                                                  
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+This is a fatal error: LaTeX will abort.
+
+
+
+D:\MiKTeX\tex/latex/fontspec\fontspec.sty:101: Emergency stop.
+<read *> 
+         
+l.101 \msg_fatal:nn {fontspec} {cannot-use-pdftex}
+                                                  
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 20236 strings out of 467870
+ 374818 string characters out of 5435190
+ 956653 words of memory out of 5000000
+ 48954 multiletter control sequences out of 15000+600000
+ 628019 words of font info for 41 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 73i,0n,79p,403b,198s stack positions out of 10000i,1000n,20000p,200000b,200000s
+D:\MiKTeX\tex/latex/fontspec\fontspec.sty:101:  ==> Fatal error occurred, no output PDF file produced!
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+(fontspec)             Arial/BI scale = 1.1.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'Arial(0)' created for font 'Arial' with
+(fontspec)             options [Script=Arabic,Scale=1.1].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.1]"Arial/OT:script=arab;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1.1]"Arial/OT:script=arab;language=dflt;+smcp;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.1]"Arial/B/OT:script=arab;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1.1]"Arial/B/OT:script=arab;language=dflt;+smcp;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1.1]"Arial/I/OT:script=arab;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1.1]"Arial/I/OT:script=arab;language=dflt;+smcp;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1.1]"Arial/BI/OT:script=arab;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1.1]"Arial/BI/OT:script=arab;language=dflt;+smcp;"
+
+
+ (acronyms.tex
+\c@g@acro@MENA@int=\count485
+\c@g@acro@AI@int=\count486
+\c@g@acro@SLM@int=\count487
+\c@g@acro@LLM@int=\count488
+\c@g@acro@TDSP@int=\count489
+\c@g@acro@CRISP-DM@int=\count490
+\c@g@acro@API@int=\count491
+\c@g@acro@SME@int=\count492
+\c@g@acro@IBM@int=\count493
+\c@g@acro@SPSS@int=\count494
+\c@g@acro@ATI@int=\count495
+\c@g@acro@RAG@int=\count496
+\c@g@acro@DSR@int=\count497
+\c@g@acro@PDF@int=\count498
+\c@g@acro@HTTP@int=\count499
+\c@g@acro@OCR@int=\count500
+\c@g@acro@NLP@int=\count501
+\c@g@acro@GPU@int=\count502
+\c@g@acro@CPU@int=\count503
+\c@g@acro@VRAM@int=\count504
+\c@g@acro@RAM@int=\count505
+\c@g@acro@BERT@int=\count506
+\c@g@acro@GPT@int=\count507
+\c@g@acro@PEFT@int=\count508
+\c@g@acro@LoRA@int=\count509
+\c@g@acro@QLoRA@int=\count510
+\c@g@acro@FAISS@int=\count511
+\c@g@acro@GGUF@int=\count512
+\c@g@acro@GPTQ@int=\count513
+\c@g@acro@RRF@int=\count514
+\c@g@acro@PLE@int=\count515
+\c@g@acro@QA@int=\count516
+\c@g@acro@JORT@int=\count517
+)
+
+! Package biblatex Error: 'polyglossia' loaded after biblatex.
+
+See the biblatex package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54 \begin{document}
+                     
+? 
+\@quotelevel=\count518
+\@quotereset=\count519
+(D:\MiKTeX\tex/latex/bidi\float-xetex-bidi.def
+File: float-xetex-bidi.def 2013/04/04 v0.2 bidi adaptations for float package f
+or XeTeX engine
+) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
- (D:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count460
-\scratchdimen=\dimen166
-\scratchbox=\box59
-\nofMPsegments=\count461
-\nofMParguments=\count462
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count463
-\MPscratchDim=\dimen167
-\MPnumerator=\count464
-\makeMPintoPDFobject=\count465
-\everyMPtoPDFconversion=\toks26
-) (D:\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (D:\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-)) (D:\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
-File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+
+(D:\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-french.tr
+sl
+File: translations-basic-dictionary-french.trsl (french translation file `trans
+lations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 46.
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
- (D:\MiKTeX\tex/latex/biblatex/lbx\english.lbx
-File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `french'. on input line 54.
+Package translations Info: no dictionary file `translations-basic-dictionary-ar
+abic.trsl' found. on input line 54.
+Package biblatex Info: Trying to load language 'arabic'...
+Package biblatex Info: ... file 'arabic.lbx' not found.
+
+
+Package biblatex Warning: Language 'arabic' not supported.
+(biblatex)                Using dummy definitions on input line 54.
+
+Package biblatex Info: Trying to load language 'french'...
+Package biblatex Info: ... file 'french.lbx' found.
+(D:\MiKTeX\tex/latex/biblatex/lbx\french.lbx
+File: french.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 )
-Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 \openout3 = `main.bcf'.
@@ -505,13 +743,13 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 46.
-Package biblatex Info: Reference segment=0 on input line 46.
+Package biblatex Info: Reference section=0 on input line 54.
+Package biblatex Info: Reference segment=0 on input line 54.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: xetex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -542,9 +780,71 @@ Package biblatex Info: Reference segment=0 on input line 46.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(titlepage.tex
+Package hyperref Info: Link coloring OFF on input line 54.
+(main.out) (main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+
+Package fontspec Info: 
+(fontspec)             Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 54.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 54.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 54.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 54.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 54.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 54.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 54.
+LaTeX Font Info:    Redeclaring math accent \check on input line 54.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 54.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 54.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 54.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 54.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 54.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 54.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 54.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 54.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 54.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 54.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 54.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 54.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 54.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 54.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 54.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 54.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 54.
+ (titlepage.tex
 *geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
+* driver: xetex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -575,1052 +875,1171 @@ Package biblatex Info: Reference segment=0 on input line 46.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 4.
-<figures/logo_isi.png, id=1, 3854.4pt x 1927.2pt>
-File: figures/logo_isi.png Graphic file (type png)
-<use figures/logo_isi.png>
-Package pdftex.def Info: figures/logo_isi.png  used on input line 5.
-(pdftex.def)             Requested size: 91.04303pt x 45.52458pt.
-<figures/logo_ministere.png, id=3, 144.54pt x 144.54pt>
-File: figures/logo_ministere.png Graphic file (type png)
-<use figures/logo_ministere.png>
-Package pdftex.def Info: figures/logo_ministere.png  used on input line 15.
-(pdftex.def)             Requested size: 62.59428pt x 62.59596pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+ (D:\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
-Overfull \hbox (8.3849pt too wide) in paragraph at lines 4--18
-[][] 
+(D:\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+File: figures/logo_isi.png Graphic file (type bmp)
+<figures/logo_isi.png>
+File: figures/logo_ministere.png Graphic file (type bmp)
+<figures/logo_ministere.png>
+
+Overfull \hbox (8.76009pt too wide) in paragraph at lines 4--18
+[][][] []
  []
 
-<figures/logo_E-tafakna.png, id=4, 1027.84pt x 1027.84pt>
-File: figures/logo_E-tafakna.png Graphic file (type png)
-<use figures/logo_E-tafakna.png>
-Package pdftex.def Info: figures/logo_E-tafakna.png  used on input line 60.
-(pdftex.def)             Requested size: 56.89993pt x 56.9055pt.
+File: figures/logo_E-tafakna.png Graphic file (type bmp)
+<figures/logo_E-tafakna.png>
 [1
 
 
-{C:/Users/louai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figures/logo_isi.png> <./figures/logo_ministere.png> <./figures/logo_E-tafakna.png>]) (chapters/chapter1.tex
-Chapter I.
-File: figures/logo_E-tafakna.png Graphic file (type png)
-<use figures/logo_E-tafakna.png>
-Package pdftex.def Info: figures/logo_E-tafakna.png  used on input line 15.
-(pdftex.def)             Requested size: 84.96216pt x 84.95781pt.
+]) (main.toc [1
+
+
+] [2])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [3] (main.lof [4
+
+
+])
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ [5] (main.lot
+Overfull \hbox (0.77997pt too wide) detected at line 18
+\TU/lmr/m/n/12 III.10 
+ []
+
+
+Overfull \hbox (0.77997pt too wide) detected at line 19
+\TU/lmr/m/n/12 III.11 
+ []
+
+
+Overfull \hbox (0.46797pt too wide) detected at line 30
+\TU/lmr/m/n/12 IV.10 
+ []
+
+)
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+ [6
+
+
+] [7
+
+
+] [8] (chapters/general_introduction.tex) (chapters/chapter1.tex
 [1
 
 
-] [2] [3] [4] [5] [6]
-<figures/CRISP-DM.png, id=36, 2116.90875pt x 1411.2725pt>
-File: figures/CRISP-DM.png Graphic file (type png)
-<use figures/CRISP-DM.png>
-Package pdftex.def Info: figures/CRISP-DM.png  used on input line 285.
-(pdftex.def)             Requested size: 377.62642pt x 251.73546pt.
- [7 <./figures/CRISP-DM.png>]
-<figures/TDSP.png, id=41, 968.61874pt x 722.7pt>
-File: figures/TDSP.png Graphic file (type png)
-<use figures/TDSP.png>
-Package pdftex.def Info: figures/TDSP.png  used on input line 322.
-(pdftex.def)             Requested size: 377.62642pt x 281.75261pt.
- [8 <./figures/TDSP.png (PNG copy)>]
-<figures/DSR.png, id=45, 853.1875pt x 617.30624pt>
-File: figures/DSR.png Graphic file (type png)
-<use figures/DSR.png>
-Package pdftex.def Info: figures/DSR.png  used on input line 366.
-(pdftex.def)             Requested size: 424.82523pt x 307.38075pt.
+]
+Chapitre I.
+File: figures/logo_E-tafakna.png Graphic file (type bmp)
+<figures/logo_E-tafakna.png>
+[2
+
+] [3] [4] [5] [6] [7]
+File: figures/CRISP-DM.png Graphic file (type bmp)
+<figures/CRISP-DM.png>
+ [8]
+File: figures/TDSP.png Graphic file (type bmp)
+<figures/TDSP.png>
+ [9]
+File: figures/DSR.png Graphic file (type bmp)
+<figures/DSR.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 386--386
-[]|\OT1/cmr/m/n/12 Data min-ing and
+[][]|\TU/lmr/m/n/12 Data mining and[]
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 387--387
-[]|\OT1/cmr/m/n/12 Production AI and
+Underfull \hbox (badness 2237) in paragraph at lines 387--387
+[][]|\TU/lmr/m/n/12 Production AI and[]
  []
 
 
 Underfull \hbox (badness 1997) in paragraph at lines 388--389
-[]|\OT1/cmr/m/n/12 Design and eval-u-a-
+[][]|\TU/lmr/m/n/12 Design and evalua-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 390--390
-[]|\OT1/cmr/m/n/12 Development
+[][]|\TU/lmr/m/n/12 Development[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 393--394
-[]|\OT1/cmr/m/n/12 Iterative, artifact-
+[][]|\TU/lmr/m/n/12 Iterative, artifact-[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--400
-[]|\OT1/cmr/m/n/12 Evaluation
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
-[]|\OT1/cmr/m/n/12 Deployment mon-i-
+Underfull \hbox (badness 1721) in paragraph at lines 400--400
+[][]|\TU/lmr/m/n/12 Evaluation Fra-[]
  []
 
 
 Underfull \hbox (badness 7704) in paragraph at lines 405--405
-[]|\OT1/cmr/m/n/12 Artifact Ori-en-
+[][]|\TU/lmr/m/n/12 Artifact Orien-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 410--410
-[]|\OT1/cmr/m/n/12 Communication
+[][]|\TU/lmr/m/n/12 Communication[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 415--415
-[]|\OT1/cmr/m/n/12 Deployment
+[][]|\TU/lmr/m/n/12 Deployment[]
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 417--417
-[]|\OT1/cmr/m/n/12 Detailed pro-duc-tion
+Underfull \hbox (badness 2173) in paragraph at lines 417--417
+[][]|\TU/lmr/m/n/12 Detailed production[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
+[][]|\TU/lmr/m/n/12 Demonstration in[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 420--420
-[]|\OT1/cmr/m/n/12 Suitability for
+[][]|\TU/lmr/m/n/12 Suitability for[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 420--420
-\OT1/cmr/m/n/12 Small-Scale
+[]\TU/lmr/m/n/12 Small-Scale[]
  []
 
-[9 <./figures/DSR.png (PNG copy)>] [10] [11]
-<figures/azure_ai_foundry.jpg, id=55, 542.025pt x 416.55624pt>
-File: figures/azure_ai_foundry.jpg Graphic file (type jpg)
-<use figures/azure_ai_foundry.jpg>
-Package pdftex.def Info: figures/azure_ai_foundry.jpg  used on input line 514.
-(pdftex.def)             Requested size: 188.8096pt x 145.10405pt.
- [12 <./figures/azure_ai_foundry.jpg>]
-<figures/vertex_ai_logo.png, id=60, 679.53876pt x 183.68625pt>
-File: figures/vertex_ai_logo.png Graphic file (type png)
-<use figures/vertex_ai_logo.png>
-Package pdftex.def Info: figures/vertex_ai_logo.png  used on input line 575.
-(pdftex.def)             Requested size: 188.8096pt x 51.03659pt.
- [13 <./figures/vertex_ai_logo.png>]
-<figures/ovh_logo.png, id=65, 301.125pt x 301.125pt>
-File: figures/ovh_logo.png Graphic file (type png)
-<use figures/ovh_logo.png>
-Package pdftex.def Info: figures/ovh_logo.png  used on input line 630.
-(pdftex.def)             Requested size: 165.2138pt x 165.2195pt.
- [14 <./figures/ovh_logo.png (PNG copy)>]
-<figures/vscode_logo.png, id=69, 501.875pt x 501.875pt>
-File: figures/vscode_logo.png Graphic file (type png)
-<use figures/vscode_logo.png>
-Package pdftex.def Info: figures/vscode_logo.png  used on input line 681.
-(pdftex.def)             Requested size: 70.8018pt x 70.79807pt.
- [15 <./figures/vscode_logo.png>]
-<figures/python_logo.png, id=74, 225.84375pt x 225.84375pt>
-File: figures/python_logo.png Graphic file (type png)
-<use figures/python_logo.png>
-Package pdftex.def Info: figures/python_logo.png  used on input line 726.
-(pdftex.def)             Requested size: 70.8018pt x 70.80344pt.
- [16 <./figures/python_logo.png>]
-<figures/n8n_logo.png, id=78, 3854.4pt x 1541.76pt>
-File: figures/n8n_logo.png Graphic file (type png)
-<use figures/n8n_logo.png>
-Package pdftex.def Info: figures/n8n_logo.png  used on input line 773.
-(pdftex.def)             Requested size: 141.61081pt x 56.62547pt.
- [17 <./figures/n8n_logo.png>]
-<figures/fastapi_logo.png, id=83, 1275.93932pt x 459.78673pt>
-File: figures/fastapi_logo.png Graphic file (type png)
-<use figures/fastapi_logo.png>
-Package pdftex.def Info: figures/fastapi_logo.png  used on input line 818.
-(pdftex.def)             Requested size: 118.0078pt x 42.52258pt.
-) (chapters/chapter2.tex [18 <./figures/fastapi_logo.png>] [19]
-Chapter II.
-[20
+[10] [11] [12]
+File: figures/azure_ai_foundry.jpg Graphic file (type bmp)
+<figures/azure_ai_foundry.jpg>
+ [13]
+File: figures/vertex_ai_logo.png Graphic file (type bmp)
+<figures/vertex_ai_logo.png>
+ [14]
+File: figures/ovh_logo.png Graphic file (type bmp)
+<figures/ovh_logo.png>
+ [15]
+File: figures/vscode_logo.png Graphic file (type bmp)
+<figures/vscode_logo.png>
+ [16]
+File: figures/python_logo.png Graphic file (type bmp)
+<figures/python_logo.png>
+ [17]
+File: figures/n8n_logo.png Graphic file (type bmp)
+<figures/n8n_logo.png>
+ [18]
+File: figures/fastapi_logo.png Graphic file (type bmp)
+<figures/fastapi_logo.png>
+) (chapters/chapter2.tex [19]
+[20]
+Chapitre II.
+[21
 
 ]
-<figures/Annotated-Transformers-Architecture.png, id=95, 2814.515pt x 1714.405pt>
-File: figures/Annotated-Transformers-Architecture.png Graphic file (type png)
-<use figures/Annotated-Transformers-Architecture.png>
-Package pdftex.def Info: figures/Annotated-Transformers-Architecture.png  used on input line 86.
-(pdftex.def)             Requested size: 377.62642pt x 230.02206pt.
- [21]
-<figures/openai_logo.png, id=99, 1284.8pt x 349.305pt>
-File: figures/openai_logo.png Graphic file (type png)
-<use figures/openai_logo.png>
-Package pdftex.def Info: figures/openai_logo.png  used on input line 129.
-(pdftex.def)             Requested size: 94.4048pt x 25.66374pt.
- [22 <./figures/Annotated-Transformers-Architecture.png>]
-<figures/llama_logo.png, id=103, 353.32pt x 143.53625pt>
-File: figures/llama_logo.png Graphic file (type png)
-<use figures/llama_logo.png>
-Package pdftex.def Info: figures/llama_logo.png  used on input line 143.
-(pdftex.def)             Requested size: 94.4048pt x 38.3523pt.
-<figures/qwen_logo.jpg, id=104, 1991.44pt x 599.23875pt>
-File: figures/qwen_logo.jpg Graphic file (type jpg)
-<use figures/qwen_logo.jpg>
-Package pdftex.def Info: figures/qwen_logo.jpg  used on input line 157.
-(pdftex.def)             Requested size: 94.4048pt x 28.40013pt.
-<figures/gemma_logo.png, id=105, 225.84375pt x 225.84375pt>
-File: figures/gemma_logo.png Graphic file (type png)
-<use figures/gemma_logo.png>
-Package pdftex.def Info: figures/gemma_logo.png  used on input line 171.
-(pdftex.def)             Requested size: 94.4048pt x 94.40573pt.
- [23 <./figures/openai_logo.png> <./figures/llama_logo.png> <./figures/qwen_logo.jpg> <./figures/gemma_logo.png>]
-<figures/lora_diagram.jpg, id=112, 1405.25pt x 590.205pt>
-File: figures/lora_diagram.jpg Graphic file (type jpg)
-<use figures/lora_diagram.jpg>
-Package pdftex.def Info: figures/lora_diagram.jpg  used on input line 232.
-(pdftex.def)             Requested size: 424.82523pt x 178.42273pt.
+File: figures/Annotated-Transformers-Architecture.png Graphic file (type bmp)
+<figures/Annotated-Transformers-Architecture.png>
+ [22]
+File: figures/openai_logo.png Graphic file (type bmp)
+<figures/openai_logo.png>
+ [23]
+File: figures/llama_logo.png Graphic file (type bmp)
+<figures/llama_logo.png>
+File: figures/qwen_logo.jpg Graphic file (type bmp)
+<figures/qwen_logo.jpg>
+File: figures/gemma_logo.png Graphic file (type bmp)
+<figures/gemma_logo.png>
  [24]
-<figures/lora_vs_fft.png, id=117, 1541.76pt x 1027.84pt>
-File: figures/lora_vs_fft.png Graphic file (type png)
-<use figures/lora_vs_fft.png>
-Package pdftex.def Info: figures/lora_vs_fft.png  used on input line 257.
-(pdftex.def)             Requested size: 424.82523pt x 283.21364pt.
- [25 <./figures/lora_diagram.jpg>] [26 <./figures/lora_vs_fft.png (PNG copy)>] [27]
-<figures/rag_pipeline.jpg, id=127, 1215.54124pt x 927.465pt>
-File: figures/rag_pipeline.jpg Graphic file (type jpg)
-<use figures/rag_pipeline.jpg>
-Package pdftex.def Info: figures/rag_pipeline.jpg  used on input line 347.
-(pdftex.def)             Requested size: 606.5539pt x 462.81148pt.
- [28 <./figures/rag_pipeline.jpg>]
-<figures/chroma_logo.png, id=131, 803.0pt x 501.875pt>
-File: figures/chroma_logo.png Graphic file (type png)
-<use figures/chroma_logo.png>
-Package pdftex.def Info: figures/chroma_logo.png  used on input line 380.
-(pdftex.def)             Requested size: 84.96216pt x 53.10046pt.
-<figures/qdrant_logo.png, id=132, 755.07094pt x 201.00093pt>
-File: figures/qdrant_logo.png Graphic file (type png)
-<use figures/qdrant_logo.png>
-Package pdftex.def Info: figures/qdrant_logo.png  used on input line 393.
-(pdftex.def)             Requested size: 84.96216pt x 22.61623pt.
- [29
+File: figures/lora_diagram.jpg Graphic file (type bmp)
+<figures/lora_diagram.jpg>
+ [25]
+File: figures/lora_vs_fft.png Graphic file (type bmp)
+<figures/lora_vs_fft.png>
+ [26] [27] [28]
+File: figures/rag_pipeline.jpg Graphic file (type bmp)
+<figures/rag_pipeline.jpg>
+ [29]
+File: figures/chroma_logo.png Graphic file (type bmp)
+<figures/chroma_logo.png>
+File: figures/qdrant_logo.png Graphic file (type bmp)
+<figures/qdrant_logo.png>
+ [30
 
 
- <./figures/chroma_logo.png> <./figures/qdrant_logo.png>] [30]
-<figures/chunking_methodes.png, id=142, 1070.49937pt x 797.98125pt>
-File: figures/chunking_methodes.png Graphic file (type png)
-<use figures/chunking_methodes.png>
-Package pdftex.def Info: figures/chunking_methodes.png  used on input line 461.
-(pdftex.def)             Requested size: 606.5539pt x 452.1631pt.
- [31 <./figures/chunking_methodes.png>] [32
+] [31]
+File: figures/chunking_methodes.png Graphic file (type bmp)
+<figures/chunking_methodes.png>
+ [32] [33
 
 
-] [33]
-<figures/ollama_logo.png, id=153, 330.23375pt x 153.57375pt>
-File: figures/ollama_logo.png Graphic file (type png)
-<use figures/ollama_logo.png>
-Package pdftex.def Info: figures/ollama_logo.png  used on input line 606.
-(pdftex.def)             Requested size: 118.0078pt x 54.87875pt.
-<figures/vllm_logo.png, id=154, 3011.25pt x 863.225pt>
-File: figures/vllm_logo.png Graphic file (type png)
-<use figures/vllm_logo.png>
-Package pdftex.def Info: figures/vllm_logo.png  used on input line 620.
-(pdftex.def)             Requested size: 118.0078pt x 33.82501pt.
-<figures/llamacpp_logo.png, id=155, 800.9925pt x 335.00156pt>
-File: figures/llamacpp_logo.png Graphic file (type png)
-<use figures/llamacpp_logo.png>
-Package pdftex.def Info: figures/llamacpp_logo.png  used on input line 632.
-(pdftex.def)             Requested size: 118.0078pt x 49.35352pt.
- [34 <./figures/ollama_logo.png> <./figures/vllm_logo.png> <./figures/llamacpp_logo.png>]
+] [34]
+File: figures/ollama_logo.png Graphic file (type bmp)
+<figures/ollama_logo.png>
+File: figures/vllm_logo.png Graphic file (type bmp)
+<figures/vllm_logo.png>
+File: figures/llamacpp_logo.png Graphic file (type bmp)
+<figures/llamacpp_logo.png>
+ [35]
 Underfull \hbox (badness 10000) in paragraph at lines 676--676
-[]|\OT1/cmr/bx/n/12 Harvey
+[][]|\TU/lmr/bx/n/12 Harvey[]
  []
 
 
-Overfull \hbox (8.12924pt too wide) in paragraph at lines 676--676
-[]|\OT1/cmr/bx/n/12 Doctrine.fr| 
+Overfull \hbox (8.15851pt too wide) in paragraph at lines 676--676
+[][]|\TU/lmr/bx/n/12 Doctrine.fr| []
  []
 
 
-Overfull \hbox (7.42783pt too wide) in paragraph at lines 676--676
-[]|\OT1/cmr/bx/n/12 Luminance| 
+Overfull \hbox (7.4385pt too wide) in paragraph at lines 676--676
+[][]|\TU/lmr/bx/n/12 Luminance| []
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 678--678
-[]|\OT1/cmr/m/n/12 Target Ju-ris-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 679--679
-[]|\OT1/cmr/m/n/12 Common
+Underfull \hbox (badness 1342) in paragraph at lines 678--678
+[][]|\TU/lmr/m/n/12 Target Juris-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 679--679
-\OT1/cmr/m/n/12 Law
+[][]|\TU/lmr/m/n/12 Common[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 679--679
+[]\TU/lmr/m/n/12 Law[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 680--680
-[]|\OT1/cmr/m/n/12 French
+[][]|\TU/lmr/m/n/12 French[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 682--682
-[]|\OT1/cmr/m/n/12 Multi-
+[][]|\TU/lmr/m/n/12 Multi-[]
  []
 
 
-Overfull \hbox (0.93001pt too wide) in paragraph at lines 682--682
-\OT1/cmr/m/n/12 jurisdiction| 
+Overfull \hbox (0.9345pt too wide) in paragraph at lines 682--682
+[]\TU/lmr/m/n/12 jurisdiction| []
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 683--684
-[]|\OT1/cmr/m/n/12 Tunisian
+[][]|\TU/lmr/m/n/12 Tunisian[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 685--685
-[]|\OT1/cmr/m/n/12 Tunisian
+[][]|\TU/lmr/m/n/12 Tunisian[]
+ []
+
+
+Underfull \hbox (badness 2913) in paragraph at lines 685--685
+[]\TU/lmr/m/n/12 Legal Know-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 690--691
-[]|\OT1/cmr/m/n/12 Fine-
+[][]|\TU/lmr/m/n/12 Fine-tuned[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 690--691
-\OT1/cmr/m/n/12 tuned on
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 690--691
-\OT1/cmr/m/n/12 Tunisian
+[]\TU/lmr/m/n/12 on Tuni-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 692--692
-[]|\OT1/cmr/m/n/12 Language
+[][]|\TU/lmr/m/n/12 Language[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 697--698
-[]|\OT1/cmr/m/n/12 Arabic &
+[][]|\TU/lmr/m/n/12 Arabic &[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 699--699
-[]|\OT1/cmr/m/n/12 Deployment
+[][]|\TU/lmr/m/n/12 Deployment[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 704--705
-[]|\OT1/cmr/m/n/12 On-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 706--706
-[]|\OT1/cmr/m/n/12 Data
+[][]|\TU/lmr/m/n/12 On-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 713--713
-[]|\OT1/cmr/m/n/12 Knowledge
+[][]|\TU/lmr/m/n/12 Knowledge[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 713--713
-\OT1/cmr/m/n/12 Up-date
+[]\TU/lmr/m/n/12 Update Me-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 714--714
-[]|\OT1/cmr/m/n/12 Periodic
+[][]|\TU/lmr/m/n/12 Periodic[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 715--715
-[]|\OT1/cmr/m/n/12 Database
+[][]|\TU/lmr/m/n/12 Database[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 716--716
-[]|\OT1/cmr/m/n/12 Database
+[][]|\TU/lmr/m/n/12 Database[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 717--717
-[]|\OT1/cmr/m/n/12 Periodic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 718--719
-[]|\OT1/cmr/m/n/12 RAG
+[][]|\TU/lmr/m/n/12 Periodic[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 720--720
-[]|\OT1/cmr/m/n/12 Domain
+[][]|\TU/lmr/m/n/12 Domain[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 720--720
-\OT1/cmr/m/n/12 Adap-ta-tion
+[]\TU/lmr/m/n/12 Adaptation[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 721--721
-[]|\OT1/cmr/m/n/12 Prompt
+[][]|\TU/lmr/m/n/12 Prompt[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 721--721
-\OT1/cmr/m/n/12 en-gi-neer-
+[]\TU/lmr/m/n/12 enginee-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 722--722
-[]|\OT1/cmr/m/n/12 Custom
+[][]|\TU/lmr/m/n/12 Custom[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 722--722
-\OT1/cmr/m/n/12 search
+[]\TU/lmr/m/n/12 search[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 723--723
-[]|\OT1/cmr/m/n/12 Prompt
+[][]|\TU/lmr/m/n/12 Prompt[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 723--723
-\OT1/cmr/m/n/12 en-gi-neer-
+[]\TU/lmr/m/n/12 enginee-[]
  []
 
 
-Overfull \hbox (2.33139pt too wide) in paragraph at lines 724--724
-[]|\OT1/cmr/m/n/12 Proprietary
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
-[]|\OT1/cmr/m/n/12 Fine-tuned
+Overfull \hbox (2.3505pt too wide) in paragraph at lines 724--724
+[][]|\TU/lmr/m/n/12 Proprietary[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 725--726
-\OT1/cmr/m/n/12 LLM +
+[][]|\TU/lmr/m/n/12 Fine-tuned[]
  []
 
-[35]
-Underfull \hbox (badness 3989) in paragraph at lines 770--770
-[]|\OT1/cmr/m/n/12 Legal Ques-tion An-
+
+Underfull \hbox (badness 10000) in paragraph at lines 725--726
+[]\TU/lmr/m/n/12 LLM +[]
+ []
+
+[36]
+Underfull \hbox (badness 1117) in paragraph at lines 770--770
+[][]|\TU/lmr/m/n/12 Legal Question Ans-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 775--775
-[]|\OT1/cmr/m/n/12 Document-Grounded
+[][]|\TU/lmr/m/n/12 Document-Grounded[]
  []
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 789--789
-[]|\OT1/cmr/m/n/12 Conversational In-ter-
+Underfull \hbox (badness 1708) in paragraph at lines 789--789
+[][]|\TU/lmr/m/n/12 Conversational Inter-[]
  []
 
-[36]
-Overfull \hbox (2.73003pt too wide) in paragraph at lines 823--823
-[]|\OT1/cmr/m/n/12 RNF01| 
- []
-
-
-Underfull \hbox (badness 2005) in paragraph at lines 823--823
-[]|\OT1/cmr/m/n/12 On-Premises De-ploy-
+[37]
+Overfull \hbox (2.74478pt too wide) in paragraph at lines 823--823
+[][]|\TU/lmr/m/n/12 RNF01| []
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 824--827
-[]|\OT1/cmr/m/n/12 The en-tire sys-tem (lan-guage model, RAG
+Underfull \hbox (badness 2020) in paragraph at lines 823--823
+[][]|\TU/lmr/m/n/12 On-Premises Deploy-[]
  []
 
 
-Overfull \hbox (2.73003pt too wide) in paragraph at lines 828--828
-[]|\OT1/cmr/m/n/12 RNF02| 
+Overfull \hbox (2.74478pt too wide) in paragraph at lines 828--828
+[][]|\TU/lmr/m/n/12 RNF02| []
  []
 
 
-Overfull \hbox (2.73003pt too wide) in paragraph at lines 833--833
-[]|\OT1/cmr/m/n/12 RNF03| 
+Overfull \hbox (2.74478pt too wide) in paragraph at lines 833--833
+[][]|\TU/lmr/m/n/12 RNF03| []
  []
 
 
-Overfull \hbox (2.73003pt too wide) in paragraph at lines 838--838
-[]|\OT1/cmr/m/n/12 RNF04| 
+Overfull \hbox (2.74478pt too wide) in paragraph at lines 838--838
+[][]|\TU/lmr/m/n/12 RNF04| []
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 839--843
-[]|\OT1/cmr/m/n/12 Responses must demon-strate a mea-sur-ably
+Overfull \hbox (2.74478pt too wide) in paragraph at lines 844--844
+[][]|\TU/lmr/m/n/12 RNF05| []
  []
 
 
-Overfull \hbox (2.73003pt too wide) in paragraph at lines 844--844
-[]|\OT1/cmr/m/n/12 RNF05| 
+Overfull \hbox (2.74478pt too wide) in paragraph at lines 848--848
+[][]|\TU/lmr/m/n/12 RNF06| []
  []
 
 
-Overfull \hbox (2.73003pt too wide) in paragraph at lines 848--848
-[]|\OT1/cmr/m/n/12 RNF06| 
+Overfull \hbox (2.74478pt too wide) in paragraph at lines 853--853
+[][]|\TU/lmr/m/n/12 RNF07| []
  []
 
+[38] [39]) (chapters/chapter3.tex [40]
+Chapitre III.
+[41
 
-Overfull \hbox (2.73003pt too wide) in paragraph at lines 853--853
-[]|\OT1/cmr/m/n/12 RNF07| 
- []
-
-[37] [38]) (chapters/chapter3.tex [39]
-Chapter III.
-
+]
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]|\OT1/cmr/bx/n/12 Problem Ad-
+[][]|\TU/lmr/bx/n/12 Problem Addres-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--31
-[]|\OT1/cmr/bx/n/12 Evaluation Cri-te-
+[][]|\TU/lmr/bx/n/12 Evaluation Crite-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 Domain Adap-
+[][]|\TU/lmr/m/n/12 Domain Adap-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 32--32
-\OT1/cmr/m/n/12 ta-tion via Fine-
+[]\TU/lmr/m/n/12 tation via Fine-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 37--37
-[]|\OT1/cmr/m/n/12 Knowledge bounded
+[][]|\TU/lmr/m/n/12 Knowledge bounded[]
  []
 
 
 Underfull \hbox (badness 4193) in paragraph at lines 37--37
-\OT1/cmr/m/n/12 not up-date with-out
+[]\TU/lmr/m/n/12 not update without[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 40--40
-[]|\OT1/cmr/m/n/12 On-Premises De-
+[][]|\TU/lmr/m/n/12 On-Premises De-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 42--43
-[]|\OT1/cmr/m/n/12 Complete in-fer-ence
+[][]|\TU/lmr/m/n/12 Complete inference[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 42--43
-\OT1/cmr/m/n/12 with zero ex-ter-nal
+[]\TU/lmr/m/n/12 with zero external[]
  []
 
-[40
-
-] [41]
-<figures/system_architecture.png, id=184, 1267.73625pt x 692.5875pt>
-File: figures/system_architecture.png Graphic file (type png)
-<use figures/system_architecture.png>
-Package pdftex.def Info: figures/system_architecture.png  used on input line 69.
-(pdftex.def)             Requested size: 638.47984pt x 348.81865pt.
- [42 <./figures/system_architecture.png>]
-<figures/flowchart_pipeline.jpg, id=190, 2481.27pt x 925.4575pt>
-File: figures/flowchart_pipeline.jpg Graphic file (type jpg)
-<use figures/flowchart_pipeline.jpg>
-Package pdftex.def Info: figures/flowchart_pipeline.jpg  used on input line 79.
-(pdftex.def)             Requested size: 638.45145pt x 383.09746pt.
- [43 <./figures/flowchart_pipeline.jpg>]
+[42]
+File: figures/system_architecture.png Graphic file (type bmp)
+<figures/system_architecture.png>
+ [43]
+File: figures/flowchart_pipeline.jpg Graphic file (type bmp)
+<figures/flowchart_pipeline.jpg>
+ [44]
 Underfull \hbox (badness 10000) in paragraph at lines 102--102
-[]|\OT1/cmr/m/n/12 PDF Ac-qui-si-
+[][]|\TU/lmr/m/n/12 PDF Acquisi-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 104--104
-[]|\OT1/cmr/m/n/12 Google Drive
+[][]|\TU/lmr/m/n/12 Google Drive[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 106--106
-[]|\OT1/cmr/m/n/12 Text Ex-trac-
+[][]|\TU/lmr/m/n/12 Text Extrac-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 108--108
-[]|\OT1/cmr/m/n/12 Structured
+[][]|\TU/lmr/m/n/12 Structured[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 108--109
-[]|\OT1/cmr/m/n/12 GPT-4.1
+[][]|\TU/lmr/m/n/12 GPT-4.1[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 110--110
-[]|\OT1/cmr/m/n/12 Validation &
+[][]|\TU/lmr/m/n/12 Validation &[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 110--110
-[]|\OT1/cmr/m/n/12 Structured
+[][]|\TU/lmr/m/n/12 Structured[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 110--110
-[]|\OT1/cmr/m/n/12 Validated
+[][]|\TU/lmr/m/n/12 Validated[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 110--111
-[]|\OT1/cmr/m/n/12 Python +
+[][]|\TU/lmr/m/n/12 Python +[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 112--112
-[]|\OT1/cmr/m/n/12 Validated
+[][]|\TU/lmr/m/n/12 Validated[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 112--113
-[]|\OT1/cmr/m/n/12 BAAI/bge-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
-[]|\OT1/cmr/m/n/12 Vectors +
+[][]|\TU/lmr/m/n/12 BAAI/bge-[]
  []
 
 
 Underfull \hbox (badness 4341) in paragraph at lines 114--114
-[]|\OT1/cmr/m/n/12 Qdrant col-lec-
+[][]|\TU/lmr/m/n/12 Qdrant collec-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 132--133
-[]|\OT1/cmr/m/n/12 Browser au-toma-tion for
+[][]|\TU/lmr/m/n/12 Browser automation for[]
  []
 
 
-Underfull \hbox (badness 7814) in paragraph at lines 134--134
-[]|\OT1/cmr/m/n/12 PyMuPDF [42] +
- []
-
-
-Underfull \hbox (badness 1881) in paragraph at lines 136--136
-[]|\OT1/cmr/m/n/12 Article Struc-tur-
+Underfull \hbox (badness 7832) in paragraph at lines 134--134
+[][]|\TU/lmr/m/n/12 PyMuPDF [[][]42[][]] +[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 136--136
-[]|\OT1/cmr/m/n/12 GPT-4.1 (Azure
+[][]|\TU/lmr/m/n/12 Article Structu-[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
+[][]|\TU/lmr/m/n/12 GPT-4.1 (Azure[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 140--140
-[]|\OT1/cmr/m/n/12 BAAI/bge-reranker-
+[][]|\TU/lmr/m/n/12 BAAI/bge-reranker-[]
  []
 
 
 Underfull \hbox (badness 1038) in paragraph at lines 142--143
-[]|\OT1/cmr/m/n/12 Hybrid se-man-tic and lex-i-cal
+[][]|\TU/lmr/m/n/12 Hybrid semantic and lexical[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
-[]|\OT1/cmr/m/n/12 HTTP in-ter-face for each
+Underfull \hbox (badness 1990) in paragraph at lines 148--148
+[][]|\TU/lmr/m/n/12 Python [[][]13[][]] + VS[]
  []
 
-
-Underfull \hbox (badness 1983) in paragraph at lines 148--148
-[]|\OT1/cmr/m/n/12 Python [13] + VS
- []
-
-[44
+[45
 
 
 
 
-]
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 163.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 163.
+] [46]
+File: figures/n8n_workflow_simple.png Graphic file (type bmp)
+<figures/n8n_workflow_simple.png>
+ [47] [48]
+File: figures/scraping_workflow.png Graphic file (type bmp)
+<figures/scraping_workflow.png>
+ [49]
+File: figures/uploding_workflow.png Graphic file (type bmp)
+<figures/uploding_workflow.png>
+ [50]
+File: figures/text_extracion_workflow.png Graphic file (type bmp)
+<figures/text_extracion_workflow.png>
 
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 163.
-
-[45]
-<figures/n8n_workflow_ultra_upscaled.png, id=202, 311.2428pt x 631.158pt>
-File: figures/n8n_workflow_ultra_upscaled.png Graphic file (type png)
-<use figures/n8n_workflow_ultra_upscaled.png>
-Package pdftex.def Info: figures/n8n_workflow_ultra_upscaled.png  used on input line 189.
-(pdftex.def)             Requested size: 330.42041pt x 670.0933pt.
- [46]
-Overfull \vbox (58.44678pt too high) has occurred while \output is active []
-
- [47 <./figures/n8n_workflow_ultra_upscaled.png>]
-<figures/scraping_workflow.png, id=210, 693.792pt x 224.63925pt>
-File: figures/scraping_workflow.png Graphic file (type png)
-<use figures/scraping_workflow.png>
-Package pdftex.def Info: figures/scraping_workflow.png  used on input line 229.
-(pdftex.def)             Requested size: 448.42822pt x 145.19455pt.
- [48]
-<figures/uploding_workflow.png, id=215, 609.477pt x 207.77625pt>
-File: figures/uploding_workflow.png Graphic file (type png)
-<use figures/uploding_workflow.png>
-Package pdftex.def Info: figures/uploding_workflow.png  used on input line 240.
-(pdftex.def)             Requested size: 448.42822pt x 152.8738pt.
- [49 <./figures/scraping_workflow.png> <./figures/uploding_workflow.png>]
-<figures/text_extracion_workflow.png, id=221, 627.5445pt x 211.992pt>
-File: figures/text_extracion_workflow.png Graphic file (type png)
-<use figures/text_extracion_workflow.png>
-Package pdftex.def Info: figures/text_extracion_workflow.png  used on input line 264.
-(pdftex.def)             Requested size: 448.42822pt x 151.48578pt.
-
-Underfull \hbox (badness 3838) in paragraph at lines 294--295
-[]|\OT1/cmtt/m/n/12 jurisdiction\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 law[]type\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 law[]number\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 year\OT1/cmr/m/n/12 ,
+Underfull \hbox (badness 4673) in paragraph at lines 294--295
+[][]|\TU/lmtt/m/n/12 jurisdiction\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 law_type\TU/l
+mr/m/n/12 , \TU/lmtt/m/n/12 law_number\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 year\TU/
+lmr/m/n/12 ,[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 303--304
-[]|\OT1/cmtt/m/n/12 keywords\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 legal[]domains\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 legal[]concepts\OT1/cmr/m/n/12 ,
+[][]|\TU/lmtt/m/n/12 keywords\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 legal_domains\TU/
+lmr/m/n/12 , \TU/lmtt/m/n/12 legal_concepts\TU/lmr/m/n/12 ,[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 306--307
-[]|\OT1/cmtt/m/n/12 has[]obligations\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 has[]penalties\OT1/cmr/m/n/12 ,
- []
-
-[50 <./figures/text_extracion_workflow.png>]
-<figures/articles_extraction_workflow.png, id=226, 608.2725pt x 211.992pt>
-File: figures/articles_extraction_workflow.png Graphic file (type png)
-<use figures/articles_extraction_workflow.png>
-Package pdftex.def Info: figures/articles_extraction_workflow.png  used on input line 324.
-(pdftex.def)             Requested size: 448.42822pt x 156.28612pt.
- [51] [52 <./figures/articles_extraction_workflow.png>]
-<figures/articles_validation_wrokflow.png, id=234, 608.2725pt x 214.401pt>
-File: figures/articles_validation_wrokflow.png Graphic file (type png)
-<use figures/articles_validation_wrokflow.png>
-Package pdftex.def Info: figures/articles_validation_wrokflow.png  used on input line 357.
-(pdftex.def)             Requested size: 448.42822pt x 158.0621pt.
-
-Overfull \hbox (28.47021pt too wide) in paragraph at lines 372--373
-[]\OT1/cmr/m/n/12 For each ar-ti-cle, bge-m3 pro-duces two com-ple-men-tary rep-re-sen-ta-tions from the \OT1/cmtt/m/n/12 embedding[]text
- []
-
-[53 <./figures/articles_validation_wrokflow.png>]
-<figures/embedding_workflow.png, id=239, 609.477pt x 206.57175pt>
-File: figures/embedding_workflow.png Graphic file (type png)
-<use figures/embedding_workflow.png>
-Package pdftex.def Info: figures/embedding_workflow.png  used on input line 384.
-(pdftex.def)             Requested size: 448.42822pt x 151.98758pt.
-
-Overfull \hbox (8.06477pt too wide) in paragraph at lines 407--408
-[]\OT1/cmr/m/n/12 Ten pay-load fields are in-dexed for fil-tered re-trieval, in-clud-ing \OT1/cmtt/m/n/12 year\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 law[]type\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 institution\OT1/cmr/m/n/12 ,
- []
-
-[54 <./figures/embedding_workflow.png>]
-<figures/vector_storage_workflow.png, id=245, 619.113pt x 195.73125pt>
-File: figures/vector_storage_workflow.png Graphic file (type png)
-<use figures/vector_storage_workflow.png>
-Package pdftex.def Info: figures/vector_storage_workflow.png  used on input line 411.
-(pdftex.def)             Requested size: 448.42822pt x 141.77159pt.
-<figures/rag_query_flow.png, id=246, 1541.76pt x 1027.84pt>
-File: figures/rag_query_flow.png Graphic file (type png)
-<use figures/rag_query_flow.png>
-Package pdftex.def Info: figures/rag_query_flow.png  used on input line 431.
-(pdftex.def)             Requested size: 472.03123pt x 314.67485pt.
- [55 <./figures/vector_storage_workflow.png>]
-Underfull \hbox (badness 3536) in paragraph at lines 469--469
-[]|\OT1/cmr/m/n/12 Multilingual ca-pa-bil-
+[][]|\TU/lmtt/m/n/12 has_obligations\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 has_penalt
+ies\TU/lmr/m/n/12 ,[]
  []
 
 
-Underfull \hbox (badness 7326) in paragraph at lines 476--477
-[]|\OT1/cmr/m/n/12 Permissive open-weight li-cense al-low-ing on-
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
+[][]|\TU/lmtt/m/n/12 source_name\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 source_date\TU
+/lmr/m/n/12 ,[]
  []
 
-[56 <./figures/rag_query_flow.png (PNG copy)>] [57]
-<figures/synthetic_data_domains.jpg, id=258, 1027.84pt x 501.875pt>
-File: figures/synthetic_data_domains.jpg Graphic file (type jpg)
-<use figures/synthetic_data_domains.jpg>
-Package pdftex.def Info: figures/synthetic_data_domains.jpg  used on input line 517.
-(pdftex.def)             Requested size: 401.22942pt x 195.91425pt.
- [58 <./figures/synthetic_data_domains.jpg>]
-Underfull \hbox (badness 2111) in paragraph at lines 553--553
-[]|\OT1/cmr/m/n/12 Real multi-turn con-ver-sa-
+[51]
+File: figures/articles_extraction_workflow.png Graphic file (type bmp)
+<figures/articles_extraction_workflow.png>
+ [52] [53]
+File: figures/articles_validation_wrokflow.png Graphic file (type bmp)
+<figures/articles_validation_wrokflow.png>
+
+Overfull \hbox (8.7293pt too wide) in paragraph at lines 365--365
+ []|[]\TU/lmr/bx/n/12 Turning Text into Searchable Numbers : Embedding Model (B
+AAI/bge-[]
+ []
+
+
+Overfull \hbox (30.41412pt too wide) in paragraph at lines 372--373
+[][]\TU/lmr/m/n/12 For each article, bge-m3 produces two complementary represen
+tations from the \TU/lmtt/m/n/12 embedding_text[]
+ []
+
+[54]
+File: figures/embedding_workflow.png Graphic file (type bmp)
+<figures/embedding_workflow.png>
+
+Overfull \hbox (9.34875pt too wide) in paragraph at lines 407--408
+[][]\TU/lmr/m/n/12 Ten payload fields are indexed for filtered retrieval, inclu
+ding \TU/lmtt/m/n/12 year\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 law_type\TU/lmr/m/n/1
+2 , \TU/lmtt/m/n/12 institution\TU/lmr/m/n/12 ,[]
+ []
+
+[55]
+File: figures/vector_storage_workflow.png Graphic file (type bmp)
+<figures/vector_storage_workflow.png>
+ [56]
+File: figures/rag_query_flow.png Graphic file (type bmp)
+<figures/rag_query_flow.png>
+ [57] [58]
+Underfull \hbox (badness 7362) in paragraph at lines 476--477
+[][]|\TU/lmr/m/n/12 Permissive open-weight license allowing on-[]
  []
 
 [59]
-<figures/dataset_composition.png, id=265, 722.7pt x 361.35pt>
-File: figures/dataset_composition.png Graphic file (type png)
-<use figures/dataset_composition.png>
-Package pdftex.def Info: figures/dataset_composition.png  used on input line 568.
-(pdftex.def)             Requested size: 401.22942pt x 200.61227pt.
+File: figures/synthetic_data_domains.jpg Graphic file (type bmp)
+<figures/synthetic_data_domains.jpg>
+ [60] [61]
+Underfull \hbox (badness 2111) in paragraph at lines 553--553
+[][]|\TU/lmr/m/n/12 Real multi-turn conversa-[]
+ []
 
+File: figures/dataset_composition.png Graphic file (type bmp)
+<figures/dataset_composition.png>
+[62]
 Underfull \hbox (badness 10000) in paragraph at lines 598--598
-[]|\OT1/cmr/m/n/12 Const.
+[][]|\TU/lmr/m/n/12 Const.[]
  []
 
 
 Overfull \hbox (21.83186pt too wide) in paragraph at lines 582--607
- [][] 
+ [][][][] 
  []
 
-[60 <./figures/dataset_composition.png>]
+
+Overfull \hbox (3.01259pt too wide) in paragraph at lines 611--612
+[][]\TU/lmr/m/n/12 Each standard batch of 20 examples is distributed across six
+ question categories. Table [][]III.8[][][]
+ []
+
+[63]
 Underfull \hbox (badness 10000) in paragraph at lines 624--624
-[]|\OT1/cmr/m/n/12 Multi-article syn-
+[][]|\TU/lmr/m/n/12 Multi-article syn-[]
  []
 
 
-Underfull \hbox (badness 2608) in paragraph at lines 626--626
-[]|\OT1/cmr/m/n/12 Principle and ex-
+Underfull \hbox (badness 2626) in paragraph at lines 626--626
+[][]|\TU/lmr/m/n/12 Principle and ex-[]
  []
 
 
-Underfull \hbox (badness 1320) in paragraph at lines 628--628
-\OT1/cmr/m/n/12 an-swer; model de-clines and rec-om-
+Underfull \hbox (badness 1400) in paragraph at lines 628--628
+[]\TU/lmr/m/n/12 answer; model declines and recom-[]
  []
 
 
 Underfull \hbox (badness 1648) in paragraph at lines 634--634
-[]|\OT1/cmr/m/n/12 Multi-issue le-gal nar-ra-tive re-quir-ing
+[][]|\TU/lmr/m/n/12 Multi-issue legal narrative requiring[]
  []
 
-[61]
-<figures/question_categories_chart.png, id=274, 650.43pt x 361.35pt>
-File: figures/question_categories_chart.png Graphic file (type png)
-<use figures/question_categories_chart.png>
-Package pdftex.def Info: figures/question_categories_chart.png  used on input line 645.
-(pdftex.def)             Requested size: 339.86305pt x 188.81836pt.
- [62]
-<figures/language_distribution_chart.png, id=278, 578.16pt x 433.62pt>
-File: figures/language_distribution_chart.png Graphic file (type png)
-<use figures/language_distribution_chart.png>
-Package pdftex.def Info: figures/language_distribution_chart.png  used on input line 652.
-(pdftex.def)             Requested size: 339.86305pt x 254.89404pt.
- [63 <./figures/question_categories_chart.png> <./figures/language_distribution_chart.png>]) [64] [65
+File: figures/question_categories_chart.png Graphic file (type bmp)
+<figures/question_categories_chart.png>
+[64]
+File: figures/language_distribution_chart.png Graphic file (type bmp)
+<figures/language_distribution_chart.png>
+ [65] [66]
+Underfull \hbox (badness 10000) in paragraph at lines 704--704
+[][]|\TU/lmtt/m/n/12 q_proj, k_proj, v_proj, o_proj,[]
+ []
+
+
+Overfull \hbox (45.0968pt too wide) in paragraph at lines 719--721
+[][]\TU/lmr/m/n/12 The Gemma 4 chat template uses \TU/lmtt/m/n/12 <|turn>user\n
+ \TU/lmr/m/n/12 as the instruction delimiter and \TU/lmtt/m/n/12 <|turn>model\n
+[]
+ []
+
+[67] [68]
+File: figures/ovh_notebook.png Graphic file (type bmp)
+<figures/ovh_notebook.png>
+ [69]) (chapters/chapter4.tex [70] [71]
+Chapitre IV.
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
+[][]|\TU/lmr/m/n/12 Qdrant[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[][]|\TU/lmr/m/n/12 BAAI/bge-reranker-v2-[]
+ []
+
+[72
 
 ]
-Overfull \hbox (32.35733pt too wide) in paragraph at lines 73--73
-[]\OT1/cmr/m/n/12 DigitalOcean, \OT1/cmr/m/it/12 LoRA: Low-rank adap-ta-tion for LLMs ex-plained\OT1/cmr/m/n/12 , $\OT1/cmtt/m/n/12 https : / / www . digitalocean .
+File: figures/qdrant_collection.png Graphic file (type bmp)
+<figures/qdrant_collection.png>
+ [73] [74]
+File: figures/telegram_1.png Graphic file (type bmp)
+<figures/telegram_1.png>
+File: figures/telegram_2.png Graphic file (type bmp)
+<figures/telegram_2.png>
+ [75]
+File: figures/n8n_logs.png Graphic file (type bmp)
+<figures/n8n_logs.png>
+ [76]
+File: figures/fastAPI_logs.png Graphic file (type bmp)
+<figures/fastAPI_logs.png>
+ [77] [78]
+LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
+(Font)              scaled to size 13.20007pt on input line 398.
+ [79] [80]
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+[][]|\TU/lmr/m/n/12 Citation and disclaimer[]
  []
 
 
-Overfull \hbox (18.4587pt too wide) in paragraph at lines 73--73
-[]\OT1/cmr/m/n/12 Towards AI, \OT1/cmr/m/it/12 De-vel-op-ing a retrieval-augmented gen-er-a-tion (RAG) pipeline us-ing LangChain\OT1/cmr/m/n/12 ,
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+[]\TU/lmr/m/n/12 conventions learned during[]
  []
 
 
-Overfull \hbox (18.77948pt too wide) in paragraph at lines 73--73
-[]\OT1/cmr/m/n/12 Qdrant, \OT1/cmr/m/it/12 Qdrant: Vec-tor database doc-u-men-ta-tion\OT1/cmr/m/n/12 , $\OT1/cmtt/m/n/12 https : / / qdrant . tech / documentation/$\OT1/cmr/m/n/12 ,
- []
-
-[66]
-Overfull \hbox (0.25154pt too wide) in paragraph at lines 73--73
-\OT1/cmr/m/n/12 quan-ti-za-tion for gen-er-a-tive pre-trained trans-form-ers,'' \OT1/cmr/m/it/12 arXiv preprint arXiv:2210.17323\OT1/cmr/m/n/12 ,
+Underfull \hbox (badness 10000) in paragraph at lines 468--468
+[][]|\TU/lmr/m/n/12 Factual retrieval[]
  []
 
 
-Overfull \hbox (38.82799pt too wide) in paragraph at lines 73--73
-[]\OT1/cmr/m/n/12 BAAI, \OT1/cmr/m/it/12 BAAI/bge-reranker-v2-m3: Lightweight cross-encoder reranker\OT1/cmr/m/n/12 , $\OT1/cmtt/m/n/12 https : / / huggingface .
+Underfull \hbox (badness 3536) in paragraph at lines 468--469
+[][]|\TU/lmr/m/n/12 Correct retrieval, reranking,[]
  []
 
 
-Overfull \hbox (22.73961pt too wide) in paragraph at lines 73--73
-[]\OT1/cmr/m/n/12 Qwen Team, \OT1/cmr/m/it/12 Qwen3.5: A fam-ily of ef-fi-cient hy-brid lan-guage mod-els\OT1/cmr/m/n/12 , $\OT1/cmtt/m/n/12 https : / / huggingface .
+Underfull \hbox (badness 5607) in paragraph at lines 470--471
+[][]|\TU/lmr/m/n/12 Language detection, Arabic[]
  []
 
-(chapters/annex1.tex [67]
-Appendix A.
+
+Underfull \hbox (badness 6268) in paragraph at lines 472--473
+[][]|\TU/lmr/m/n/12 No relevant article found;[]
+ []
+
+[81] [82] [83] [84]
+Underfull \hbox (badness 1817) in paragraph at lines 670--670
+[][]|\TU/lmr/m/n/12 Diploma conditions for[]
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 676--676
+[][]|\TU/lmr/m/n/12 Duration of ENF trai-[]
+ []
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 678--678
+[]\TU/lmr/m/n/12 inspecteur des finances[]
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 680--680
+[][]|\TU/lmr/m/n/12 Conditions for archives[]
+ []
+
+[85] [86]
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
+[][]|\TU/lmr/m/n/12 Multi-article syn-[]
+ []
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 743--743
+[][]|\TU/lmr/m/n/12 Principle and ex-[]
+ []
+
+
+Overfull \hbox (48.55345pt too wide) in paragraph at lines 735--752
+ [][][][] 
+ []
+
+[87]
+File: figures/jurist_evaluation.png Graphic file (type bmp)
+<figures/jurist_evaluation.png>
+
+
+LaTeX Warning: Reference `subsec:ch4-training' on page 88 undefined on input li
+ne 765.
+
+[88]
+Overfull \hbox (4.9606pt too wide) in paragraph at lines 779--780
+[][]\TU/lmr/m/n/12 Objective O3 requires that no data leave the local environme
+nt at inference time. Table [][]IV.9[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 790--790
+[][]|\TU/lmr/m/n/12 BAAI/bge-m3 (embed-[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 792--792
+[][]|\TU/lmr/m/n/12 Qdrant[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 794--794
+[][]|\TU/lmr/m/n/12 BAAI/bge-reranker-v2-[]
+ []
+
+
+Underfull \hbox (badness 4024) in paragraph at lines 820--820
+[][]|\TU/lmr/m/n/12 Domain adap-[]
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 820--820
+[][]|\TU/lmr/m/n/12 Correct citation and[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 820--820
+[]\TU/lmr/m/n/12 disclaimer on legal[]
+ []
+
+
+Underfull \hbox (badness 3291) in paragraph at lines 820--820
+[][]|\TU/lmr/m/n/12 Both models cite[]
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 820--820
+[]\TU/lmr/m/n/12 correctly and ap-[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 820--820
+[]\TU/lmr/m/n/12 disclaimer (Sec-[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+[][]|\TU/lmr/m/n/12 Dynamic re-[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+[]\TU/lmr/m/n/12 trieval from[]
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 822--822
+[]\TU/lmr/m/n/12 for factual queries;[]
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 822--822
+[]\TU/lmr/m/n/12 system declines out-[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+[]\TU/lmr/m/n/12 found; 3/3 out-[]
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 822--822
+[]\TU/lmr/m/n/12 of-scope questions[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+[]\TU/lmr/m/n/12 correctly declined[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+[]\TU/lmr/m/n/12 (Sections [][]3.2.1[][]–[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 824--824
+[][]|\TU/lmr/m/n/12 On-premises[]
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 824--824
+[][]|\TU/lmr/m/n/12 Confirmed for all[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 824--824
+[]\TU/lmr/m/n/12 five query-time[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 824--824
+[]\TU/lmr/m/n/12 components (Sec-[]
+ []
+
+[89] [90]) (chapters/general_conclusion.tex [91]) [92
+
+] [93] [94
+
+]
+Overfull \hbox (3.79932pt too wide) in paragraph at lines 105--105
+[][]\TU/lmr/m/n/12 P. []\TU/lmr/m/sc/12 Lewis[]​ \TU/lmr/m/n/12 et al., “Retrie
+val-Augmented Generation for Knowledge-Intensive NLP Tasks”,[]
+ []
+
+
+Overfull \hbox (36.89134pt too wide) in paragraph at lines 105--105
+[][][]\TU/lmr/m/sc/12 Qdrant[]​\TU/lmr/m/n/12 , \TU/lmr/m/it/12 Qdrant : Vector
+ Database Documentation\TU/lmr/m/n/12 , [][]$[][][][][] [] [] [] [][][][][][] [
+] [][][][] [] [][][][][][][][][][][][][][]$[][],[]
+ []
+
+[95]
+Overfull \hbox (59.34471pt too wide) in paragraph at lines 105--105
+[]\TU/lmr/m/n/12 Training Quantization for Generative Pre-trained Transformers”
+, \TU/lmr/m/it/12 arXiv preprint arXiv :2210.17323\TU/lmr/m/n/12 ,[]
+ []
+
+[96]
+Overfull \hbox (6.28339pt too wide) in paragraph at lines 105--105
+[][][]\TU/lmr/m/sc/12 Unsloth AI[]​\TU/lmr/m/n/12 , \TU/lmr/m/it/12 Unsloth : 2
+x Faster LLM Fine-Tuning\TU/lmr/m/n/12 , [][]$[][][][][] [] [] [] [][][][][][] 
+[] [][][] [] [][][][][][][][][] []$[][]
+ []
+
+(chapters/annex1.tex [97]
+Annexe A.
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
-[]|\OT1/cmr/m/n/12 Current life-cy-cle sta-tus: \OT1/cmtt/m/n/12 ACTIVE\OT1/cmr/m/n/12 ,
+[][]|\TU/lmr/m/n/12 Current lifecycle status : \TU/lmtt/m/n/12 ACTIVE\TU/lmr/m/
+n/12 ,[]
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 40--41
-[]|\OT1/cmr/m/n/12 Article num-ber as it ap-pears in the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
-[]|\OT1/cmr/m/n/12 Functional type: \OT1/cmtt/m/n/12 SUBSTANTIVE\OT1/cmr/m/n/12 ,
+Underfull \hbox (badness 1142) in paragraph at lines 40--41
+[][]|\TU/lmr/m/n/12 Article number as it appears in the[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 42--43
-\OT1/cmtt/m/n/12 PROCEDURAL\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 DEFINITIONAL\OT1/cmr/m/n/12 ,
+[][]|\TU/lmr/m/n/12 Functional type : \TU/lmtt/m/n/12 SUBSTANTIVE\TU/lmr/m/n/12
+ ,[]
  []
 
-[68
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+[]\TU/lmtt/m/n/12 PROCEDURAL\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 DEFINITIONAL\TU/lm
+r/m/n/12 ,[]
+ []
+
+[98
 
 ]
 Underfull \hbox (badness 2753) in paragraph at lines 59--60
-[]|\OT1/cmr/m/n/12 Search-optimized text com-bin-ing key
+[][]|\TU/lmr/m/n/12 Search-optimized text combining key[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 78--79
-[]|\OT1/cmr/m/n/12 Assessed tex-tual am-bi-gu-ity: \OT1/cmtt/m/n/12 LOW\OT1/cmr/m/n/12 ,
+[][]|\TU/lmr/m/n/12 Assessed textual ambiguity : \TU/lmtt/m/n/12 LOW\TU/lmr/m/n
+/12 ,[]
  []
 
-[69]
-Overfull \hbox (1.78503pt too wide) in paragraph at lines 107--107
-[]|\OT1/cmtt/m/n/12 institution[]primary| 
+[99]
+Overfull \hbox (3.60898pt too wide) in paragraph at lines 107--107
+[][]|\TU/lmtt/m/n/12 institution_primary| []
  []
 
 
-Overfull \hbox (14.13504pt too wide) in paragraph at lines 108--108
-[]|\OT1/cmtt/m/n/12 institution[]secondary| 
+Overfull \hbox (15.96898pt too wide) in paragraph at lines 108--108
+[][]|\TU/lmtt/m/n/12 institution_secondary| []
  []
 
-[70]
+[100]
+Overfull \hbox (3.60898pt too wide) in paragraph at lines 138--138
+[][]|\TU/lmtt/m/n/12 relation_target_ids| []
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 152--153
-[]|\OT1/cmr/m/n/12 Type of each en-tity: \OT1/cmtt/m/n/12 MINISTRY\OT1/cmr/m/n/12 ,
+[][]|\TU/lmr/m/n/12 Type of each entity : \TU/lmtt/m/n/12 MINISTRY\TU/lmr/m/n/1
+2 ,[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 165--166
-[]|\OT1/cmr/m/n/12 Identifier of the the-matic com-mu-
+[][]|\TU/lmr/m/n/12 Identifier of the thematic commu-[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 165--166
-\OT1/cmr/m/n/12 nity this ar-ti-cle be-longs to (e.g.,
+[]\TU/lmr/m/n/12 nity this article belongs to (e.g.,[]
  []
 
-[71]
-Overfull \hbox (6.23103pt too wide) in paragraph at lines 180--180
-[]|\OT1/cmtt/m/n/12 preceding[]article[]id| 
- []
-
-
-Overfull \hbox (6.23103pt too wide) in paragraph at lines 181--181
-[]|\OT1/cmtt/m/n/12 following[]article[]id| 
- []
-
-) (chapters/annex2.tex [72]
-Appendix B.
-
-Underfull \hbox (badness 7012) in paragraph at lines 23--23
-[]|\OT1/cmr/m/n/12 Question re-quir-ing two to
+[101]
+Overfull \hbox (9.78899pt too wide) in paragraph at lines 180--180
+[][]|\TU/lmtt/m/n/12 preceding_article_id| []
  []
 
 
-Underfull \hbox (badness 1960) in paragraph at lines 27--27
-[]|\OT1/cmr/m/n/12 Plausible ques-tion the code
+Overfull \hbox (9.78899pt too wide) in paragraph at lines 181--181
+[][]|\TU/lmtt/m/n/12 following_article_id| []
+ []
+
+) (chapters/annex2.tex [102]
+Annexe B.
+
+Overfull \hbox (2.78496pt too wide) in paragraph at lines 39--39
+[][]|\TU/lmr/m/n/12 CIRPP/IS| []
  []
 
 
-Underfull \hbox (badness 2359) in paragraph at lines 31--31
-[]|\OT1/cmr/m/n/12 Ambiguous ques-tion; model
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
+[][]|\TU/lmr/m/n/12 Const.[]
  []
 
 
-Underfull \hbox (badness 6510) in paragraph at lines 37--37
-[]|\OT1/cmr/m/n/12 User clearly needs an E-
+Overfull \hbox (21.40271pt too wide) in paragraph at lines 17--64
+ [][][][] 
+ []
+
+[103
+
+] [104]
+Underfull \hbox (badness 2486) in paragraph at lines 93--94
+[]\TU/lmr/m/n/12 should be standardised to two variants[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
-[]|\OT1/cmr/m/n/12 Wrong-service cor-
+Underfull \hbox (badness 2245) in paragraph at lines 120--120
+[][]|\TU/lmr/m/n/10.95 Principle and excep-[]
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 41--41
-[]|\OT1/cmr/m/n/12 User im-plies ser-vice A but
+Underfull \hbox (badness 5578) in paragraph at lines 124--124
+[][]|\TU/lmr/m/n/10.95 Sequential legal processes or[]
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 51--51
-[]|\OT1/cmr/m/n/12 Simple greet-ings; model re-
+Underfull \hbox (badness 2197) in paragraph at lines 130--130
+[][]|\TU/lmr/m/n/10.95 Multi-issue narrative requiring[]
  []
 
 
-Underfull \hbox (badness 2495) in paragraph at lines 59--59
-[]|\OT1/cmr/m/n/12 Translation re-quests; model
- []
-
-[73
-
-]
-Overfull \vbox (140.58711pt too high) has occurred while \output is active []
-
- [74]
-Overfull \hbox (11.32312pt too wide) in paragraph at lines 99--99
-[]|\OT1/cmr/m/n/12 CIRPP/IS| 
+Underfull \hbox (badness 1867) in paragraph at lines 136--136
+[][]|\TU/lmr/m/n/10.95 Wrong-service correc-[]
  []
 
 
-Overfull \hbox (0.95654pt too wide) in paragraph at lines 107--107
-[]|\OT1/cmr/m/n/12 Douanes| 
+Underfull \hbox (badness 2261) in paragraph at lines 138--138
+[][]|\TU/lmr/m/n/10.95 Casual phrasing; model reco-[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--113
-[]|\OT1/cmr/m/n/12 Const.
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+[][]|\TU/lmr/m/n/10.95 Multi-turn conversa-[]
  []
 
 
-Overfull \hbox (12.80331pt too wide) in paragraph at lines 77--124
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[][]|\TU/lmr/m/n/10.95 Simple greetings; model re-[]
  []
 
 
-Overfull \hbox (1.9541pt too wide) in paragraph at lines 130--131
-\OT1/cmr/m/n/12 All ex-am-ples use the Ope-nAI mes-sages for-mat with three roles: \OT1/cmtt/m/n/12 system\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 user\OT1/cmr/m/n/12 , and \OT1/cmtt/m/n/12 assistant\OT1/cmr/m/n/12 .
- []
-
-[75]
-Underfull \hbox (badness 10000) in paragraph at lines 151--151
-[]|\OT1/cmr/m/n/12 Single-turn only (con-
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[]\TU/lmr/m/n/10.95 sponds and invites a legal[]
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 153--154
-\OT1/cmr/m/n/12 should be stan-dard-ised to two vari-ants
+Underfull \hbox (badness 4048) in paragraph at lines 148--148
+[][]|\TU/lmr/m/n/10.95 Minimal queries; model asks[]
  []
 
-) [76] (main.aux)
+
+Underfull \hbox (badness 1052) in paragraph at lines 152--152
+[][]|\TU/lmr/m/n/10.95 Hostile messages; model stays[]
+ []
+
+
+LaTeX Warning: Float too large for page by 7.33728pt on input line 159.
+
+) [105] [106] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
 LaTeX Warning: There were undefined references.
 
-
-Package biblatex Warning: Please rerun LaTeX.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 00CD54AEB71DB0251DA04A031EAE5841;17399.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18323 strings out of 467870
- 450528 string characters out of 5435190
- 1238139 words of memory out of 5000000
- 47057 multiletter control sequences out of 15000+600000
- 644349 words of font info for 95 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 73i,12n,79p,1033b,1405s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\louai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (77 pages, 8958864 bytes).
-PDF statistics:
- 363 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 211 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31257 strings out of 402986
+ 733786 string characters out of 5455748
+ 1559870 words of memory out of 5000000
+ 59557 multiletter control sequences out of 15000+600000
+ 644863 words of font info for 130 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 84i,14n,93p,1360b,6259s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
+Output written on main.pdf (115 pages).

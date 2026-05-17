@@ -1,0 +1,53 @@
+\acswitchoff 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces E-Tafakna Company Logo \blx@tocontentsinit {0}\cite {etafakna2024website}}}{2}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces CRISP-DM Methodology Phases \blx@tocontentsinit {0}\cite {chapman2000crispdm}}}{8}{figure.1.2}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces TDSP Iterative Lifecycle \blx@tocontentsinit {0}\cite {microsoft2016tdsp}}}{9}{figure.1.3}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces DSR Process Model \blx@tocontentsinit {0}\cite {peffers2007dsrm}}}{10}{figure.1.4}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Azure AI Foundry Platform \blx@tocontentsinit {0}\cite {microsoft2024azureaifoundry}}}{13}{figure.1.5}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Google Vertex AI \blx@tocontentsinit {0}\cite {google2024vertexai}}}{14}{figure.1.6}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces OVHcloud AI Notebooks \blx@tocontentsinit {0}\cite {ovh2024notebooks}}}{15}{figure.1.7}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Visual Studio Code \blx@tocontentsinit {0}\cite {microsoft2024vscode}}}{16}{figure.1.8}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Python Programming Language \blx@tocontentsinit {0}\cite {python2024docs}}}{17}{figure.1.9}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow Automation Platform \blx@tocontentsinit {0}\cite {n8n2024docs}}}{18}{figure.1.10}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces FastAPI Framework \blx@tocontentsinit {0}\cite {fastapi2024docs}}}{19}{figure.1.11}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces The Transformer Architecture \blx@tocontentsinit {0}\cite {aiml2024transformer}}}{23}{figure.2.12}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces GPT - OpenAI \blx@tocontentsinit {0}\cite {brown2020gpt3}}}{24}{figure.2.13}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces LLaMA - Meta \blx@tocontentsinit {0}\cite {touvron2023llama}}}{24}{figure.2.14}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Qwen - Alibaba Cloud \blx@tocontentsinit {0}\cite {qwen2025qwen25}}}{24}{figure.2.15}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Gemma - Google \blx@tocontentsinit {0}\cite {gemma2024google}}}{24}{figure.2.16}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces LoRA: Low-Rank Adaptation of frozen weight matrices \blx@tocontentsinit {0}\cite {datadriveninvestor2024lora}}}{26}{figure.2.17}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces \xpg@aux {}{french}\ignorespaces LoRA vs Full Fine-Tuning: comparison of parameter update strategies \blx@tocontentsinit {0}\cite {digitalocean2024lora}}}{27}{figure.2.18}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces \xpg@aux {}{french}\ignorespaces The RAG Pipeline: indexing, retrieval, and generation stages \blx@tocontentsinit {0}\cite {towardsai2024rag}}}{29}{figure.2.19}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces \xpg@aux {}{french}\ignorespaces Chroma Vector Database \blx@tocontentsinit {0}\cite {chroma2024docs}}}{30}{figure.2.20}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces \xpg@aux {}{french}\ignorespaces Qdrant Vector Database \blx@tocontentsinit {0}\cite {qdrant2024docs}}}{30}{figure.2.21}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces \xpg@aux {}{french}\ignorespaces Overview of Common Chunking Strategies for RAG Pipelines}}{32}{figure.2.22}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces \xpg@aux {}{french}\ignorespaces Ollama Local Inference Framework \blx@tocontentsinit {0}\cite {ollama2024docs}}}{35}{figure.2.23}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces \xpg@aux {}{french}\ignorespaces vLLM Inference Engine \blx@tocontentsinit {0}\cite {kwon2023vllm}}}{35}{figure.2.24}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces \xpg@aux {}{french}\ignorespaces llama.cpp Inference Library \blx@tocontentsinit {0}\cite {ollama2024docs}}}{35}{figure.2.25}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.26}{\ignorespaces \xpg@aux {}{french}\ignorespaces Overall Architecture of the Legal AI System}}{43}{figure.3.26}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces \xpg@aux {}{french}\ignorespaces Flowchart of the Data Pipeline}}{44}{figure.3.27}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow: Automated Pipeline Orchestration}}{48}{figure.3.28}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow: Phase 1 -- PDF Acquisition}}{50}{figure.3.29}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow: Phase 2 -- Cloud Backup}}{50}{figure.3.30}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow: Phase 3 -- Text Extraction}}{51}{figure.3.31}%
+\contentsline {figure}{\numberline {3.32}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow: Phase 4 -- Article Extraction}}{53}{figure.3.32}%
+\contentsline {figure}{\numberline {3.33}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow: Phase 5 -- Validation and Scoring}}{54}{figure.3.33}%
+\contentsline {figure}{\numberline {3.34}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow: Phase 6 -- Embedding}}{55}{figure.3.34}%
+\contentsline {figure}{\numberline {3.35}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Workflow: Phase 7 -- Vector Storage}}{56}{figure.3.35}%
+\contentsline {figure}{\numberline {3.36}{\ignorespaces \xpg@aux {}{french}\ignorespaces RAG Query Flow: From User Question to Grounded Answer}}{58}{figure.3.36}%
+\contentsline {figure}{\numberline {3.37}{\ignorespaces \xpg@aux {}{french}\ignorespaces Industries and Domains Leveraging Synthetic Data (Source: \blx@tocontentsinit {0}\cite {pvml2025syntheticdata})}}{61}{figure.3.37}%
+\contentsline {figure}{\numberline {3.38}{\ignorespaces \xpg@aux {}{french}\ignorespaces Fine-Tuning Dataset Composition by Type}}{63}{figure.3.38}%
+\contentsline {figure}{\numberline {3.39}{\ignorespaces \xpg@aux {}{french}\ignorespaces Distribution of Question Categories in the Constructed Dataset}}{65}{figure.3.39}%
+\contentsline {figure}{\numberline {3.40}{\ignorespaces \xpg@aux {}{french}\ignorespaces Language Distribution Across the Full Training Dataset}}{65}{figure.3.40}%
+\contentsline {figure}{\numberline {3.41}{\ignorespaces \xpg@aux {}{french}\ignorespaces OVHcloud AI Notebook Instance Used for Fine-Tuning}}{70}{figure.3.41}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.42}{\ignorespaces \xpg@aux {}{french}\ignorespaces Qdrant Dashboard Showing the \texttt {jort\_articles\_v2} Collection After Indexing}}{73}{figure.4.42}%
+\contentsline {figure}{\numberline {4.43}{\ignorespaces \xpg@aux {}{french}\ignorespaces Telegram Notifications Received During Pipeline Execution}}{76}{figure.4.43}%
+\contentsline {figure}{\numberline {4.44}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Execution Panel During Pipeline Run}}{77}{figure.4.44}%
+\contentsline {figure}{\numberline {4.45}{\ignorespaces \xpg@aux {}{french}\ignorespaces FastAPI Server Logs During Pipeline Run}}{77}{figure.4.45}%
+\contentsline {figure}{\numberline {4.46}{\ignorespaces \xpg@aux {}{french}\ignorespaces Expert Evaluation Accuracy by Question Category and Model}}{88}{figure.4.46}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

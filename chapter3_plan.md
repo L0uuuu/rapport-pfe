@@ -1,6 +1,23 @@
 # Chapter 3 — Design and Development
 ## Full Planning Reference (updated from context_rag)
+nch → system retrieves relevant JORT articles → LLM generates a grounded, sourced answer
+- Two distinct flows running in the same system:
+  - **Offline pipeline:** raw PDFs → text → structured articles → embeddings → Qdrant (runs once, updated when new JORT issues are published)
+  - **Online flow (inference):** user query → embed → vector search → retrieved articles injected into LLM prompt → response
+- Figure: high-level architecture diagram (draw in draw.io, export as PNG)
 
+### 3.2 Pipeline Architecture — BPMN Diagram  ← USE BPMN HERE
+- BPMN diagram covering the full offline pipeline (7 phases)
+- Show the two flows as separate pools or lanes:
+  - Offline lane: Scraping → GDrive Upload → Text Extraction → Article Extraction → Embedding → Qdrant
+  - Online lane: Query → BGE-M3 embed → Qdrant hybrid search → Prompt assembly → LLM → Response
+- Tool: draw.io with BPMN shapes (free)
+
+### 3.3 Technology Stack
+| Layer | Technology | Role |
+|-------|-----------|------|
+| Scraping | Playwright (Python) | Browser automation on iort.gov.tn |
+| Storage | Google Drive + rclone
 ---
 
 ## Chapter Title
@@ -35,24 +52,7 @@ The chapter is divided into two independent but complementary parts:
 ## Section 3: RAG System Architecture
 
 ### 3.1 Overall Architecture and Data Flow
-- End goal: user asks a question in Arabic or French → system retrieves relevant JORT articles → LLM generates a grounded, sourced answer
-- Two distinct flows running in the same system:
-  - **Offline pipeline:** raw PDFs → text → structured articles → embeddings → Qdrant (runs once, updated when new JORT issues are published)
-  - **Online flow (inference):** user query → embed → vector search → retrieved articles injected into LLM prompt → response
-- Figure: high-level architecture diagram (draw in draw.io, export as PNG)
-
-### 3.2 Pipeline Architecture — BPMN Diagram  ← USE BPMN HERE
-- BPMN diagram covering the full offline pipeline (7 phases)
-- Show the two flows as separate pools or lanes:
-  - Offline lane: Scraping → GDrive Upload → Text Extraction → Article Extraction → Embedding → Qdrant
-  - Online lane: Query → BGE-M3 embed → Qdrant hybrid search → Prompt assembly → LLM → Response
-- Tool: draw.io with BPMN shapes (free)
-
-### 3.3 Technology Stack
-| Layer | Technology | Role |
-|-------|-----------|------|
-| Scraping | Playwright (Python) | Browser automation on iort.gov.tn |
-| Storage | Google Drive + rclone | Backup of raw PDFs |
+- End goal: user asks a question in Arabic or Fre | Backup of raw PDFs |
 | Text Extraction (digital) | PyMuPDF | Direct text layer extraction |
 | Text Extraction (scanned) | Gemini via Vertex AI | OCR for image-based pages |
 | Article Extraction | GPT-4.1 (Azure OpenAI) | Two-stage structured extraction |

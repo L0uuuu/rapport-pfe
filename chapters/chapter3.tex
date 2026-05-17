@@ -3,7 +3,7 @@
 \section{Introduction}
 \label{sec:ch3-introduction}
 
-This chapter covers the two central phases of our \ac{DSR} lifecycle: formalizing the project objectives and constructing the technological artifact. It is organized in two parts. The first, presented here, follows the \ac{RAG} system from its starting point, acquiring raw legal texts from official Tunisian sources, through to indexing them in a hybrid vector database ready for semantic retrieval. The second part, to be presented once the training experiments are complete, addresses the domain adaptation of the base language model through supervised fine-tuning on Tunisian legal data.
+This chapter covers the design and construction phase of the \ac{DSR} lifecycle, translating the three objectives defined in Section~\ref{sec:ch3-objectives} into a working system. It is organized in two parts. The first builds the retrieval backbone of the legal assistant: acquiring official Tunisian legal texts, structuring individual articles, validating their quality, and indexing them so that the most relevant ones can be surfaced in response to any user question; this is implemented as a \ac{RAG} pipeline. The second adapts a base language model to understand and respond within the vocabulary, citation conventions, and reasoning patterns of Tunisian law, grounding its answers in the retrieved articles rather than general-purpose knowledge; this is achieved through supervised fine-tuning.
 
 \section{Definition of Objectives}
 \label{sec:ch3-objectives}
@@ -186,7 +186,7 @@ The complete workflow consists of 50 nodes covering all seven phases, with notif
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{figures/n8n_workflow_ultra_upscaled.png}
+\includegraphics[width=0.6\textwidth]{figures/n8n_workflow_simple.png}
 \caption{n8n Workflow: Automated Pipeline Orchestration}
 \label{fig:n8n-workflow}
 \end{figure}
@@ -211,7 +211,7 @@ The primary source for the legal corpus is the Journal Officiel de la Républiqu
 
 Each section is accessible through both Arabic and French interfaces on the website, yielding six distinct scraping targets. Coverage spans from [START\_YEAR] to [END\_YEAR], producing a corpus of [N] JORT issues and [N] \ac{PDF} documents across all sections.
 
-\subsubsection{Automated PDF Acquisition}
+\subsubsection{Downloading the Legal Corpus: Automated PDF Acquisition}
 \label{subsec:scraping}
 
 The JORT website is a legacy application built on the WinDev/WebDev framework and exposes no public \ac{API}. Automated acquisition therefore requires direct browser interaction. We implemented a Python scraping system using Playwright \cite{playwright2024docs}, a browser automation library that drives a Chromium instance to navigate the site, select the target year and issue, and trigger the \ac{PDF} download for each entry.
@@ -245,7 +245,7 @@ Downloaded \ac{PDF}s are mirrored to Google Drive using rclone, a command-line u
 \subsection{Text Extraction and Article Structuring}
 \label{sec:text-structuring}
 
-\subsubsection{Hybrid PDF-to-Text Conversion}
+\subsubsection{Reading the Documents: Hybrid PDF-to-Text Conversion}
 \label{subsec:hybrid-extraction}
 
 The JORT corpus contains two fundamentally different categories of \ac{PDF}: digitally generated files, where the text is encoded as a selectable text layer, and scanned files, where each page is stored as a rasterized image with no embedded text. These two categories require distinct extraction strategies, applied on a per-page basis.
@@ -266,7 +266,7 @@ The output of this phase is one plain text file per JORT issue, with each page s
 \label{fig:text-extraction-workflow}
 \end{figure}
 
-\subsubsection{Article-Level Extraction Using GPT-4.1}
+\subsubsection{Isolating Each Legal Article: Article-Level Extraction Using GPT-4.1}
 \label{subsec:article-extraction}
 
 Converting plain text JORT issues into individually structured legal articles is the most semantically demanding step of the pipeline. Rather than applying a generic text-splitting strategy, we designed a two-stage extraction pipeline powered by GPT-4.1 \cite{microsoft2024azureopenai} that identifies and enriches legal articles as the natural semantic unit of the corpus.
@@ -335,7 +335,7 @@ As discussed in Chapter~II, the three most common chunking strategies for \ac{RA
 
 The two-stage GPT-4.1 extraction implements a structurally superior form of semantic chunking, guided by the actual legal architecture of the document rather than arbitrary size thresholds. Each resulting unit is a complete, self-contained legal article enriched with metadata that enables precise filtering and ranking at retrieval time. In Tunisian legal texts, the article is simultaneously the natural unit of legislative meaning and the natural unit of legal citation, making article-level segmentation the most semantically faithful representation of the corpus.
 
-\subsubsection{Two-Layer Validation and Scoring}
+\subsubsection{Keeping Only Quality Articles: Two-Layer Validation and Scoring}
 \label{subsec:validation}
 
 Before any article proceeds to embedding, it passes through a two-layer quality gate designed to filter out records that are too incomplete or malformed to be useful in retrieval.
@@ -362,7 +362,7 @@ The output of this phase is the same set of JSON files enriched in place, with a
 \subsection{Embedding and Vector Storage}
 \label{sec:embedding-vector}
 
-\subsubsection{Embedding Model: BAAI/bge-m3}
+\subsubsection{Turning Text into Searchable Numbers: Embedding Model (BAAI/bge-m3)}
 \label{subsec:bge-m3-embedding}
 
 Each validated article is converted into a vector representation using BAAI/bge-m3 \cite{chen2024bgem3}, a multilingual embedding model developed by the Beijing Academy of Artificial Intelligence. The model runs entirely on local hardware using the \texttt{FlagEmbedding} Python library, with no external \ac{API} call required at any stage of the embedding process.
@@ -386,7 +386,7 @@ Both representations are generated alongside all article metadata and persisted 
 \label{fig:embedding-workflow}
 \end{figure}
 
-\subsubsection{Hybrid Vector Database: Qdrant}
+\subsubsection{Where the Articles Are Stored: Hybrid Vector Database (Qdrant)}
 \label{subsec:qdrant-db}
 
 The embeddings and metadata produced in Phase 6 are stored in Qdrant \cite{qdrant2024docs}, an open-source vector database running in a local Docker container. Qdrant was selected over alternatives such as \ac{FAISS} and Chroma for three reasons: its native support for named vector fields enabling hybrid dense and sparse search within a single collection, its production-grade stability under concurrent queries, and its fully self-hosted deployment model that aligns with the on-premises constraints of the project.
@@ -413,10 +413,10 @@ Ten payload fields are indexed for filtered retrieval, including \texttt{year}, 
 \label{fig:vector-storage-workflow}
 \end{figure}
 
-\subsubsection{Retrieval at Inference Time}
+\subsubsection{When a User Asks a Question: Retrieval at Inference Time}
 \label{subsec:inference-retrieval}
 
-When a user submits a query to the legal assistant, the retrieval process closely mirrors the indexing process. The system first auto-detects the query language based on the proportion of Arabic Unicode characters in the input, selecting either the French or Arabic content fields for context injection accordingly. The query text is then embedded using the same bge-m3 model, producing a dense and a sparse vector, which are submitted to Qdrant as a hybrid search request. An optional year filter can be applied at this stage, restricting the search to articles from a specific year using a payload field condition. Qdrant returns an initial candidate pool of 20 articles ranked by \ac{RRF}-fused score.
+When a user submits a query to the legal assistant, the retrieval process closely mirrors the indexing process. The system first auto-detects the query language based on the proportion of Arabic Unicode characters in the input, selecting either the French or Arabic content fields for context injection accordingly. The query text is then embedded using the same bge-m3 model, producing a dense and a sparse vector, which are submitted to Qdrant as a hybrid search request. Qdrant returns an initial candidate pool of 20 articles ranked by \ac{RRF}-fused score.
 
 \vspace{1em}
 
@@ -428,7 +428,7 @@ The reranked articles are injected into the prompt of the fine-tuned language mo
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{figures/rag_query_flow.png}
+\includegraphics[width=0.8\textwidth]{figures/rag_query_flow.png}
 \caption{RAG Query Flow: From User Question to Grounded Answer}
 \label{fig:rag-query-flow}
 \end{figure}
@@ -662,10 +662,174 @@ Citation accuracy is the most critical quality constraint in a legal training da
 
 Approximately 50\% of the dataset was reviewed by legal professionals, with coverage distributed across all question categories and complexity levels. Reviewers assessed citation accuracy, the correctness and completeness of the legal reasoning in each answer, and the appropriateness of refusals and clarification requests. Across the full set of reviewed examples, fewer than 2\% required correction, confirming that the multi-model synthesis process combined with the verbatim citation constraint produces legally sound training data at scale.
 
-\section{Conclusion}
+% ----------------------------------------------------------------
+\subsection{Fine-Tuning Methodology}
+\label{sec:finetuning-methodology}
 
-This chapter presented the design and implementation of the two main components of the legal assistant. Part~I described the \ac{RAG} pipeline: starting from the official Tunisian legal gazette, the pipeline acquires, processes, and structures the full JORT corpus into individually enriched legal articles, passes them through a two-layer quality gate, converts them into bilingual dense and sparse vector representations using bge-m3, and stores them in a hybrid Qdrant collection optimized for legal retrieval. Retrieval at inference time combines hybrid vector search with cross-encoder reranking to surface the most relevant articles before they are injected into the language model's prompt. The complete pipeline runs under an automated n8n workflow backed by a FastAPI service layer, entirely on-premises with no dependency on external services.
+\subsubsection{Why Full Fine-Tuning Is Not Feasible}
+
+A standard full fine-tuning run updates every parameter in the model simultaneously. For a model with 7.98 billion parameters, storing the weights alone in 16-bit floating-point precision requires approximately 16 GB. During training, the Adam optimizer \cite{kingma2014adam} must additionally maintain two momentum tensors per parameter, which together consume a further 32 GB in full precision. Adding gradients and intermediate activations, the total memory requirement for full fine-tuning exceeds 60 GB, well above the 32 GB ceiling of the Tesla V100S used for this project.
 
 \vspace{1em}
 
-Part~II opened the fine-tuning component with the selection of two open-weight \acp{SLM}, Qwen3.5~9B and Gemma~4~E4B, and the construction of a 1,762-example Tunisian legal training dataset synthesized using GPT~5.2, Qwen~3.6, and Claude~Opus~4.6 in rotation across 20 legal codes, validated by legal professionals with a correction rate below 2\%. The following sections address the supervised fine-tuning procedure using \ac{QLoRA} and the preparation of the trained models for integration with the retrieval layer.
+The solution is to freeze the base model weights entirely and attach a small number of trainable adapter parameters using \ac{LoRA} \cite{peft2024}. Since the frozen weights do not require gradients, optimizer states and backward-pass memory are limited to the adapter parameters only, bringing the peak \ac{VRAM} requirement within the available hardware budget. The two models use slightly different variants of this approach: Gemma~4~E4B is trained with standard \ac{LoRA} on a full-precision base, while Qwen3.5~9B is trained with \ac{QLoRA} \cite{peft2024}, where the base model is additionally loaded in 4-bit NF4 quantization before adapters are attached, further reducing the base weight memory footprint.
+
+\subsubsection{Adapter Configuration}
+
+\ac{LoRA} injects a pair of trainable low-rank matrices, $A \in \mathbb{R}^{r \times d}$ and $B \in \mathbb{R}^{d \times r}$, alongside each frozen weight matrix $W$. Only the product $BA$ is trained; at inference time the adapter can be merged back into the base weights at no additional computational cost. \ac{QLoRA} extends this by additionally quantizing the frozen base weights to 4-bit NF4 format before attaching the adapters, reducing the base model's \ac{VRAM} footprint by approximately 75\% relative to fp16 while keeping the adapter parameters in full precision for training.
+
+\vspace{1em}
+
+Both models share the same adapter configuration: rank $r = 16$, scaling factor $\alpha = 32$, dropout disabled, and adapters attached to all seven linear projection layers in the attention and feed-forward blocks. The difference between the two runs is the base model precision. Gemma~4~E4B was loaded at fp16 without quantization, as its \ac{PLE} architecture already provides a compact active \ac{VRAM} footprint. For Qwen3.5~9B, loading the full 9B model in fp16 (approximately 18 GiB) alongside the adapter parameters, optimizer states, and training activations on a single V100S exceeded the 32 GiB \ac{VRAM} ceiling, making standard \ac{LoRA} training infeasible. \ac{QLoRA} resolved this by quantizing the frozen base weights to 4-bit NF4 before attaching the adapters, reducing the base model footprint to approximately 5 GiB and bringing total peak \ac{VRAM} usage within budget. Gradient checkpointing was enabled for both runs using Unsloth's \cite{unsloth2024} optimized implementation. Table~\ref{tab:lora-config} summarises the full adapter configuration for each model.
+
+\begin{table}[H]
+\centering
+\caption{Adapter Configuration by Model}
+\label{tab:lora-config}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{5cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+\textbf{Parameter} & \textbf{Gemma~4~E4B} & \textbf{Qwen3.5~9B} \\
+\hline
+Method & \ac{LoRA} & \ac{QLoRA} \\
+\hline
+Base model precision & fp16 & 4-bit NF4 \\
+\hline
+Rank ($r$) & 16 & 16 \\
+\hline
+Scaling factor ($\alpha$) & 32 & 32 \\
+\hline
+Dropout & 0 (disabled) & 0 (disabled) \\
+\hline
+Target modules & \multicolumn{2}{p{9cm}|}{\texttt{q\_proj, k\_proj, v\_proj, o\_proj, gate\_proj, up\_proj, down\_proj}} \\
+\hline
+Gradient checkpointing & Unsloth optimized & Unsloth optimized \\
+\hline
+Trainable parameters & 40,583,168 (0.51\%) & 29,097,984 (0.31\%) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{What the Model Is Trained to Do: Response-Only Masking}
+
+The training objective is standard next-token prediction with cross-entropy loss, restricted to the assistant turns of each conversation. The \texttt{train\_on\_responses\_only} function from the Unsloth library \cite{unsloth2024} sets the loss weight to zero for all system and user tokens, so the model is penalized only for errors in its own generated output. This is essential for the legal assistant use case: the model must learn to produce well-formed, citation-accurate answers from the retrieved context in the \textit{Documents pertinents} block, not to reproduce the question or the article text, which it receives as input.
+
+\vspace{1em}
+
+The Gemma 4 chat template uses \texttt{<|turn>user\textbackslash n} as the instruction delimiter and 
+\texttt{<|turn>model\textbackslash n} as the response delimiter. The masking function identifies these boundaries in each tokenized example and zeroes out the loss for all tokens preceding the response delimiter.
+
+\subsubsection{Out-of-Memory Error and Parameter Adjustment}
+
+This error occurred exclusively during the fine-tuning of Gemma~4~E4B on a single V100S instance. The initial configuration used a per-device batch size of 2 and a maximum sequence length of 4,096 tokens. After loading the base model (14.8 GiB) and initializing the LoRA adapters and optimizer (26.5 GiB total), the run terminated with an out-of-memory error on the first forward pass.
+
+\vspace{1em}
+
+The root cause is that activation memory during training scales with batch size and sequence length jointly. For a transformer layer, the activation tensors for a single forward-backward pass occupy memory proportional to $\text{batch\_size} \times \text{seq\_len} \times d_{\text{model}}$. With a batch size of 2 and a sequence length of 4,096, the activation tensors for a single accumulation step exceeded the remaining \ac{VRAM} headroom after weights and optimizer states were loaded.
+
+\vspace{1em}
+
+The adjustment followed directly from this analysis: the batch size was reduced from 2 to 1, and the maximum sequence length was halved from 4,096 to 2,048. To keep the effective batch size unchanged at 8, the gradient accumulation steps were doubled from 4 to 8. The revised configuration brought peak \ac{VRAM} usage to 30.8 GiB, within the 32 GiB ceiling. Qwen3.5~9B was configured with the same adjusted parameters from the start, applying the lesson learned from Gemma's run. Table~\ref{tab:oom-adjustment} summarises the before and after.
+
+\begin{table}[H]
+\centering
+\caption{Parameter Adjustment Following the Out-of-Memory Error}
+\label{tab:oom-adjustment}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{5.5cm}|c|c|}
+\hline
+\textbf{Parameter} & \textbf{Initial (failed)} & \textbf{Adjusted (final)} \\
+\hline
+Per-device batch size & 2 & 1 \\
+\hline
+Gradient accumulation steps & 4 & 8 \\
+\hline
+Effective batch size & 8 & 8 \\
+\hline
+Maximum sequence length (tokens) & 4,096 & 2,048 \\
+\hline
+Peak \ac{VRAM} usage & $>$ 32 GiB (OOM) & 30.8 GiB \\
+\hline
+\end{tabular}
+\end{table}
+
+% ----------------------------------------------------------------
+\subsection{Training Configuration}
+\label{sec:training-configuration}
+
+\subsubsection{Hyperparameters}
+
+Both models were trained under the same hyperparameter configuration. Table~\ref{tab:training-hyperparams} lists the complete set of values applied to both runs.
+
+\begin{table}[H]
+\centering
+\caption{Training Hyperparameters (Both Models)}
+\label{tab:training-hyperparams}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{5.5cm}|p{7cm}|}
+\hline
+\textbf{Hyperparameter} & \textbf{Value} \\
+\hline
+Per-device batch size & 1 \\
+\hline
+Gradient accumulation steps & 8 \\
+\hline
+Effective batch size & 8 \\
+\hline
+Number of epochs & 3 \\
+\hline
+Learning rate & $2 \times 10^{-4}$ \\
+\hline
+LR scheduler & Cosine decay \\
+\hline
+Warmup ratio & 0.05 \\
+\hline
+Optimizer & AdamW 8-bit \\
+\hline
+Weight decay & 0.01 \\
+\hline
+Gradient clipping (max norm) & 1.0 \\
+\hline
+Precision & fp16 \\
+\hline
+Maximum sequence length & 2,048 tokens \\
+\hline
+Sequence packing & Disabled \\
+\hline
+Random seed & 42 \\
+\hline
+\end{tabular}
+\end{table}
+
+Sequence packing was disabled to preserve the conversational integrity of each training example. Legal question-answer pairs vary considerably in length, and mixing tokens from different examples within a single packed sequence would risk the model learning spurious cross-example associations. AdamW with 8-bit precision was used to reduce optimizer memory consumption without affecting gradient quality.
+
+\subsubsection{Training Infrastructure}
+
+Both models were trained on OVHcloud \cite{ovhcloud2024ainotebooks} AI Notebook instances, as shown in Figure~\ref{fig:ovh-notebook}. Gemma~4~E4B was trained on a single NVIDIA Tesla V100S with 32 GiB of \ac{VRAM} using standard \ac{LoRA} with an fp16 base. Qwen3.5~9B was trained on a single NVIDIA Tesla V100S using \ac{QLoRA}, with the base model loaded in 4-bit NF4 quantization. The quantitative results for both runs, including loss curves, training duration, and peak \ac{VRAM} usage, are reported in Chapter~IV alongside the evaluation experiments.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/ovh_notebook.png}
+\caption{OVHcloud AI Notebook Instance Used for Fine-Tuning}
+\label{fig:ovh-notebook}
+\end{figure}
+
+% ----------------------------------------------------------------
+\subsection{Quantization and Deployment}
+\label{sec:quantization-deployment}
+
+\subsubsection{LoRA Adapter Export}
+
+On completion of training, the LoRA adapter weights were saved independently of the base model. The adapter is stored as a single \texttt{adapter\_model.safetensors} file of 154.9 MB, accompanied by the tokenizer and configuration files, for a total size of 185.6 MB. This compact representation can be loaded on top of any copy of the base model at inference time without rewriting the base weights, making it straightforward to update the adapter independently of the base model in future training iterations.
+
+\subsubsection{Preparing the Model for Production: GGUF Export and Local Deployment}
+
+For on-premises deployment at \ac{ATI} Tunisie, the adapter was merged with the base model and the combined weights were exported to the \ac{GGUF} format using Unsloth's built-in export utility \cite{unsloth2024}. The quantization method applied was \texttt{q4\_k\_m}, a 4-bit scheme that groups weights into blocks and uses k-means clustering with mixed precision to assign larger quantization budgets to the layers most sensitive to precision loss. This method reduces the model's on-disk footprint to approximately one quarter of its fp16 size while preserving inference quality suitable for production use.
+
+\vspace{1em}
+
+The resulting \ac{GGUF} file is served locally using Ollama on \ac{ATI} Tunisie's infrastructure, with no external \ac{API} dependency at inference time, in line with objective O3 established in Section~\ref{sec:ch3-objectives}.
+
+\section{Conclusion}
+
+This chapter covered the design and implementation of both components of the legal assistant. Part~I built the retrieval pipeline: legal texts are acquired from the official Tunisian gazette, structured into individual articles, filtered through a two-layer quality gate, embedded using bge-m3, and stored in a hybrid Qdrant collection, with the full workflow orchestrated by n8n and backed by a FastAPI service layer, entirely on-premises. Part~II adapted two candidate models to the legal domain: Gemma~4~E4B using standard \ac{LoRA} on an fp16 base, and Qwen3.5~9B using \ac{QLoRA} with a 4-bit NF4 base to fit within the single V100S budget. Both models were exported to \ac{GGUF} format for local deployment at \ac{ATI} Tunisie. Their training results and comparative evaluation are presented in Chapter~IV.
