@@ -1,0 +1,51 @@
+% ============================================================
+% Signature Page
+% ============================================================
+
+\newcommand{\signaturebox}[2]{%
+  \begin{tikzpicture}
+    \node[
+      draw=black,
+      line width=1.2pt,
+      rounded corners=12pt,
+      minimum width=\linewidth,
+      minimum height=5.5cm,
+      text width=\dimexpr\linewidth-1.5cm\relax,
+      align=left,
+      anchor=north west,
+      inner sep=12pt
+    ] {%
+      \vspace{0.2cm}
+      #1 \\[0.3cm]
+      \centerline{\textbf{#2}}
+      \vspace{3.5cm}
+    };
+  \end{tikzpicture}%
+}
+
+\clearpage
+\thispagestyle{empty}
+
+\vspace*{1cm}
+
+\begin{center}
+  {\LARGE \textbf{Company Supervisor}}
+\end{center}
+
+\vspace{0.8cm}
+
+\noindent
+\signaturebox{I authorize the student to submit their internship report for defense.}{Signature and stamp:}
+
+\vspace{1.5cm}
+
+\begin{center}
+  {\LARGE \textbf{Academic Supervisor (ISI)}}
+\end{center}
+
+\vspace{0.8cm}
+
+\noindent
+\signaturebox{I authorize the student to submit their internship report for defense.}{Signature:}
+
+\clearpage

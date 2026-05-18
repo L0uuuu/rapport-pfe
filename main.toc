@@ -118,27 +118,28 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Query 1: Contract Validity Under Tunisian Law (French, Direct QA)}{78}{subsubsection.4.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Query 2: Diploma Conditions for an Archives Examination (French, JORT Corpus)}{79}{subsubsection.4.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}Query 3: Arabic Query on the Same Examination}{80}{subsubsection.4.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Query 4: Out-of-Domain Query (Confidence Gate)}{80}{subsubsection.4.2.3.4}%
-\contentsline {subsection}{\numberline {2.4}Pipeline Execution Walkthrough}{81}{subsection.4.2.4}%
-\contentsline {section}{\numberline {3}Part II: Evaluation}{82}{section.4.3}%
-\contentsline {subsection}{\numberline {3.1}Training Results}{82}{subsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Gemma 4 E4B}{82}{subsubsection.4.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Qwen3.5 9B}{83}{subsubsection.4.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Side-by-Side Comparison}{84}{subsubsection.4.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Retrieval Evaluation}{85}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Finding the Right Article}{85}{subsubsection.4.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Handling Out-of-Scope Questions}{86}{subsubsection.4.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Expert Evaluation by Legal Professionals}{87}{subsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Evaluation Protocol}{87}{subsubsection.4.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Results by Category}{87}{subsubsection.4.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Discussion}{88}{subsubsection.4.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}On-Premises Compliance}{89}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {3.5}Objectives Summary}{89}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {3.6}Limitations and Identified Improvements}{90}{subsection.4.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Corpus Scale}{90}{subsubsection.4.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Routing Underperformance}{90}{subsubsection.4.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.3}Graph RAG as a Structural Improvement}{90}{subsubsection.4.3.6.3}%
-\contentsline {section}{\numberline {4}Conclusion}{91}{section.4.4}%
-\contentsline {chapter}{General Conclusion}{92}{chapter*.7}%
-\contentsline {chapter}{\numberline {A}Legal Article Enrichment Schema}{98}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Fine-Tuning Dataset: Full Reference}{103}{appendix.B}%
+\contentsline {subsubsection}{\numberline {2.3.4}Query 4: Out-of-Domain Query (Confidence Gate)}{81}{subsubsection.4.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Pipeline Execution Walkthrough}{82}{subsection.4.2.4}%
+\contentsline {section}{\numberline {3}Part II: Evaluation}{86}{section.4.3}%
+\contentsline {subsection}{\numberline {3.1}Training Results}{86}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Gemma 4 E4B}{86}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Qwen3.5 9B}{87}{subsubsection.4.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Side-by-Side Comparison}{87}{subsubsection.4.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Retrieval Evaluation}{88}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Finding the Right Article}{88}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Handling Out-of-Scope Questions}{89}{subsubsection.4.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Expert Evaluation by Legal Professionals}{90}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Evaluation Protocol}{90}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Results by Category}{90}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Discussion}{91}{subsubsection.4.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}On-Premises Compliance}{92}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {3.5}Objectives Summary}{92}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {3.6}Limitations and Identified Improvements}{93}{subsection.4.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Corpus Scale}{93}{subsubsection.4.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Routing Underperformance}{93}{subsubsection.4.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Graph RAG as a Structural Improvement}{93}{subsubsection.4.3.6.3}%
+\contentsline {section}{\numberline {4}Conclusion}{94}{section.4.4}%
+\contentsline {chapter}{General Conclusion}{95}{chapter*.7}%
+\contentsline {chapter}{\numberline {A}Legal Article Enrichment Schema}{101}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Fine-Tuning Dataset: Full Reference}{106}{appendix.B}%
+\contentsline {chapter}{Appendix C: Carbon Footprint of the Final Year Project}{110}{appendix*.9}%

@@ -48,6 +48,8 @@
 \contentsline {figure}{\numberline {4.43}{\ignorespaces \xpg@aux {}{french}\ignorespaces Telegram Notifications Received During Pipeline Execution}}{76}{figure.4.43}%
 \contentsline {figure}{\numberline {4.44}{\ignorespaces \xpg@aux {}{french}\ignorespaces n8n Execution Panel During Pipeline Run}}{77}{figure.4.44}%
 \contentsline {figure}{\numberline {4.45}{\ignorespaces \xpg@aux {}{french}\ignorespaces FastAPI Server Logs During Pipeline Run}}{77}{figure.4.45}%
-\contentsline {figure}{\numberline {4.46}{\ignorespaces \xpg@aux {}{french}\ignorespaces Expert Evaluation Accuracy by Question Category and Model}}{88}{figure.4.46}%
+\contentsline {figure}{\numberline {4.46}{\ignorespaces \xpg@aux {}{french}\ignorespaces RAG Query Pipeline Terminal Output - Interactive Mode}}{84}{figure.4.46}%
+\contentsline {figure}{\numberline {4.47}{\ignorespaces \xpg@aux {}{french}\ignorespaces RAG Query Pipeline Terminal Output - Single-Query Mode}}{85}{figure.4.47}%
+\contentsline {figure}{\numberline {4.48}{\ignorespaces \xpg@aux {}{french}\ignorespaces Expert Evaluation Accuracy by Question Category and Model}}{91}{figure.4.48}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

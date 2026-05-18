@@ -2,6 +2,7 @@
 
 % ---- Packages ----
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{titlesec}
 \usepackage{chngcntr}
 \usepackage{acro}
@@ -16,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage[table]{xcolor}
 \usepackage{hyperref}
 \usepackage{fontspec}
 \usepackage{polyglossia}
@@ -44,6 +46,8 @@
 \renewcommand{\thesection}{\arabic{section}}
 \counterwithout{figure}{chapter}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\counterwithout{table}{chapter}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 % ---- Section depth ----
 \setcounter{secnumdepth}{3}
 
@@ -68,6 +72,21 @@
 
 % Title page — no page number here, that is correct
 \input{titlepage}
+
+% Signature page — no page number
+\input{chapters/page_signature}
+
+% Honorable mention — no page number
+\input{chapters/dedication}
+
+
+% Personal dedication
+\input{chapters/dedicace}
+
+% Acknowledgments
+\input{chapters/remerciements}
+
+
 
 % ---- Front matter (roman numerals) ----
 \pagenumbering{roman}
@@ -106,5 +125,6 @@
 \appendix
 \input{chapters/annex1}
 \input{chapters/annex2}
+\input{chapters/annex3}
 
 \end{document}

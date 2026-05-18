@@ -371,8 +371,8 @@ This query targets the indexed \ac{JORT} corpus directly and verifies that the r
 \noindent\textbf{Gemma~4~E4B response:}
 
 \begin{quote}
-En vertu de l'article premier de l'arrêté relatif au concours de recrutement de gestionnaires de documents et d'archives, les candidats doivent être titulaires soit d'un diplôme de technicien supérieur en gestion des archives et de la documentation (deux années d'études supérieures), soit d'un mastère en sciences de l'information et des bibliothèques (quatre années d'études supérieures). La limite d'âge est fixée à quarante ans à la date de clôture des candidatures.
-Sources~: art.~1 de l'arrêté, JORT n\textsuperscript{o}~2, 6 janvier 2026. Ceci ne constitue pas un avis juridique.
+En vertu de l'article~1 du décret du 5~janvier~2026, le concours externe de gestionnaire de documents et d'archives est ouvert aux candidats titulaires d'un diplôme de spécialité. Deux parcours sont possibles~: soit un cycle d'études supérieures d'au moins deux~(2) ans aboutissant à un diplôme en gestion des documents et des archives~; soit un cycle de quatre~(4) ans aboutissant à une maîtrise en bibliothéconomie, documentation et archivistique. Une dispense est accordée si le diplôme de formation est homologué au niveau requis. Par ailleurs, les candidats doivent être âgés de 40~ans au plus.
+Sources~: art.~1 du décret n\textsuperscript{o}~2026-2000 du 5~janvier~2026. Ceci ne constitue pas un avis juridique. Pour votre situation spécifique, consultez un avocat.
 \end{quote}
 
 \noindent\textbf{Qwen3.5~9B response:}
@@ -382,7 +382,7 @@ Conformément à l'article premier de l'arrêté du Conseil national des région
 Sources~: art.~1 de l'arrêté, JORT n\textsuperscript{o}~2, 6 janvier 2026. Ceci ne constitue pas un avis juridique. Pour votre situation spécifique, consultez un avocat.
 \end{quote}
 
-Both models correctly identified the two diploma pathways and the age limit stated in Article~1, and cited the source in the expected format. The reranker score for this article exceeded the 0.4 confidence threshold, confirming that generation was triggered on a reliable retrieval result.
+Gemma's response described three admission pathways: a two-year specialist diploma in document and archive management, a four-year master's in library science, documentation, and archiving, and a dispensation granted when a training diploma is recognised at the required level. Qwen's response identified the same two main diploma routes but did not mention the dispensation option. Both models cited the correct article and appended the required legal disclaimer. The reranker score for this article exceeded the 0.4 confidence threshold, confirming that generation was triggered on a reliable retrieval result.
 
 % ----------------------------------------------------------------
 \subsubsection{Query 3: Arabic Query on the Same Examination}
@@ -409,7 +409,7 @@ This query repeats the same request in Arabic to verify language detection, the 
 \noindent\textbf{Gemma~4~E4B response:}
 
 \begin{quote}
-\textarabic{وفقاً للفصل الأول من القرار المتعلق بمناظرة انتداب متصرفي الوثائق والأرشيف بالمجلس الوطني للجهات والأقاليم، يُشترط في المترشح أن يكون حاملاً إما لشهادة تقني سامٍ في الأرشيف والتوثيق، أو لشهادة الماجستير في علوم المعلومات والمكتبات، على ألا يتجاوز سنُّه أربعين سنة عند غلق التسجيل. المصادر: الفصل الأول، الرائد الرسمي عدد~2، 6 جانفي 2026. هذا لا يُعدّ استشارةً قانونية.}
+\textarabic{بمقتضى قرار رئيس المجلس الوطني للأقاليم والجهات المؤرخ في 5 جانفي 2026، وتحديداً الفصل الأول، يشترط للترشح بمناظرة متصرفي الوثائق والأرشيف أحد المسارات الثلاثة التالية: (1) الحصول على شهادة في اختصاص التصرف في الوثائق والأرشيف بعد إتمام مرحلة دراسات عليا لا تقل مدتها عن سنتين؛ (2) الحصول على شهادة الماجستير في علم المكتبات والتوثيق والأرشفة بعد إتمام مرحلة دراسات عليا لا تقل مدتها عن أربع سنوات؛ (3) أو تقديم شهادة تكوين معترف بها في المستوى المذكور. علاوة على ذلك، يشترط ألا يتجاوز سن المترشح أربعين (40) سنة، وفقاً للأحكام المعمول بها. أما بالنسبة لمجال الاختبارات، فقد نصّ الفصل 11 على أنها تتكون من اختبار كتابي في الاختصاص (ساعتان، معامل 2) واختبار شفوي (عرض لمدة 10 دقائق، مناقشة لمدة 10 دقائق، معامل 1). هذا لا يشكل استشارة قانونية. لوضعك الخاص، يُرجى استشارة محامٍ. المصادر: الفصل 1، 11، و17 من قرار 5 جانفي 2026 المتعلق بضبط مناظرة متصرفي الوثائق والأرشيف.}
 \end{quote}
 
 \noindent\textbf{Qwen3.5~9B response:}
@@ -418,7 +418,7 @@ This query repeats the same request in Arabic to verify language detection, the 
 \textarabic{وفقاً للفصل الأول من قرار المجلس الوطني للجهات والأقاليم المتعلق بفتح مناظرة لانتداب متصرفي الوثائق والأرشيف، يشترط في المترشح حمل شهادة تقني سامٍ في تصرف الوثائق والأرشيف أو شهادة الماجستير في علوم المعلومات والمكتبات، على ألا يتجاوز سنه الأربعين عاماً عند انقضاء أجل التسجيل. المصادر: الفصل 1 من القرار، الرائد الرسمي عدد 2، 6 جانفي 2026. هذا لا يُعدّ استشارةً قانونية. للحصول على مشورة خاصة بوضعك، استشر محامياً.}
 \end{quote}
 
-The language detection module classified this query as Arabic based on the proportion of Arabic Unicode characters in the input. The pipeline selected the \texttt{content\_ar} fields for both reranking and prompt construction, and both models generated their responses entirely in Arabic, matching the query language.
+The language detection module classified this query as Arabic based on the proportion of Arabic Unicode characters in the input. The pipeline selected the \texttt{content\_ar} fields for both reranking and prompt construction, and both models responded entirely in Arabic. Gemma's response was more detailed than Qwen's: beyond listing three eligibility pathways from Article~1 (the two-year specialist diploma, the four-year master's, and a recognised equivalent certificate) and the 40-year age limit, it also extracted the examination structure from Article~11, covering the written test duration and coefficient and the oral presentation format. Qwen's response focused strictly on the eligibility conditions stated in Article~1. Both citations are accurate; the difference reflects how much of the retrieved context each model synthesised into its response.
 
 % ----------------------------------------------------------------
 \subsubsection{Query 4: Out-of-Domain Query (Confidence Gate)}
@@ -439,7 +439,7 @@ This query concerns tax fraud penalties, a topic absent from the two indexed \ac
 \noindent\textbf{Gemma~4~E4B response:}
 
 \begin{quote}
-Je n'ai pas trouvé d'articles juridiques pertinents dans la base de connaissances concernant les sanctions en matière de fraude fiscale en Tunisie. Ce sujet n'est pas couvert par les documents actuellement indexés. Pour obtenir des informations précises, je vous recommande de consulter un avocat spécialisé en droit fiscal tunisien ou de vous référer directement au Code des droits et procédures fiscaux. Ceci ne constitue pas un avis juridique.
+Les documents fournis ne contiennent pas d'informations suffisantes pour répondre à votre question sur les sanctions en cas de fraude fiscale en Tunisie. Le Code des droits et obligations fiscales ne traite que des droits à recevoir l'impôt et des procédures de recouvrement, sans aborder les sanctions pénales ou administratives liées à la fraude. Je vous recommande de consulter un avocat spécialisé en droit fiscal ou de vous référer au Code de Procédure Fiscale ainsi qu'aux dispositions du Code Pénal Fiscal. Ceci ne constitue pas un avis juridique. Pour votre situation spécifique, consultez un avocat.
 \end{quote}
 
 \noindent\textbf{Qwen3.5~9B response:}
@@ -448,7 +448,7 @@ Je n'ai pas trouvé d'articles juridiques pertinents dans la base de connaissanc
 Aucun article pertinent n'a été trouvé dans les documents indexés pour répondre à votre question sur les sanctions en matière de fraude fiscale. Les textes actuellement disponibles dans la base de connaissances ne couvrent pas ce domaine. Pour une réponse précise et adaptée à votre situation, veuillez consulter un professionnel du droit ou vous référer au Code des droits et procédures fiscaux tunisien. Ceci ne constitue pas un avis juridique.
 \end{quote}
 
-The confidence gate fired at step~5: the highest reranker score across the 20 Qdrant candidates fell below 0.4, meaning none of the retrieved articles met the relevance threshold. Rather than returning an automatic fallback message, the pipeline notified each model that no relevant articles were found. Both models generated a decline response on that basis, without any legal article in their context. The responses differ slightly in phrasing, as each model produces its own natural language output, but both correctly acknowledge the gap and direct the user to an appropriate resource.
+The confidence gate fired at step~5: the highest reranker score across the 20 Qdrant candidates fell below 0.4, meaning none of the retrieved articles met the relevance threshold. Both models were called with a notification that no relevant articles were found and generated decline responses accordingly, without any legal article in their context. Gemma's response was more specific: it noted that the available documents on tax law cover collection rights and recovery procedures but not criminal or administrative penalties for fraud, and directed the user to the Code de Procédure Fiscale and the Code Pénal Fiscal as the appropriate references. Qwen's response was more generic, acknowledging the absence of relevant indexed documents and recommending a legal professional or the Code des droits et procédures fiscaux. Both models declined without fabricating legal content, though Gemma drew on broader legal domain knowledge to provide more targeted guidance.
 
 \vspace{1em}
 
@@ -499,6 +499,28 @@ Each user question is processed by \texttt{rag/query.py}, a Python script that c
 \vspace{0.5em}
 
 The entire sequence runs on local hardware with no external network call at any step. Steps~1 through~6 are deterministic and take from 2 to 5 seconds, the dominant latency factor is step~7, whose duration scales with the length of the generated response.
+
+\vspace{0.5em}
+
+Figure~\ref{fig:query-interactive} and Figure~\ref{fig:query-single} show the terminal output of \texttt{rag/query.py} as it appears in practice, in interactive mode and in single-query mode respectively. Interactive mode keeps the pipeline loaded between questions, while single-query mode processes one question and exits.
+
+\clearpage
+\begin{sidewaysfigure}
+\centering
+\includegraphics[width=0.9\textheight]{figures/query_in_interactive_mode.png}
+\caption{RAG Query Pipeline Terminal Output - Interactive Mode}
+\label{fig:query-interactive}
+\end{sidewaysfigure}
+\clearpage
+
+\clearpage
+\begin{sidewaysfigure}
+\centering
+\includegraphics[width=0.9\textheight]{figures/query_in_single_mode.png}
+\caption{RAG Query Pipeline Terminal Output - Single-Query Mode}
+\label{fig:query-single}
+\end{sidewaysfigure}
+\clearpage
 
 % ================================================================
 % PART II: EVALUATION
