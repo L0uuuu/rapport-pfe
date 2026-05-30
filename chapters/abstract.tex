@@ -2,11 +2,15 @@
 % Abstract page
 % ============================================================
 \thispagestyle{empty}
-\vspace{0.4cm}
+
+\vfill
+
+\begin{center}
 
 % ---- English ----
-\noindent{\bfseries Abstract}\\[0.25cm]
-\noindent
+{\bfseries Abstract}\\[0.25cm]
+\begin{minipage}{0.85\textwidth}
+\centering
 This project presents the design and development of an on-premises legal \ac{AI} assistant
 specialized in Tunisian law, combining Retrieval-Augmented Generation (\ac{RAG}) and
 language model fine-tuning. A seven-phase pipeline processes official \ac{JORT}
@@ -15,12 +19,18 @@ were fine-tuned on 1,619 Tunisian legal question-answer examples and served loca
 in quantized \ac{GGUF} format. Expert evaluation confirms accuracy between 73\,\%
 and 95\,\% across six categories, with both models reaching 80\,\% or above on five
 of them. The system runs fully on-premises with no external network calls at inference time.
+\end{minipage}\\[0.15cm]
+{\bfseries Keywords:} RAG \textbullet{} Fine-tuning \textbullet{} Tunisian law
+\textbullet{} Language model \textbullet{} On-premises \textbullet{} GGUF \textbullet{} Qdrant \textbullet{} bge-m3
 
-\vspace{0.4cm}
+\vspace{0.12cm}
+\rule{0.6\linewidth}{0.4pt}
+\vspace{0.12cm}
 
 % ---- French ----
-\noindent{\bfseries Résumé}\\[0.25cm]
-\noindent
+{\bfseries Résumé}\\[0.25cm]
+\begin{minipage}{0.85\textwidth}
+\centering
 Ce projet présente la conception et le développement d'un assistant juridique intelligent
 spécialisé dans le droit tunisien, combinant la génération augmentée par récupération
 (\ac{RAG}) et l'ajustement fin de modèles de langage. Un pipeline en sept phases traite
@@ -30,14 +40,19 @@ de questions-réponses juridiques et déployés localement au format \ac{GGUF} q
 L'évaluation par un expert confirme des performances de 73\,\% à 95\,\% selon la catégorie,
 avec une précision de 80\,\% ou plus sur cinq des six catégories. Le système fonctionne
 entièrement en local sans aucun appel réseau externe lors de l'inférence.
+\end{minipage}\\[0.15cm]
+{\bfseries Mots-clés :} RAG \textbullet{} Ajustement fin \textbullet{} Droit tunisien
+\textbullet{} Modèle de langage \textbullet{} Déploiement local \textbullet{} GGUF \textbullet{} Qdrant \textbullet{} bge-m3
 
-\vspace{0.4cm}
+\vspace{0.12cm}
+\rule{0.6\linewidth}{0.4pt}
+\vspace{0.12cm}
 
 % ---- Arabic ----
-\begin{flushright}{\bfseries \begin{Arabic}ملخص\end{Arabic}}\end{flushright}
-\vspace{-0.1cm}
+{\bfseries \begin{Arabic}ملخص\end{Arabic}}\\[0.25cm]
+\begin{minipage}{0.85\textwidth}
+\centering
 \begin{Arabic}
-\noindent
 يقدّم هذا المشروع تصميم وتطوير مساعد قانوني ذكي متخصص في القانون التونسي،
 يجمع بين الاسترجاع المعزَّز بالتوليد (RAG) والضبط الدقيق لنماذج اللغة.
 يعالج خط أنابيب مكوَّن من سبع مراحل منشورات الرائد الرسمي للجمهورية التونسية (JORT)
@@ -48,18 +63,15 @@ entièrement en local sans aucun appel réseau externe lors de l'inférence.
 مع بلوغ كلا النموذجَين 80\,\% أو أكثر في خمس فئات من أصل ست.
 يعمل النظام بالكامل محلياً دون أي اتصال بشبكة خارجية أثناء الاستدلال.
 \end{Arabic}
-
-\vfill
-\noindent\rule{\linewidth}{0.8pt}
-\vspace{0.3cm}
-\begin{center}
-{\bfseries Keywords:} RAG \textbullet{} Fine-tuning \textbullet{} Tunisian law \textbullet{} Language model \textbullet{} On-premises \textbullet{} GGUF\\[0.2cm]
-{\bfseries Mots-clés :} RAG \textbullet{} Ajustement fin \textbullet{} Droit tunisien \textbullet{} Modèle de langage \textbullet{} Déploiement local \textbullet{} GGUF\\[0.2cm]
+\end{minipage}\\[0.15cm]
 \begin{Arabic}
-{\bfseries الكلمات المفتاحية:} RAG \textbullet{} الضبط الدقيق \textbullet{} القانون التونسي \textbullet{} نموذج اللغة \textbullet{} النشر المحلي \textbullet{} GGUF
-\end{Arabic}\\[0.3cm]
-\vspace{0.9cm}
-\noindent\rule{\linewidth}{0.8pt}
+{\bfseries الكلمات المفتاحية:} RAG \textbullet{} الضبط الدقيق \textbullet{} القانون التونسي
+\textbullet{} نموذج اللغة \textbullet{} النشر المحلي \textbullet{} GGUF \textbullet{} Qdrant \textbullet{} bge-m3
+\end{Arabic}
+\end{center}
+\vfill
+\noindent\rule{\linewidth}{0.6pt}
+\begin{center}
 {\small Academic Year 2025/2026}
 \end{center}
 
