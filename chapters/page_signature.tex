@@ -35,7 +35,27 @@
 \vspace{0.8cm}
 
 \noindent
-\signaturebox{I authorize the student to submit their internship report for defense.}{Signature and stamp:}
+\begin{tikzpicture}
+  \node[
+    draw=black,
+    line width=1.2pt,
+    rounded corners=12pt,
+    minimum width=\linewidth,
+    minimum height=5.5cm,
+    text width=\dimexpr\linewidth-1.5cm\relax,
+    align=left,
+    anchor=north west,
+    inner sep=12pt
+  ] {%
+    \vspace{0.2cm}
+    I authorize the student to submit their internship report for defense. \\[0.4cm]
+    \centerline{%
+      \includegraphics[height=1.5cm]{figures/signatur_nourchen.png}%
+      \hspace{1.5cm}%
+      \includegraphics[height=1.5cm]{figures/stamp_etafakna.png}%
+    }
+  };
+\end{tikzpicture}
 
 \vspace{1.5cm}
 

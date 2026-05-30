@@ -1,15 +1,21 @@
 \documentclass[12pt]{report}
 
 % ---- Packages ----
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{french}
+\setotherlanguage{arabic}
+\newfontfamily\arabicfont[Script=Arabic, Scale=1.1]{Arial}
+\usepackage[backend=biber, style=ieee]{biblatex}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{titlesec}
 \usepackage{chngcntr}
 \usepackage{acro}
 \usepackage{xpatch}
-\usepackage[backend=biber, style=ieee]{biblatex}
 \usepackage{array}
 \usepackage{float}
+\usepackage{subcaption}
 \usepackage{rotating}
 \usepackage{geometry}
 \usepackage{setspace}
@@ -19,11 +25,6 @@
 \usepackage{amssymb}
 \usepackage[table]{xcolor}
 \usepackage{hyperref}
-\usepackage{fontspec}
-\usepackage{polyglossia}
-\setmainlanguage{french}
-\setotherlanguage{arabic}
-\newfontfamily\arabicfont[Script=Arabic, Scale=1.1]{Arial}
 
 % ---- Geometry ----
 \geometry{
@@ -40,6 +41,17 @@
 
 % ---- Acronyms ----
 \input{acronyms}
+
+% ---- English heading overrides ----
+% \gappto\captionsfrench appends after polyglossia applies French captions,
+% so these definitions always win regardless of language-switch timing.
+\gappto\captionsfrench{%
+  \renewcommand{\contentsname}{Table of Contents}%
+  \renewcommand{\listfigurename}{List of Figures}%
+  \renewcommand{\listtablename}{List of Tables}%
+  \renewcommand{\bibname}{References}%
+  \renewcommand{\appendixname}{Appendix}%
+}
 
 % ---- Numbering Customization ----
 \renewcommand{\thechapter}{\Roman{chapter}}
@@ -86,8 +98,6 @@
 % Acknowledgments
 \input{chapters/remerciements}
 
-
-
 % ---- Front matter (roman numerals) ----
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -126,5 +136,10 @@
 \input{chapters/annex1}
 \input{chapters/annex2}
 \input{chapters/annex3}
+
+% Abstract — last page of the report
+\clearpage
+\pagestyle{empty}
+\input{chapters/abstract}
 
 \end{document}

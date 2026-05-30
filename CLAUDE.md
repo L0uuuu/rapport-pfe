@@ -25,19 +25,23 @@ Single-pass compile (no bibliography update):
 pdflatex main.tex
 ```
 
-"Cannot find reference" warnings in VSCode are usually stale `.aux` file artifacts — a full recompile clears them.
+"Cannot find reference" warnings in VSCode are usually stale `.aux` file artifacts — a full recompile clears them. Close the PDF viewer before compiling or the output file will be locked and `dvipdfmx` will fail.
 
 ## Document Structure
 
 ```
 main.tex               — Entry point; loads packages, formatting, inputs all chapters
-titlepage.tex          — Cover page with institutional logos and signatures
+titlepage.tex          — Cover page (French) with three logos: stava_isi.png, logo_E-tafakna.png, carbon_signature.png
 acronyms.tex           — All \DeclareAcronym definitions (acro package)
 references.bib         — Biber/BibLaTeX bibliography (IEEE style)
 chapters/
-  chapter1.tex         — Chapter I:   Cadre Général du Projet (General Framework)
-  chapter2.tex         — Chapter II:  État de l'Art (Literature Review)
-  chapter3.tex         — Chapter III: Design and Development
+  page_signature.tex   — Signature page (English): company supervisor (with signature + stamp images) and academic supervisor
+  dedication.tex       — Honorable mention to children killed in war (Palestine, Lebanon, Congo, Sudan)
+  dedicace.tex         — Personal dedication to parents, family, and friends
+  remerciements.tex    — Acknowledgments (English) to Dhikra Ben Mahmoud, Bakhta Haouari, Norchen Mezni
+  chapter1.tex         — Chapter I:   Cadre Général du Projet (General Framework) [French]
+  chapter2.tex         — Chapter II:  État de l'Art (Literature Review) [French]
+  chapter3.tex         — Chapter III: Design and Development [English]
                            Section 1: Definition of Objectives
                            Section 2: Part I — RAG System Implementation
                              2.1 System Architecture
@@ -71,7 +75,7 @@ chapters/
                                2.10.1 LoRA Adapter Export
                                2.10.2 Preparing the Model for Production: GGUF Export and Local Deployment (Ollama)
                            Section 4: Conclusion
-  chapter4.tex         — Chapter IV: Demonstration and Evaluation
+  chapter4.tex         — Chapter IV: Demonstration and Evaluation [English]
                            Section 1: Introduction
                            Section 2: Part I — Demonstration
                              2.1 System Overview at Demo Time
@@ -83,15 +87,26 @@ chapters/
                                — n8n logs + FastAPI logs figures
                              2.3 Example Queries and System Responses
                                — Query 1: COC Art.2 contract validity (both model responses)
-                               — Query categories table (4 types; categories 2-4 pending screenshots)
+                               — Query categories table (4 types)
                              2.4 Pipeline Execution Walkthrough (rag/query.py steps 1-7)
-                           Section 3: Part II — Evaluation (TODO)
+                             2.5 Streamlit Interface (rag/streamlit_app.py; fig:streamlit-interface)
+                           Section 3: Part II — Evaluation
+                             3.1 Evaluation Framework (6 categories, 20 Q each except routing=15, binary rating)
+                             3.2 Results by Category (table + per-category discussion)
+                             3.3 Limitations (Qwen quantization noise; routing gap)
+                             — 80% acceptance threshold; routing only category below 80% for Gemma
+                             — Gemma all ≥ 80%; Qwen meets 80% on all non-routing categories
   annex1.tex           — Appendix A: Legal Article Enrichment Schema (all ~45 fields)
   annex2.tex           — Appendix B: Fine-Tuning Dataset Full Reference (question types, legal codes, data format, limitations)
+  annex3.tex           — Appendix C: Carbon Footprint of the Final Year Project (English)
+                           — Total: 1,103.7 kg CO2e; Transport 96.1%, Hardware 1.3%, Infra 2.3%, Office 0.2%
+                           — 130 pages printed; 85 km one-way commute; 26 on-site days
 figures/               — All images (logos, diagrams, n8n workflow screenshots)
 context_rag/           — Technical documentation for each pipeline phase (source of truth)
 context_fine-tuning/   — Technical documentation for the fine-tuning pipeline (source of truth)
-scripts/               — Utility scripts (generate_charts.py for dataset figures)
+scripts/               — Utility scripts
+  generate_charts.py              — Dataset composition/category/language charts (Chapter 3)
+  generate_evaluation_chart.py    — Expert evaluation grouped bar chart → figures/jurist_evaluation.png
 ```
 
 ## LaTeX Conventions
@@ -100,20 +115,37 @@ scripts/               — Utility scripts (generate_charts.py for dataset figur
 - Chapters: Roman numerals (`\renewcommand{\thechapter}{\Roman{chapter}}`)
 - Sections: Arabic numerals only (`\renewcommand{\thesection}{\arabic{section}}`)
 - Subsubsections: numbered (`\setcounter{secnumdepth}{3}`)
-- Figures: chapter-prefixed, continuous within chapter (`\thefigure` = `chapter.figure`)
-- Tables: default LaTeX report numbering (chapter-prefixed)
+- Figures: chapter-prefixed (`\thefigure` = `chapter.figure`), `\counterwithout{figure}{chapter}`
+- Tables: Arabic chapter-prefixed (`\counterwithout{table}{chapter}` + `\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}`)
 
-**Key packages:** `biblatex` (biber, IEEE), `acro`, `titlesec`, `fancyhdr`, `geometry`, `float`, `rotating`, `needspace`, `setspace`, `array`, `chngcntr`
+**Key packages (loading order matters):**
+```
+fontspec, polyglossia  ← MUST come before biblatex (or biblatex errors on polyglossia)
+biblatex (biber, IEEE)
+graphicx, tikz
+titlesec, chngcntr, acro, xpatch
+array, float, subcaption, rotating
+geometry, setspace, needspace, fancyhdr
+amsmath, amssymb
+xcolor [table]         ← [table] option for \rowcolor in tables
+hyperref               ← always last
+```
 
 **Margins:** top 3cm, bottom 2.5cm, left/right 2.5cm
 
-**Language:** Chapters 3 and 4 are in English. Other chapters in French. Acronyms are defined in `acronyms.tex` and used with `\ac{}`, `\acp{}`, `\acl{}` etc.
+**Language:** Chapters 3, 4, and appendices are in English. Chapters 1, 2 in French. Acronyms are defined in `acronyms.tex` and used with `\ac{}`, `\acp{}`, `\acl{}` etc.
 
 **Citations:** Use `\cite{}` with keys from `references.bib`. Bibliography printed at end of `main.tex` via `\printbibliography`.
 
-**Appendix:** Added via `\appendix` then `\input{chapters/annexN}` after `\printbibliography` in `main.tex`. Currently: annex1 (Appendix A: Article Schema), annex2 (Appendix B: Dataset Reference). LaTeX labels them automatically.
+**Appendix:** Added via `\appendix` then `\input{chapters/annexN}` after `\printbibliography` in `main.tex`. Currently: annex1 (A), annex2 (B), annex3 (C). LaTeX labels them automatically.
 
 **Sideways figures:** Large pipeline diagrams use `\begin{sidewaysfigure}` (from `rotating` package), wrapped in `\clearpage` before and after.
+
+**Side-by-side figures:** Use two `\begin{minipage}[t]{0.48\textwidth}` blocks with `\hfill` between them and `\subcaption*{}` for unlabeled subcaptions (requires `subcaption` package).
+
+**Colored table headers:** `\rowcolor{green!25}` on the header row (requires `\usepackage[table]{xcolor}`).
+
+**Signature boxes:** `\signaturebox{Title}{Content}` defined via TikZ in `page_signature.tex`. The company supervisor box contains actual images (`signatur_nourchen.png` + `stamp_etafakna.png`, both in `.gitignore`).
 
 ## Writing Style
 
@@ -129,7 +161,7 @@ scripts/               — Utility scripts (generate_charts.py for dataset figur
 
 When adding new acronyms, declare them in `acronyms.tex` and use `\ac{KEY}` on first occurrence (auto-expands to "Long Form (SHORT)").
 
-## Citation Keys (references.bib) — Chapter 3 relevant
+## Citation Keys (references.bib)
 
 | Key | What it cites |
 |---|---|
@@ -149,6 +181,7 @@ When adding new acronyms, declare them in `acronyms.tex` and use `\ac{KEY}` on f
 | `ibm2025syntheticdata` | IBM — What Is Synthetic Data? |
 | `pvml2025syntheticdata` | PVML — Synthetic Data glossary + domain figure |
 | `gartner2023syntheticdata` | Gartner 60% synthetic data prediction |
+| `streamlit2024docs` | Streamlit (used for rag/streamlit_app.py demo interface) |
 
 ## Context Files (context_rag/)
 
@@ -184,6 +217,25 @@ These markdown files are the authoritative technical reference for the RAG pipel
 - **RAG query pipeline** (runtime, NOT n8n/FastAPI): `rag/query.py` — language detection → bge-m3 embedding → Qdrant hybrid search (RRF, top-20) → bge-reranker reranking → confidence gate (threshold 0.4) → Ollama generation. n8n + FastAPI are offline preparation only.
 - **n8n trigger**: schedule trigger in production; manual trigger for testing. Sends Telegram notifications at start/end of each phase.
 
+## Expert Evaluation (chapter 4) — Final Numbers
+
+6 categories evaluated by a legal domain expert. Binary correct/incorrect per question. 80% acceptance threshold.
+
+| Category | Total Q | Gemma correct | Gemma % | Qwen correct | Qwen % |
+|---|---|---|---|---|---|
+| Direct QA | 20 | 19 | 95% | 18 | 90% |
+| Multi-article synthesis | 20 | 17 | 85% | 16 | 80% |
+| Principle and exception | 20 | 17 | 85% | 16 | 80% |
+| In-domain refusal | 20 | 18 | 90% | 16 | 80% |
+| Clarification | 20 | 17 | 85% | 16 | 80% |
+| Routing | 15 | 11 | 73% | 9 | 60% |
+
+- Gemma meets 80% on all categories except Routing (73%).
+- Qwen meets 80% on all non-routing categories; Routing is 60%.
+- Routing is the only category where both models fall below 80%.
+- Qwen performance gap attributed to 4-bit NF4 quantization noise (QLoRA).
+- Chart generated by `scripts/generate_evaluation_chart.py` → `figures/jurist_evaluation.png`.
+
 ## Figures in Chapter 3
 
 | Label | File | Description |
@@ -199,11 +251,12 @@ These markdown files are the authoritative technical reference for the RAG pipel
 | `fig:vector-storage-workflow` | `vector_storage_workflow.png` | n8n Phase 7 sub-workflow |
 | `fig:rag-query-flow` | `rag_query_flow.png` | RAG query flow diagram |
 | `fig:n8n-workflow` | `n8n_workflow.png` | Full n8n orchestration workflow |
-| `fig:dataset-composition` | `dataset_composition.png` | Fine-tuning dataset composition by type (generated by scripts/generate_charts.py) |
-| `fig:question-categories` | `question_categories_chart.png` | Question category distribution — constructed dataset |
-| `fig:language-distribution` | `language_distribution_chart.png` | Language distribution across full training dataset |
-| `fig:synthetic-data-domains` | `synthetic_data_domains.png` | Industries using synthetic data (save manually from pvml.com) |
-| `fig:ovh-notebook` | `ovh_notebook.png` | OVHcloud AI Notebook instance used for fine-tuning |
+| `fig:dataset-composition` | `dataset_composition.png` | Fine-tuning dataset composition by type |
+| `fig:question-categories` | `question_categories_chart.png` | Question category distribution |
+| `fig:language-distribution` | `language_distribution_chart.png` | Language distribution across training dataset |
+| `fig:synthetic-data-domains` | `synthetic_data_domains.png` | Industries using synthetic data (from pvml.com) |
+| `fig:ovh-notebook-gemma` | `ovh_notebook.png` | OVHcloud AI Notebook instance for Gemma 4 E4B fine-tuning |
+| `fig:ovh-notebook-qwen` | `ovh_notebook_qwen.png` | OVHcloud AI Notebook instance for Qwen3.5 9B fine-tuning |
 
 ## Figures in Chapter 4
 
@@ -213,6 +266,8 @@ These markdown files are the authoritative technical reference for the RAG pipel
 | `fig:telegram-notifications` | `telegram_1.png` + `telegram_2.png` | Telegram bot notifications during pipeline run (side by side) |
 | `fig:n8n-logs` | `n8n_logs.png` | n8n execution panel during pipeline run |
 | `fig:fastapi-logs` | `fastAPI_logs.png` | FastAPI server terminal logs during pipeline run |
+| `fig:streamlit-interface` | `streamlit_interface.png` | Streamlit demo interface for rag/query.py |
+| `fig:jurist-evaluation` | `jurist_evaluation.png` | Expert evaluation grouped bar chart (generated by scripts/generate_evaluation_chart.py) |
 
 ## Architecture Notes
 
@@ -220,3 +275,4 @@ These markdown files are the authoritative technical reference for the RAG pipel
 - New appendices: add after `\appendix` in `main.tex` using `\input{chapters/annexN}`.
 - Figures go in `figures/` and are referenced with `\includegraphics{figures/filename}`.
 - Figure drawing guides for ChatGPT/draw.io are saved in `figures/*_guide.md`.
+- Sensitive files in `.gitignore`: `signatur_nourchen.png`, `stamp_etafakna.png`.

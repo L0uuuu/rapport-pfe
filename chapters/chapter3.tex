@@ -76,7 +76,7 @@ Both flows share the same embedding model and vector database, ensuring that the
 \clearpage
 \begin{sidewaysfigure}
 \centering
-\includegraphics[width=1.0\textheight,height=0.6\textwidth]{figures/flowchart_pipeline.jpg}
+\includegraphics[width=1.0\textheight]{figures/chartflow_workflow_2.png}
 \caption{Flowchart of the Data Pipeline}
 \label{fig:flowchart-pipeline}
 \end{sidewaysfigure}
@@ -186,7 +186,7 @@ The complete workflow consists of 50 nodes covering all seven phases, with notif
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{figures/n8n_workflow_simple.png}
+\includegraphics[width=0.6\textwidth]{figures/n8n_workflow_simple_2.png}
 \caption{n8n Workflow: Automated Pipeline Orchestration}
 \label{fig:n8n-workflow}
 \end{figure}
@@ -805,13 +805,20 @@ Sequence packing was disabled to preserve the conversational integrity of each t
 
 \subsubsection{Training Infrastructure}
 
-Both models were trained on OVHcloud \cite{ovhcloud2024ainotebooks} AI Notebook instances, as shown in Figure~\ref{fig:ovh-notebook}. Gemma~4~E4B was trained on a single NVIDIA Tesla V100S with 32 GiB of \ac{VRAM} using standard \ac{LoRA} with an fp16 base. Qwen3.5~9B was trained on a single NVIDIA Tesla V100S using \ac{QLoRA}, with the base model loaded in 4-bit NF4 quantization. The quantitative results for both runs, including loss curves, training duration, and peak \ac{VRAM} usage, are reported in Chapter~IV alongside the evaluation experiments.
+Both models were trained on OVHcloud \cite{ovhcloud2024ainotebooks} AI Notebook instances, as shown in Figures~\ref{fig:ovh-notebook-gemma} and~\ref{fig:ovh-notebook-qwen}. Gemma~4~E4B was trained on a single NVIDIA Tesla V100S with 32 GiB of \ac{VRAM} using standard \ac{LoRA} with an fp16 base. Qwen3.5~9B was trained on a single NVIDIA Tesla V100S using \ac{QLoRA}, with the base model loaded in 4-bit NF4 quantization. The quantitative results for both runs, including loss curves, training duration, and peak \ac{VRAM} usage, are reported in Chapter~IV alongside the evaluation experiments.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{figures/ovh_notebook.png}
-\caption{OVHcloud AI Notebook Instance Used for Fine-Tuning}
-\label{fig:ovh-notebook}
+\includegraphics[width=\textwidth]{figures/ovh_notebook.png}
+\caption{OVHcloud AI Notebook Instance Used for Fine-Tuning -- Gemma 4 E4B}
+\label{fig:ovh-notebook-gemma}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/ovh_notebook_qwen.png}
+\caption{OVHcloud AI Notebook Instance Used for Fine-Tuning -- Qwen3.5 9B}
+\label{fig:ovh-notebook-qwen}
 \end{figure}
 
 % ----------------------------------------------------------------
